@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style6.css">
+    <title>Cadastro de Pet</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_formulario">
+            <h1>Cadastro do Pet para Consulta</h1>
+            <form action="/enviarCadastro" method="post">
+                <label for="nomePet">Nome do Pet:</label>
+                <input type="text" id="nomePet" name="nomePet" required>
+                
+                <label for="especiePet">Espécie:</label>
+                <select id="especiePet" name="especiePet">
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                    <option value="peixe">Peixe</option>
+                    <option value="passaro">Pássaro</option>
+                </select>
+                
+                <label for="racaPet">Raça:</label>
+                <input type="text" id="racaPet" name="racaPet" required>
+                
+                <label for="idadePet">Idade:</label>
+                <input type="number" id="idadePet" name="idadePet" required>
+                
+                <label for="nomeProprietario">Nome do Proprietário:</label>
+                <input type="text" id="nomeProprietario" name="nomeProprietario" required>
+                
+                <label for="nascpet">Data de Nascimento do Pet:</label>
+                <input type="date" id="nascpet" name="nascpet" required>
+                
+                <label for="emailProprietario">E-mail:</label>
+                <input type="email" id="emailProprietario" name="emailProprietario" required>
+                
+                <label for="dados">Possui algum problema de saúde ou alergias:</label>
+                <input type="text" id="dados" name="dados">
+                
+                <input type="submit" value="Cadastrar">
+            </form>
+            <div class="back-button"> 
+                <a href="front.html"><button>Voltar</button></a> 
+            </div>
+    </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Pet Gatô</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+body{
+    font-family: 'Courier New', Courier, monospace; 
+    background: linear-gradient(to right, navy, black);
+}
+*{
+margin: 0px;
+padding: 0px;
+
+}
+
+.container1{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(to right, navy, black);
+color: white;
+height: 100px; 
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.product-item {
+color: white;
+border-radius: 5px;
+padding: 10px;
+text-align: center;
+width: 200px;
+border: 2px solid rgb(255, 255, 255); 
+}
+.product-item img {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid rgb(0, 0, 0); 
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #343a40;
+  color:white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.back-button { 
+  margin-top: 20px; 
+  text-align: center; 
+} 
+.back-button button { 
+  background-color: #000000; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 4px; cursor: pointer; 
+  font-size: 16px; font-weight: bold; text-transform: uppercase;
+ } 
+ .back-button button:hover { 
+  background-color: #555; 
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color:white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

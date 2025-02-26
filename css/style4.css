@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: linear-gradient(to right, navy, black);
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+  justify-content: center;
+}
+
+.container .containerLeft {
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.container .containerLeft img {
+    width: 1000px;
+  height: 1000px;
+}
+
+.container .containerRight {
+  position: absolute;
+  height: 90vh;
+  width: 90vw;
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 16px;
+  transform: translateX(-20px);
+}
+
+.container .containerRight h1 {
+    margin-bottom: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+.container .containerRight form label input {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 5px;
+    padding: .75rem;
+    outline: 0;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+}
+
+.container .containerRight form p {
+    text-align: right;
+    margin: 1rem 0;
+    font-size: 14px;
+}
+
+.container .containerRight form button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: .75rem;
+    background: #1c214d;
+    border-radius: 6px;
+    border: 0;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.container .containerRight form button:hover {
+    background: #4e81c9;
+}
+
+@media (min-width: 768px) {
+    .container .containerRight {
+        position: static;
+        width: 60vw;
+        transform: translateX(0); 
+    }
+    .containerRight{
+        background: linear-gradient(to right, rgb(17, 17, 75), black);
+    }
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color:white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
