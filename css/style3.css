@@ -66,12 +66,3 @@ button{
    .back-button button:hover { 
     background-color: #555; 
   }
-  .footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #343a40;
-    color:white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
