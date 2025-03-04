@@ -202,3 +202,19 @@ h2{
 .product-item:hover .description {
     opacity: 1;
 }
+
+.product-item button {
+    background-color: #FF6600; 
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-item button:hover {
+    background-color: #FF4500;
+    transform: scale(1.05);
+}
