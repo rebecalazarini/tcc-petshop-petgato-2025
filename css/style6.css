@@ -97,12 +97,3 @@ body {
 .back-button { 
     margin-top: 20px; text-align: center; 
 }
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #343a40;
-    color:white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
