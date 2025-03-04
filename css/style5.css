@@ -37,16 +37,6 @@ border: 2px solid rgb(255, 255, 255);
   border-radius: 5px;
   border: 2px solid rgb(0, 0, 0); 
 }
-
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #343a40;
-  color:white;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
 .back-button { 
   margin-top: 20px; 
   text-align: center; 
@@ -61,4 +51,20 @@ border: 2px solid rgb(255, 255, 255);
  } 
  .back-button button:hover { 
   background-color: #555; 
+}
+
+.product-item button {
+  background-color: #FF6600; 
+  color: white; 
+  border: none; 
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-item button:hover {
+  background-color: #FF4500;
+  transform: scale(1.05);
 }
