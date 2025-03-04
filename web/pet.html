@@ -1,85 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro o Pet</title>
-   <link rel="stylesheet" href="/css/style3.css">
+    <link rel="stylesheet" href="/css/style3.css">
+    <title>Cadastro de Pet</title>
 </head>
 <body>
     <div class="container">
-    <div class="div1">
-    <h1>Cadastro do Pet</h1>
-    <br>
-    
-        <h2><label for="dados">Dados do dono</label></h2>
-        <br>
+        <div class="container_formulario">
+            <h1>Cadastro do Pet</h1>
+            
+            <form action="/enviarCadastro" method="post">
 
-        <p></p>
-        
-        <label for="dados">Nome do Dono(a):</label>
-        <br>
-        <input type="dados" id="dono" name="dados">
+               <label for="dados">Nome do Dono(a):</label>
+               <input type="text" id="dono" name="dados" required>
 
+               <label for="dados">Digite seu cpf:</label>
+               <input type="number" id="CPF" name="dados" required>
        
-        <p></p>
-        
-        <label for="dados">Digite seu cpf:</label>
-        <br>
-        <input type="number" id="CPF" name="dados">
+               <label for="dados">Telefone para contato:</label>
+               <input type="number" id="tel" name="dados" required>
+                
+                <label for="especiePet">Espécie:</label>
+                <select id="especiePet" name="especiePet">
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                    <option value="peixe">Peixe</option>
+                    <option value="passaro">Pássaro</option>
+                </select>
 
-        <p></p>
-        
-        <label for="dados">Telefone para contato:</label>
-        <br>
-        <input type="number" id="tel" name="dados">
-
-        <p></p>
-
-        <h2> <label for="dados">Dados do pet</label></h2>
-        <br>
-
-        <label for="dados">Espécie</label>
-        <br>
-        <select id="dados">
-        
-        <option>Cachorro</option>
-        <option>Gato</option>
-        <option>Peixe</option>
-        <option>Pássaro</option>
-       
-        </select>
-
-        <p></p>
-        <br>
-        <label for="dados">Digite o nome do pet:</label>
-        <br>
-        <input type="dados" id="dono" name="dados">
-
-        <p></p>
-
-       <label for="dados">Digite a raça:</label>
-       <br>
-       <input type="dados" id="Raça" name="dados">
-
-        <p></p>
-
-        <label for="dados">Digite a data de nascimento do pet:</label>
-        <br>
-        <input type="date" id="Nascimento" name="dados">
-
-        <p></p>
-
-        <label for="dados">Possui algum problema de saúde:</label>
-        <br>
-        <input type="dados" id="qual" name="dados">
-        
-        <p></p>
-    
-
-    <button type="submit" onclick="Enviar()">Enviar</button></a>
-    <a href="front.html"><button type="button" onclick="entrar()">Entrar</button></a>
-    <a href="cadastrar.html"><button>Voltar</button></a> 
+                
+                <label for="nome">Nome do Pet:</label>
+                <input type="text" id="nomepet" name="nomepet" required>
+                
+                <label for="racaPet">Raça:</label>
+                <input type="text" id="racaPet" name="racaPet" required>
+                
+                <label for="idadePet">Idade:</label>
+                <input type="number" id="idadePet" name="idadePet" required>
+                
+                
+                <label for="nascpet">Data de Nascimento do Pet:</label>
+                <input type="date" id="nascpet" name="nascpet" required>
+                
+                <label for="emailProprietario">E-mail:</label>
+                <input type="email" id="emailProprietario" name="emailProprietario" required>
+                
+                
+                <input type="submit" value="Cadastrar">
+            </form>
+            <div class="back-button"> 
+                <button type="submit" onclick="Enviar()">Enviar</button></a>
+                <a href="cadastrar.html"><button>Voltar</button></a> 
+            </div>
+    </div>
+    </div>
 
 </body>
 </html>
