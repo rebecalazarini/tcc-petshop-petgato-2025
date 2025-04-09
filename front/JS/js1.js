@@ -11,3 +11,4 @@ document.getElementById('Email,Senha').value;
 window.alert("Cadastrado com sucesso!");
 }
 }
+
