@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/front/css/style2.css">
+    <link rel="stylesheet" href="css/style2.css">
     <title>Cadastrar</title>
   </head>
   <body>
@@ -16,6 +16,7 @@
         <input type="password" id="Senha" placeholder="Digite sua senha: "/ required>
 
         <button type="button" onclick="Cadastrar()">Cadastrar</button>
+
 
         Deseja cadastrar seu pet?
         <a href="pet.html"><button type="button" onclick="sim()">sim</button></a>
@@ -51,6 +52,31 @@
     </header>
 
    
-<script src="/front/JS/js1.js"></script>
+<script>
+  async function Cadastrar() {
+    const email = document.getElementById("Email").value;
+    const senha = document.getElementById("Senha").value;
+
+    try {
+        const response = await fetch("/cadastrar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, senha })
+        });
+
+        if (response.ok) {
+            alert("Cadastro realizado com sucesso! Verifique seu email.");
+            window.location.href = "front.html"; // Redireciona para a página principal
+        } else {
+            const erro = await response.text();
+            alert(`Erro ao cadastrar: ${erro}`);
+        }
+    } catch (error) {
+        console.error("Erro na solicitação:", error);
+        alert("Erro ao processar o cadastro.");
+    }
+}
+
+</script>
   </body>
 </html>
