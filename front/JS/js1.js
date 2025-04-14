@@ -2,8 +2,13 @@ async function Cadastrar() {
     const email = document.getElementById("Email").value;
     const senha = document.getElementById("Senha").value;
 
+    if (!email || !senha) {
+        alert("Por favor, preencha os campos de email e senha.");
+        return;
+    }
+
     try {
-        const response = await fetch("/cadastrar", {
+        const response = await fetch("http://localhost:3000/cadastrar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, senha })
@@ -21,5 +26,3 @@ async function Cadastrar() {
         alert("Erro ao processar o cadastro.");
     }
 }
-
-
