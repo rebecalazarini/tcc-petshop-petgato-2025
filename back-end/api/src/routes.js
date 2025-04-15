@@ -4,7 +4,7 @@ const routes = express.Router();
 const User = require('./controllers/user.js');
 
 routes.get('/', (req, res) => {
-    res.json({ message: 'Rota de teste funcionando!' });
+    res.json({ message: 'Rota funcionando!' });
 });
 
 
