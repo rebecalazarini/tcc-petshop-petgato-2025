@@ -20,6 +20,8 @@ npm install bcrypt
 npm install express-validator
 npm install @prisma/client
 npx prisma generate
+npx prisma init --datasource-provider mysql
+npx prisma migrate dev --name init
 npx nodemon server.js
 
 ```
