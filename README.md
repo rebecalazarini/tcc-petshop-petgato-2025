@@ -2,6 +2,13 @@
 
 ## Como executar
 - Clone este repositório
+- Abra com VsCode
+- - Abra o terminal ctrl + '
+- Execute esse comando
+```bash
+cd back-end
+cd api
+```
 - Instale as dependencias nessa ordem
 ```bash
 npm init -y
