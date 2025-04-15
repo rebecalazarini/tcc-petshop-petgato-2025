@@ -27,7 +27,7 @@ npx nodemon server.js
 ```
 
 ## Teste no insomnia 
-- http://localhost:3000/cadastrar
+- http://localhost:3000/u
 - exemplo:
 {
   "email": "teste@exemplo.com",
