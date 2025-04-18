@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja da Beca</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <h1>Loja da Beca</h1>
+        <button onclick="window.location.href='carrinho.html'">Carrinho</button>
+    </header>
+
+    <main>
+        <div id="produtos-container"></div>
+    </main>
+
+    <footer>
+        <h2>By rebecalazarini</h2>
+    </footer>
+
+    <div id="detalhes" class="modal oculto">
+        <div class="janela">
+            <div>
+                <h3>Detalhes do Produto</h3>
+                <button onclick="document.getElementById('detalhes').classList.add('oculto')">X</button>
+            </div>
+            <div id="conteudo"></div>
+            <button id="adicionarCarrinho" onclick="adicionarCarrinho()">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <script src="./JS/js3.js"></script>
+</body>
+</html>
