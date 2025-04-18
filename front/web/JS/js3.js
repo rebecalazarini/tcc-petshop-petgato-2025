@@ -1,4 +1,4 @@
-const dadosFront = "assets/produtos.json";
+const dadosFront = "/assets/produtos.json";
 let produtos = [];
 
 
