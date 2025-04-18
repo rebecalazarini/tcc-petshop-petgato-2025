@@ -33,14 +33,13 @@ function mostrarProdutos(produtos) {
 function mostrarDetalhes(index) {
     const produto = produtos[index];
     const conteudo = document.getElementById('conteudo');
-    const frete = (produto.peso * 0.1).toFixed(2);
+    const frete = (produto.preco * 0.1).toFixed(2);
 
     conteudo.innerHTML = `
         <img src="${produto.imagem}" alt="${produto.nome}">
         <h3>${produto.nome}</h3>
         <p>${produto.descricao}</p>
         <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
-        <p>Peso: ${produto.peso} kg</p>
         <p>Frete: R$ ${frete}</p>
     `;
     document.getElementById('detalhes').classList.remove('oculto');

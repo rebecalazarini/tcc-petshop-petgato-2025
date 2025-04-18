@@ -20,6 +20,7 @@
        <div class="banner">
         <h1>Promoção Especial!</h1>
         <h5>Compras acima de R$100,00 ganham um brinde</h5>
+        <h5>Frete fixo de R$10.00 reais para todo o Brasil</h5>
     </div>
         <div class="header">
             <img src="pepet3.png" class="pet" alt="logo">
@@ -29,31 +30,22 @@
       <br>
       <br>
     
-    <main>
+    <main class="mainContainer">
         <div id="produtos-container"></div>
     </main>
 
-            <br>
-            <br>
-    
-            <section id="contato">
-                <h2>Contato</h2>
-                <p>Entre em contato conosco para pedidos!!</p>
-                <form action="/enviarContato" method="post">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required><br>
-                    
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required><br>
-                    
-                    <label for="mensagem">Mensagem:</label><br>
-                    <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea><br>
-                    
-                    <input type="submit" value="Enviar">
-                </form>
-            </section>
-            
+
+    <div id="detalhes" class="modal oculto">
+        <div class="janela">
+            <div>
+                <h3>Detalhes do Produto</h3>
+                <button onclick="document.getElementById('detalhes').classList.add('oculto')">X</button>
+            </div>
+            <div id="conteudo"></div>
+            <button id="adicionarCarrinho" onclick="adicionarCarrinho()">Adicionar ao Carrinho</button>
+        </div>
     </div>
+           
 </body>
 <script src="./JS/js3.js"></script>
 </html>
