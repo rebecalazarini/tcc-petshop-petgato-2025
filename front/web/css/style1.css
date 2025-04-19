@@ -29,11 +29,11 @@ header{
         border: none;
         padding: 5px 10px;
         border-radius: 5px;
-        box-shadow: 0 0 5px var(--t1);
         font-weight: bold;
         cursor: pointer;
         color: rgb(0, 0, 0);
         
+
     }
 }
 .header {
@@ -179,11 +179,13 @@ h2{
 }
 
 .mainContainer{
-    width: 85%;
+    width: 100%;
+    position: relative;
 }
 
 #produtos-container{
     width: 100%;
+    padding: 0 25px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -220,7 +222,9 @@ h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .janela{
@@ -232,8 +236,8 @@ h2{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    position: absolute;
-    
+    margin: auto;
+
     & div{
         display: flex;
         width: 100%;
@@ -278,14 +282,16 @@ input{
     display: flex;
     flex-direction: column;
     gap: 10px; 
-    align-items: flex-start;
+    align-items: center;
     padding: 20px; 
     max-width: 300px; 
 }
 
 #conteudo img {
-    width: 100%; 
-    height: auto; 
+    width: 200px; 
+    height: 200px; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 
 #conteudo h3 {
@@ -295,6 +301,4 @@ input{
 #conteudo p {
     margin: 5px 0; 
 }
-  
-
   

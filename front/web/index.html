@@ -31,20 +31,23 @@
       <br>
     
     <main class="mainContainer">
-        <div id="produtos-container"></div>
+        <div id="produtos-container">
+            <div id="detalhes" class="modal oculto">
+                <div class="janela">
+                    <div>
+                        <h3>Detalhes do Produto</h3>
+                        <button onclick="document.getElementById('detalhes').classList.add('oculto')">X</button>
+                    </div>
+                    <div id="conteudo"></div>
+                    <button id="adicionarCarrinho" onclick="adicionarCarrinho()">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+       
     </main>
 
 
-    <div id="detalhes" class="modal oculto">
-        <div class="janela">
-            <div>
-                <h3>Detalhes do Produto</h3>
-                <button onclick="document.getElementById('detalhes').classList.add('oculto')">X</button>
-            </div>
-            <div id="conteudo"></div>
-            <button id="adicionarCarrinho" onclick="adicionarCarrinho()">Adicionar ao Carrinho</button>
-        </div>
-    </div>
+    
            
 </body>
 <script src="./JS/js3.js"></script>
