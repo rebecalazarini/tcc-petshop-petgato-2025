@@ -145,8 +145,168 @@
         "descricao":"Estampa: pizza",
         "preco":34.99,
         "imagem":"https://www.geekmagazine.com.br/wp-content/uploads/2021/06/novo-conforto-animal-de-estimacao-gato-cao-dormir-esteira-gato-macio-quente-flanela.webp" 
+    },
+    {
+        "id":22,
+        "nome":"Cobertor liso",
+        "descricao":"Cor: Azul",
+        "preco":34.99,
+        "imagem":"https://images-americanas.b2w.io/produtos/5464540814/imagens/manta-cobertor-para-cachorro-pet-soft-quentinha-azul-royal/5464540814_1_xlarge.jpg"
+    },
+    {
+        "id":23,
+        "nome":"Cobertor estampado",
+        "descricao":"Cor: Rosa",
+        "preco":34.99,
+        "imagem":"https://a-static.mlcdn.com.br/450x450/manta-cobertor-pet-120m-x-150m-microfibra-plush-rosa-blush-meu-pet/lojaestiloeconforto2/40-06-0053-0064/2d6ec285cf23c9afe1fa617ff643365e.jpeg"
+    },
+    {
+        "id":24,
+        "nome":"Gaiola grande",
+        "descricao":"Medidas: 43cm x 35cm x 55cm, 3 Poleiros de plástico",
+        "preco":119.99,
+        "imagem":"https://http2.mlstatic.com/D_NQ_NP_846623-MLB70222956967_062023-O.webp"
+    },
+    {
+        "id":25,
+        "nome":"Gaiola preta",
+        "descricao":"Medidas: 50x48,50x21,70cm, Coxo removíve, Gancho para pendurar",
+        "preco":85.90,
+        "imagem":"https://m.media-amazon.com/images/I/71szT2R4uYL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "id":26,
+        "nome":"Gaiola de madeira",
+        "descricao":"Material: MDF, Medidas: 38cm x 18cm x 36cm, gancho para pendurar",
+        "preco":90.90,
+        "imagem":"https://casaferrari.cdn.magazord.com.br/img/2023/02/produto/42615/gaiola-quadrada-coxo-lateral-ipe-2.jpg?ims=fit-in/600x600/filters:fill(white)"
+    },
+    {
+        "id":27,
+        "nome":"Gaiola verde",
+        "descricao":"Medidas: 38cm x 18cm x 36cm, Gancho para pendurar, Material: MDF ",
+        "preco":75.90,
+        "imagem":"https://images.tcdn.com.br/img/img_prod/554605/gaiola_triangular_para_passarinho_periquito_calopsita_metal_cor_sortida_american_pets_80697_1_e5cec55836836245dbdcd0d6dea9501c.jpg"
+    },
+    {
+        "id":28,
+        "nome":"Casa ecológica para cães",
+        "descricao":"Medidas:44cm x 51cm x 55cm, Material:Reciclada Ecológica",
+        "preco":40.90,
+        "imagem":"https://http2.mlstatic.com/D_NQ_NP_880007-MLB73909497002_012024-O.webp"
+    },
+    {
+        "id":29,
+        "nome":"Casa mdf",
+        "descricao":"Medidas:44cm x 51cm x 55cm, Material: MDF",
+        "preco":60.90,
+        "imagem":"https://images.tcdn.com.br/img/img_prod/601564/casinha_madeira_no_06_6_1_20171212145832.jpg"
+    },
+    {
+        "id":30,
+        "nome":"Casa moderna",
+        "descricao":"Medidas:44cm x 51cm x 55cm, Material: MDF",
+        "preco":149.90,
+        "imagem":"https://www.somaurbanismo.com.br/wp-content/uploads/2021/11/Casinha-Para-Cachorro-Soma-Urbanismo-2021-1.jpg"
+    },
+    {
+        "id":31,
+        "nome":"Casa com arranhador para gatos",
+        "descricao":"Medidas:80 cm x 93cm x 62cm, Material:Estrutura de MDF,Canos de Polipropileno Atóxico, Arranhadores feitos com corda de sisal natural",
+        "preco":99.90,
+        "imagem":"https://http2.mlstatic.com/D_NQ_NP_600106-MLB44959418312_022021-O.webp"
+    },
+    {
+        "id":32,
+        "nome":"Casa moderna para gatos",
+        "descricao":"Medidas:80 cm x 93cm x 62cm, Material:Estrutura MDF,Canos de Polipropileno Atóxico, Arranhadores feitos com corda de sisal natural",
+        "preco":99.90,
+        "imagem":"https://www.somaurbanismo.com.br/wp-content/uploads/2021/11/Casinha-Para-Cachorro-Soma-Urbanismo-2021-1.jpg"
+    },
+    {
+        "id":33,
+        "nome":"Casa suspensa",
+        "descricao":"Medidas:45 cm de diâmetro e 60 cm de comprimento, Material: MDF e cúpula de acrílico",
+        "preco":99.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrBygIlTcB80CCuRfKxsvlM0urqAs7rCW0g&s"
+    },
+    {
+        "id":34,
+        "nome":"Coleira sem guia",
+        "descricao":"Tamanho: P, M, G, GG",
+        "preco":20.90,
+        "imagem":"https://www.petlove.com.br/images/products/263516/product/Coleira_Future_Pet_Azul_Marinho_para_C%C3%A3es.jpg?1665669998"
+    },
+    {
+        "id":35,
+        "nome":"Coleira Peitoral",
+        "descricao":"Tamanho: P, M, G, GG",
+        "preco":20.90,
+        "imagem":"https://www.mundomiauauau.com.br/cdn/shop/products/S4473c29c98ab41d99f17ab99b4d15df3r.jpg?v=1691012258"
+    },
+    {
+        "id":36,
+        "nome":"Coleira Peitoral",
+        "descricao":"Tamanho: P, M, G, GG",
+        "preco":29.90,
+        "imagem":"https://a-static.mlcdn.com.br/1500x1500/coleira-peitoral-para-cachorro-pet-woof/lojasedri/15902675155/d4b19ff90189113dedc5f81a121d038f.jpeg"
+    },
+    {
+        "id":37,
+        "nome":"Colerira + guia",
+        "descricao":"Tamanho: P, M, G, GG",
+        "preco":29.90,
+        "imagem":"https://cdn.awsli.com.br/2500x2500/2370/2370983/produto/302395508/mood-kit-coleira-00fapq1ctc.jpg"
+    },
+    {
+        "id":38,
+        "nome":"Coleira simples para gatos",
+        "descricao":"Tamanho: P, M, G",
+        "preco":19.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnchNxI0VTRbUEsqtjoyAo5-4s6tlcjeSLA&s"
+    },
+    {
+        "id":39,
+        "nome":"Coleira peitoral para gatos",
+        "descricao":"Tamanho: P, M, G",
+        "preco":20.90,
+        "imagem":"https://cdn.awsli.com.br/600x700/1754/1754080/produto/237091256/coleira-gato-3-gxeie2omg2.png"
+    },
+    {
+        "id":40,
+        "nome":"Aquario de 2 andares ",
+        "descricao":"Medidas:25 cm x 19 cm x 10 cm, Material:Vdro e acrílico",
+        "preco":149.90,
+        "imagem":"https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQrSsXEyCeanmg_P3XA3M_A-9HJIPglD2Vat4XC9FlcHWAfRdlxwFY-9qS5fYJ73-GJtlw0WRrA9Ff8fEBQaaTVdWafAM4wg_GEEjyqFy05KaC5nZS3vswo&usqp=CAE"
+    },
+    {
+        "id":41,
+        "nome":"Aquario de Vidro temperado ",
+        "descricao":"Medidas:180cm x 40cm x 60cm, Material:Vdro temperado e acrílico Com trava superior, inferior e central",
+        "preco":585.90,
+        "imagem":"https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQjcWqUZm5LIwWJPtvBvBNMx-hDPxLHlmw-yDwNPTyvlf9r4m8xmlOLumPe-omnWVlAJ-9DXnhE6HwBgK9rJTtYgOnB-8t346rKaQGs7h4WxkNnGZF50MLB1g&usqp=CAE"
+    },
+    {
+        "id":42,
+        "nome":"Aquario com torre interna",
+        "descricao":"Medidas:100cm x 50cm x 40cm, Material:Vdro temperado e acrílicoe torre feita em mdf e acabamento acetinado",
+        "preco":859.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTwV7jBcJqjVfNTWCCKj91REdV3Iv0tFioTzrPbtq-BS60-7I7XZp0OffWxL31yyTVhuPIKi43Wot8tWrgBYTL2EaHveFEcGmA4nkje62IA0RdG4kHOTfpBWYCN&usqp=CAE"
+    },
+    {
+        "id":43,
+        "nome":"Coleira simples para gatos",
+        "descricao":"Tamanho: P, M, G",
+        "preco":19.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnchNxI0VTRbUEsqtjoyAo5-4s6tlcjeSLA&s"
+    },
+    {
+        "id":44,
+        "nome":"Coleira simples para gatos",
+        "descricao":"Tamanho: P, M, G",
+        "preco":19.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnchNxI0VTRbUEsqtjoyAo5-4s6tlcjeSLA&s"
     }
-
 
 
 ]
