@@ -72,110 +72,12 @@ to {
 }
 }
 h2{
-    color: rgb(250, 241, 241);
+    color: rgb(0, 0, 0);
     margin-top: 40px;
     margin-bottom: 2vw;
     display: flex;
     justify-content: center;
     padding: 10px;
-}
-.containerheader {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 2;
-    justify-content: flex-end;
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-}
-.container1 {
-    flex: 1;
-}
-.containerMenu{
-    background-color: rgb(255, 255, 255);
-    flex: 2;
-    display: flex;
-    justify-content: flex-end;
-    color: #000000;
-}
-.containerheader .containerMenu nav {
-    display: flex;
-    gap: 20px;
-}
-
-.containerheader .containerMenu nav a {
-    color: rgb(10, 9, 9);
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.containerheader .containerMenu nav a:hover {
-    color: rgb(253, 252, 252);
-    background: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 16px;
-}
-#contato {
-    background-color: rgb(17, 27, 58);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin: 0 auto;
-    text-align: left;
-    color: #fff;
-}
-#contato h2 {
-    text-align: center;
-    color: #f7f3f3;
-}
-#contato p {
-    text-align: center;
-    color: #ffffff;
-}
-#contato form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-#contato label {
-    color: #fffbfb;
-}
-#contato input[type="text"],
-#contato input[type="email"],
-#contato textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-#contato input[type="submit"] {
-    background-color: #333333;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-#contato input[type="submit"]:hover {
-    background-color: #555555;
-}
-#Z{
-    
-    font-size: 2vw;
-}
-#p11{
-    color: white;
 }
 
 .mainContainer{
@@ -185,10 +87,17 @@ h2{
 
 #produtos-container{
     width: 100%;
-    padding: 0 25px;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
+
+
+:root{
+    --t1:rgba(80, 34, 74, 0.3);
+    --t2:rgba(0,0,0,0.7);
+}
+
 
 .card{
     display: flex;
@@ -200,9 +109,10 @@ h2{
     border-radius: 10px;
     gap: 10px;
     color: rgb(0, 0, 0);
+   
 
     & img {
-        max-width: 250px;
+        max-width: 200px;
     }
     & button{
         background-color: black;
@@ -225,12 +135,14 @@ h2{
     position: fixed;
     top: 0;
     left: 0;
+    background-color: var(--t2);
 }
 
 .janela{
     width: fit-content;
     height: fit-content;
     background-color: white;
+    box-shadow: 0 0 5px var(--t1);
     padding: 10px;
     display: flex;
     flex-direction: column;
