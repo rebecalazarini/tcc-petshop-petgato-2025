@@ -30,6 +30,11 @@ header{
         cursor: pointer;
         color: rgb(0, 0, 0);
     }
+    & button:hover{
+        background-color: black;
+        color: white;
+    }
+   
 }
 main{
     width: 100%;
@@ -82,9 +87,13 @@ input{
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    width: 15vh;
-    height: 5vh;
+    width: 9vw;
+    height: 9vh;
     color: black;
+}
+#enviarPedido:hover{
+    background-color: black;
+    color:white;
 }
 
 #totalCarrinho{
