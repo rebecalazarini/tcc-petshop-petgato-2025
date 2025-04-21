@@ -289,24 +289,218 @@
     {
         "id":42,
         "nome":"Aquario com torre interna",
-        "descricao":"Medidas:100cm x 50cm x 40cm, Material:Vdro temperado e acrílicoe torre feita em mdf e acabamento acetinado",
+        "descricao":"Medidas:100cm x 50cm x 40cm, Material:Vdro temperado e acrílico, torre feita em mdf e acabamento acetinado",
         "preco":859.90,
         "imagem":"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTwV7jBcJqjVfNTWCCKj91REdV3Iv0tFioTzrPbtq-BS60-7I7XZp0OffWxL31yyTVhuPIKi43Wot8tWrgBYTL2EaHveFEcGmA4nkje62IA0RdG4kHOTfpBWYCN&usqp=CAE"
     },
     {
         "id":43,
-        "nome":"Coleira simples para gatos",
-        "descricao":"Tamanho: P, M, G",
-        "preco":19.90,
-        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnchNxI0VTRbUEsqtjoyAo5-4s6tlcjeSLA&s"
+        "nome":"Aquario inteligente",
+        "descricao":"Volume: 30L, Material: Vidro, VIDRO+ABS ",
+        "preco":2000.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTLkCjweRmKmIWEDNFo-cXKjMI7GkBc37IkGcMFNr3b_CIeZTSeiORCZSioFvTrOER9jqBZU1R5aMERLtF3ySrN8v9MDkHaKEwpxo_qjhM&usqp=CAE"
     },
     {
         "id":44,
-        "nome":"Coleira simples para gatos",
-        "descricao":"Tamanho: P, M, G",
+        "nome":"Aquario embutido na parede ",
+        "descricao":"Medidas: 160cm x 15cm x 65cm, Material: Vidro, VIDRO+ABS",
         "preco":19.90,
-        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnchNxI0VTRbUEsqtjoyAo5-4s6tlcjeSLA&s"
+        "imagem":"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSeFt8YKDn3ZgJrH5YEzzMaOF5KZzWSnI3WUip4wVUyT8aUBAjN-LmFkZ4U_qonkla1FsgozblOtvgnChB8WsEhQkXjpKzyub9wUMa_NDJR&usqp=CAE"
+    },
+    {
+        "id":45,
+        "nome":"Ração GoldeN 3,0kg ",
+        "descricao":"Porte:médio",
+        "preco":80.89,
+        "imagem":"https://images.tcdn.com.br/img/img_prod/1087789/racao_golden_caes_adultos_porte_pequeno_frango_e_arroz_3kg_653_2_071e0b45a963e8ad28ef40e1c4ad2799.jpg"
+    },
+    {
+        "id":46,
+        "nome":"Ração Magnus 3,0kg",
+        "descricao":"Porte:grande",
+        "preco":80.89,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIBWVx4cPg6E7d2JOO_lFPpgyWnkmn8AF7Lw&s"
+    },
+    {
+        "id":47,
+        "nome":"Ração Origens 2,0kg",
+        "descricao":"Porte:pequeno",
+        "preco":50.89,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpSDQi_UPEhnELXb7WdmpqHWRrb9WJsGk90A&s"
+    },
+    {
+        "id":48,
+        "nome":"Ração Besser 2,0kg",
+        "descricao":"Porte:grande",
+        "preco":50.89,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOUqLgFVw_QGs30n2dBnYQsrau05k48SuFFw&s"
+    },
+    {
+        "id":49,
+        "nome":"Ração ProHealth 4,5kg",
+        "descricao":"Porte:grande",
+        "preco":115.89,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ZseGUkjhDVPgu4kEzsrWQv_EO_WvpLhXOQ&s"
+    },
+    {
+        "id":50,
+        "nome":"Ração Premiatta 4,0kg",
+        "descricao":"Porte:médio",
+        "preco":115.89,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyQSu2I5EKKOo2Hv-fc85KfijO97SaOVouA&s"
+    },
+    {
+        "id":51,
+        "nome":"Ração Mini Betta 25g",
+        "descricao":"Porte:betta",
+        "preco":10.89,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ428dowcUP_RwkgzniXDS3cUM7o0Jfk6hGkg&s"
+    },
+    {
+        "id":52,
+        "nome":"Ração Payatra 100g",
+        "descricao":"Porte:todos",
+        "preco":31.89,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRRwDRzUfLrM7BXffmqQSMyBhKsQYSbBioA&s"
+    },
+    {
+        "id":53,
+        "nome":"Ração Neon 30g",
+        "descricao":"Porte:todos",
+        "preco":28.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTq7GbGE74-HR0MuTig6OiUJEW-7eJoBEbg&s"
+    },
+    {
+        "id":54,
+        "nome":"Ração tetra 25g",
+        "descricao":"Porte:betta",
+        "preco":10.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtBs3ipd9ver62NtW9LT41Zr_QRsyLqplIPA&s"
+    },
+    {
+        "id":55,
+        "nome":"Alpiste Grãoville 25kg ",
+        "descricao":"Porte:ave",
+        "preco":220.90,
+        "imagem":"https://vininutripet.cdn.magazord.com.br/img/2022/09/produto/349/25-kg.png?ims=600x600"
+    },
+    {
+        "id":56,
+        "nome":"Alpiste Empório 1kg",
+        "descricao":"Porte:ave",
+        "preco":20.51,
+        "imagem":"https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTQa4x_UzkY93-LPrCCr3vGLj5RFlYIFM4RVJb4Ol9EnW0G9qZXmUSZxgi_NRSOCs4cp8Kfr4JZLZG4xoE7wZl824EOlWR8Cy-T8JsQI-uqlj1pes_lGJ9_"
+    },
+    {
+        "id":56,
+        "nome":"Forca com Bola de Tênis",
+        "descricao":"Resistente a mordida do cão, feito em corda e microfibra",
+        "preco":24.90,
+        "imagem":"https://liderdamatilha.fbitsstatic.net/img/p/brinquedo-pet-forca-com-bola-de-tenis-chalesco-para-caes-cores-sortidas-68304/259321-1.jpg?w=612&h=612&v=no-value"
+    },
+    {
+        "id":57,
+        "nome":"Bola com Espinho Dual Color Rosa e Amarelo",
+        "descricao":"Bolinha Dog jambo",
+        "preco":22.51,
+        "imagem":"https://cdn.awsli.com.br/600x450/1012/1012421/produto/92966233/b721538350.jpg"
+    },
+    {
+        "id":58,
+        "nome":"Varinha Cat",
+        "descricao":"Varinha Cat Pena Gato Brinquedo Interativo Vara Divertida",
+        "preco":15.51,
+        "imagem":"https://http2.mlstatic.com/D_NQ_NP_937183-MLU74934746117_032024-O.webp"
+    },
+    {
+        "id":59,
+        "nome":"Ratinho",
+        "descricao":"Ideal para gatinhos",
+        "preco":5.99,
+        "imagem":"https://cdn.awsli.com.br/600x450/1226/1226108/produto/161498130/1adea950ed.jpg"
+    },
+    {
+        "id":60,
+        "nome":"Escada de Madeira",
+        "descricao":"Brinquedo Para Papagaio Escada de Madeira",
+        "preco":15.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbHNnTT-W1bA8CCEmOsl4RET9e35LlKEIE7g&s"
+    },
+    {
+        "id":61,
+        "nome":"Puleiro",
+        "descricao":"balanço ideal para aves",
+        "preco":25.99,
+        "imagem":"https://img.joomcdn.net/59b89cbbeddbbce951da7a88b561206909389748_original.jpeg"
+    },
+    {
+        "id":62,
+        "nome":"Cortador de unha",
+        "descricao":"cortador de unhas simples",
+        "preco":8.90,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpazEe4R9v1Z01F9bKXIcMrzVHvLiHE0oCOw&s"
+    },
+    {
+        "id":63,
+        "nome":"Cortador de unha",
+        "descricao":"Cortador de unhas colorido",
+        "preco":15.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs9qOmqyEA-xiONNjQTlY-Pygbd3zmibLQ5Q&s"
+    },
+    {
+        "id":64,
+        "nome":"Kit shampoo e condicionador",
+        "descricao":"Kit Bully Nutrition 900ml",
+        "preco":35.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP_uCIV1dTXmvU88yr2BaONKYG5qMzFiVKWQ&s"
+    },
+    {
+        "id":65,
+        "nome":"kit 3 shampoo",
+        "descricao":"Kit Dompet 500ml",
+        "preco":15.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp3UvABsNMcFasgGrqtHTboQYSshwuK8XVEw&s"
+    },
+    {
+        "id":66,
+        "nome":"kit banho",
+        "descricao":"kit Banho Neem Pet 700ml",
+        "preco":46.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BW_g9nXjQBqGvh5krEMSbvZeyp_bEga4fQ&s"
+    },
+    {
+        "id":67,
+        "nome":"kit banho a seco",
+        "descricao":"kit banho a seco Pet Clean 500ml",
+        "preco":36.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-9j_1Q7bHJZmb_Wz8s3_WwHhxm6pr0wyKtg&s"
+    },
+    {
+        "id":68,
+        "nome":"Escova",
+        "descricao":"Escova de pelos",
+        "preco":16.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYb_XrLgt310HtXjwBY_wxnWwdq2asJv6O0g&s"
+    },
+    {
+        "id":69,
+        "nome":"Escova a vapor",
+        "descricao":"Escova de pelos a vapor",
+        "preco":32.99,
+        "imagem":"https://casachick.cdn.magazord.com.br/img/2024/06/produto/12522/escova-7.jpg?ims=fit-in/600x600/filters:fill(white)"
+    },
+    {
+        "id":70,
+        "nome":"Escova de pelos",
+        "descricao":"Escova de pelos",
+        "preco":15.99,
+        "imagem":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk5MiUhrrg7anb-zSv4ZV6v66fFLHQdUQSEw&s"
     }
+
+
+    
+    
+
 
 
 ]
