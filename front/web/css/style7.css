@@ -105,3 +105,19 @@ input{
     margin-bottom: 1vh;
     border-radius: 10px;
 }
+
+#removerProduto{
+    background-color: white;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 8vw;
+    height: 5vh;
+    color: black;
+}
+#removerProduto:hover{
+        background-color: black;
+        color:white;
+}

@@ -17,7 +17,7 @@ function carregarCarrinho() {
                 <td>R$ ${item.preco.toFixed(2)}</td>
                 <td><input type="number" value="${item.quantidade}" min="0" onchange="atualizarQuantidade(${index})"></td>
                 <td>R$ ${totalProduto.toFixed(2)}</td>
-                <td><button onclick="removerProduto(${index})">Remover</button></td>
+                <td><button id="removerProduto" onclick="removerProduto(${index})">Remover</button></td>
             </tr>
         `;
     });

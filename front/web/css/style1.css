@@ -32,10 +32,14 @@ header{
         font-weight: bold;
         cursor: pointer;
         color: rgb(0, 0, 0);
-        
-
+    }
+    & button:hover{
+        background-color:rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
     }
 }
+
+
 .header {
     background: url('header.jpg') no-repeat center center/cover;
     padding: 100px 20px;
