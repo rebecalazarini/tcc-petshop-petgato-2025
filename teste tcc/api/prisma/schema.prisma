@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente{
+  id Int @id @default(autoincrement())
+  cpf String? @db.VarChar(20) @unique
+  nome String
+  telefones Telefone[]
+  pedidos Pedido[]
+}
+
+model Funcionarios{
+const mongoose = require('mongoose');
+const FuncionarioSchema = new mongoose.Schema({
+    nome: { type: String, required: true },
+    cargo: { type: String, required: true },
+    telefone: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    data_nascimento: { type: Date, required: true }
+});
+
+
+}
+
+model Pedido{
+  id Int @id @default(autoincrement())
+  clienteId Int
+  data DateTime @default(now())
+  produto String
+  qtd Int
+  preco Decimal @db.Decimal(10,2)
+  subTotal Decimal? @db.Decimal(10,2)
+  cliente Cliente @relation(fields: [clienteId], references: [id])
+}
