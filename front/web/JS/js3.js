@@ -20,7 +20,6 @@ function mostrarProdutos(produtos) {
             <div class="card">
                 <h2>${produto.nome}</h2>
                 <img src="${produto.imagem}" alt="${produto.nome}">
-                <p>${produto.descricao}</p>
                 <p>R$ ${produto.preco.toFixed(2)}</p>
                 <button onclick="mostrarDetalhes(${index})">Detalhes</button>
             </div>
