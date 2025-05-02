@@ -1,5 +1,9 @@
 # tcc 
-
+## Tecnologias
+- IDE (VsCode)
+- JavaScript
+- Prisma 
+- Mysql
 ## Como executar
 - Clone este repositório
 - Abra com VsCode
