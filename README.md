@@ -9,17 +9,22 @@
 cd back-end
 cd api
 ```
+- Crie o arquivo . env na raiz do projeto com a seguintes variaveis de a,mbiente:
+````bash
+EMAIL_USER=seu-email@gmail.com
+EMAIL_PASS=sua-senha
+PORT=3000
+
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_NAME=cadastro
+
+DATABASE_URL="mysql://root@localhost:3306/cadastro"
+````
 - Instale as dependencias nessa ordem
 ```bash
-npm init -y
-npm i express cors mysql 
-npm install dotenv
-npm install body-parser
-npm install --save-dev nodemon
-npm install bcrypt
-npm install express-validator
-npm install @prisma/client
-npx prisma generate
+npm i 
 npx prisma init --datasource-provider mysql
 npx prisma migrate dev --name init
 npx nodemon server.js
