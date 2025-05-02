@@ -16,7 +16,7 @@ async function Cadastrar() {
 
         if (response.ok) {
             alert("Cadastro realizado com sucesso! Verifique seu email.");
-            window.location.href = "front.html"; // Redireciona para a página principal
+            window.location.href = "index.html"; // Redireciona para a página principal
         } else {
             const erro = await response.text();
             alert(`Erro ao cadastrar: ${erro}`);
