@@ -24,8 +24,7 @@ DATABASE_URL="mysql://root@localhost:3306/cadastro"
 ````
 - Instale as dependencias nessa ordem
 ```bash
-npm i 
-npx prisma init --datasource-provider mysql
+npm i
 npx prisma migrate dev --name init
 npx nodemon server.js
 
