@@ -45,6 +45,22 @@ npx nodemon server.js
 }
 ```
 
+- Cadastro do Pet
+```bash
+ http://localhost:3000/c
+ exemplo:
+{
+		"id": 1,
+		"nomepet": "Rex",
+		"especie": "cachorro",
+		"raca": "Labrador",
+		"nomeproprietario": "João Silva",
+		"datanascpet": "2022-04-25T00:00:00.000Z",
+		"email": "joao.silva@example.com",
+		"alergia": "Nenhuma"
+	}
+```
+
 
 ## Sprint inicial
 - Metodologia: KANBAN
