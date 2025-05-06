@@ -58,7 +58,7 @@ npx nodemon server.js
 "datanascpet": "2022-04-25T00:00:00.000Z",
 "email": "joao.silva@example.com",
 "alergia": "Nenhuma"
-	}
+}
 ```
 
 
