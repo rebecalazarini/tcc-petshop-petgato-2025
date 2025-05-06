@@ -37,8 +37,8 @@ npx nodemon server.js
 ## Teste no insomnia 
 - Users
 ```bash
-- http://localhost:3000/u
-- exemplo:
+ http://localhost:3000/u
+ exemplo:
 {
   "email": "teste@exemplo.com",
   "senha": "123456"
