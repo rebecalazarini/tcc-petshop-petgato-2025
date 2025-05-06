@@ -35,12 +35,31 @@ npx nodemon server.js
 ```
 
 ## Teste no insomnia 
-- http://localhost:3000/u
-- exemplo:
+- Users
+```bash
+ http://localhost:3000/u
+ exemplo:
 {
   "email": "teste@exemplo.com",
   "senha": "123456"
 }
+```
+
+- Cadastro do Pet
+```bash
+ http://localhost:3000/c
+ exemplo:
+{
+"id": 1,
+"nomepet": "Rex",
+"especie": "cachorro",
+"raca": "Labrador",
+"nomeproprietario": "João Silva",
+"datanascpet": "2022-04-25T00:00:00.000Z",
+"email": "joao.silva@example.com",
+"alergia": "Nenhuma"
+}
+```
 
 
 ## Sprint inicial
