@@ -12,3 +12,21 @@ model User {
   email String @unique
   senha String
 }
+
+model Consulta{
+  id Int @id @default(autoincrement())
+  nomepet String
+  especie Especie
+  raca String?
+  nomeproprietario String
+  datanascpet DateTime
+  email String @unique
+  alergia String?
+}
+
+enum Especie {
+  cachorro
+  gato
+  peixe
+  passaro
+}
