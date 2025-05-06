@@ -42,3 +42,13 @@ npx nodemon server.js
   "senha": "123456"
 }
 
+
+## Sprint inicial
+- Metodologia: KANBAN
+- Papéis e responsabilidades: Rebeca Lazarini: Front-end, Larissa Santos: Back-end, Evelyn Fernandes: Banco de dados, Larissa Rocha: Teste e Crislaine Leopoldo: Documentação
+- O objetivo do nosso site de pet shop é oferecer uma experiência online de fácil acesso e navegação, com uma interface intuitiva e dinâmica. As telas serão funcionais e bem organizadas, permitindo que os clientes encontrem rapidamente os produtos e serviços que procuram, além de possibilitar um processo de compra simples e eficiente.
+
+
+
+## Gráfico gant
+ [Gráfico aqui](https://wellifabio.github.io/gantt/)
