@@ -13,7 +13,7 @@ const create = async (req, res) => {
         especie,
         raca,
         nomeproprietario,
-        datanascpet: new Date(datanascpet), // Certificando-se de formatar a data corretamente
+        datanascpet: new Date(datanascpet), // Formatação de data
         email,
         alergia,
       },

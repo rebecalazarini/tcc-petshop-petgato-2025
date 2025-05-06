@@ -14,7 +14,7 @@ async function Cadastrar() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/c", { // Rota alterada para /c
+        const response = await fetch("http://localhost:3000/c", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, nomepet, especie, raca, idade, nomeproprietario, datanascpet, alergia })
@@ -22,7 +22,7 @@ async function Cadastrar() {
 
         if (response.ok) {
             alert("Cadastro realizado com sucesso!.");
-            window.location.href = "index.html"; // Redireciona para a página principal
+            window.location.href = "index.html";
         } else {
             const erro = await response.text();
             alert(`Erro ao cadastrar: ${erro}`);
