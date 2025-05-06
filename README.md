@@ -51,4 +51,4 @@ npx nodemon server.js
 
 
 ## Gráfico gant
- [Gráfico aqui](https://wellifabio.github.io/gantt/)
+ [Gráfico aqui](https://wellifabio.github.io/gantt/) anual (260 dias)
