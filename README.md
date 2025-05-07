@@ -27,6 +27,7 @@ DB_NAME=cadastro
 DATABASE_URL="mysql://root@localhost:3306/cadastro"
 ````
 - Instale as dependencias nessa ordem
+- Caso tenha a pasta migration em prisma/migrations exclua ela e execute as dependencias
 ```bash
 npm i
 npx prisma migrate dev --name init
