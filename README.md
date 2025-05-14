@@ -39,6 +39,7 @@ npx nodemon server.js
 ```
 
 ## Teste no insomnia 
+- Você pode testar tanto no insomnia quanto na própria tela de cadastro e consulta no fron-end
 - Users
 ```bash
  http://localhost:3000/u
