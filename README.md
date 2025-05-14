@@ -26,10 +26,11 @@ DB_NAME=cadastro
 
 DATABASE_URL="mysql://root@localhost:3306/cadastro"
 ````
-- Caso ja exista exclua o arquivo .env e crie um
+- Caso ja exista, exclua o arquivo .env e crie um
   
 - Instale as dependencias nessa ordem
 - Caso tenha a pasta migrations em prisma/migrations exclua ela e execute as dependencias
+- Não esqueça que se tiver um banco de dados com o nome cadastro em seu mysql é importante excluir para poder funcionar as depndencias
 ```bash
 npm i
 npx prisma migrate dev --name init
