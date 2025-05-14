@@ -92,6 +92,13 @@ const remove = async (req, res) => {
   }
 };
 
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
 module.exports = {
   create,
   read,
@@ -99,3 +106,7 @@ module.exports = {
   update,
   remove,
 };
+
+
+
+
