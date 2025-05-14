@@ -13,41 +13,31 @@ model User {
   senha String
 }
 
-model Consulta{
+model consulta {
   id Int @id @default(autoincrement())
-  nomepet String
-  especie Especie
-  raca String?
-  nomeproprietario String
-  datanascpet DateTime
-  email String @unique
-  alergia String?
+  nomePet  String @db.VarChar(150)
+  especiePet String 
+  racaPet String @db.VarChar(25)
+  idadePet Int
+  nomeProprietario String @db.VarChar(255)
+  nascpet DateTime
+  emailProprietario String @db.VarChar(255)
+  dados String?
 }
 
-model Login {
-  id  Int @id @default(autoincrement()) 
-  nome  String
-  email String  @unique  
-  senha  String   
-  createdAt DateTime @default(now()) 
-  updatedAt DateTime @updatedAt  
-
-  @@index([email]) 
+model Loginogin{
+  id Int @id @default(autoincrement())
+  email String @db.VarChar(100)
+  senha String @db.VarChar(60) @unique
 }
 
-model Adocao {
-  id  Int  @id @default(autoincrement())
-  nomepet  String
-  especie  String
-  raca String
-  nomeproprietario String
-  datanascpet ateTime
-  email String
-  alergia String
-  createdAt  DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model adocao {
+  id  Int @id @default(autoincrement())
+  nome String  @db.VarChar(30)
+  peso String @db.VarChar(3)
+  idade String @db.VarChar(3)
+  raca String @db.VarChar(10)
 }
-
 enum Especie {
   cachorro
   gato

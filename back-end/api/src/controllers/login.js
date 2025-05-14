@@ -68,6 +68,24 @@ const update = async (req, res) => {
     res.status(500).json({ message: 'Erro ao atualizar o login' });
   }
 };
+const autenticar = async (req, res) => {
+  const { email, senha } = req.body;
+
+  try {
+    const usuario = await prisma.login.findUnique({
+      where: { email },
+    });
+
+    if (!usuario || usuario.senha !== senha) {
+      return res.status(401).json({ message: 'Email ou senha inválidos' });
+    }
+
+    res.status(200).json({ message: 'Login realizado com sucesso', usuario });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao autenticar o login' });
+  }
+};
 
 const remove = async (req, res) => {
   const { id } = req.params;
@@ -90,4 +108,12 @@ module.exports = {
   readOne,
   update,
   remove,
+  autenticar,
 };
+
+
+
+
+
+
+
