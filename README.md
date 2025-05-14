@@ -26,7 +26,7 @@ DB_NAME=cadastro
 
 DATABASE_URL="mysql://root@localhost:3306/cadastro"
 ````
-- Caso ja exista exclua o arquivo .env e a pasta migrations em prisma/migrations
+- Caso ja exista exclua o arquivo .env e crie um
   
 - Instale as dependencias nessa ordem
 - Caso tenha a pasta migrations em prisma/migrations exclua ela e execute as dependencias
