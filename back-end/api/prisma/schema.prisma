@@ -8,7 +8,7 @@ generator client {
 }
 
 model User {
-  id    Int    @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   email String @unique
   senha String
 }
@@ -22,6 +22,30 @@ model Consulta{
   datanascpet DateTime
   email String @unique
   alergia String?
+}
+
+model Login {
+  id  Int @id @default(autoincrement()) 
+  nome  String
+  email String  @unique  
+  senha  String   
+  createdAt DateTime @default(now()) 
+  updatedAt DateTime @updatedAt  
+
+  @@index([email]) 
+}
+
+model Adocao {
+  id  Int  @id @default(autoincrement())
+  nomepet  String
+  especie  String
+  raca String
+  nomeproprietario String
+  datanascpet ateTime
+  email String
+  alergia String
+  createdAt  DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum Especie {

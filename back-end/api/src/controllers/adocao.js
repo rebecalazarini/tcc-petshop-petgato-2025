@@ -1,4 +1,3 @@
-
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
@@ -6,62 +5,59 @@ const create = async (req, res) => {
   const { nomepet, especie, raca, nomeproprietario, datanascpet, email, alergia } = req.body;
 
   try {
-    const novaConsulta = await prisma.consulta.create({
+    const novaAdocao = await prisma.adocao.create({
       data: {
         nomepet,
         especie,
         raca,
         nomeproprietario,
-        datanascpet: new Date(datanascpet), 
+        datanascpet: new Date(datanascpet),
         email,
         alergia,
       },
     });
-    res.status(201).json(novaConsulta);  
+    res.status(201).json(novaAdocao);  
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao criar consulta' });
+    res.status(500).json({ message: 'Erro ao criar adoção' });
   }
 };
-
 
 const read = async (req, res) => {
   try {
-    const pets = await prisma.consulta.findMany(); 
-    res.status(200).json(pets);  
+    const adocoes = await prisma.adocao.findMany(); 
+    res.status(200).json(adocoes);  
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao consultar os pets' });
+    res.status(500).json({ message: 'Erro ao listar as adoções' });
   }
 };
-
 
 const readOne = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const pet = await prisma.consulta.findUnique({
+    const adocao = await prisma.adocao.findUnique({
       where: { id: parseInt(id) },
     });
 
-    if (!pet) {
-      return res.status(404).json({ message: 'Pet não encontrado' });
+    if (!adocao) {
+      return res.status(404).json({ message: 'Adoção não encontrada' });
     }
 
-    res.status(200).json(pet); 
+    res.status(200).json(adocao); 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao consultar o pet por ID' });
+    res.status(500).json({ message: 'Erro ao buscar a adoção por ID' });
   }
 };
-
 
 const update = async (req, res) => {
   const { id } = req.params;
   const { nomepet, especie, raca, nomeproprietario, datanascpet, email, alergia } = req.body;
 
   try {
-    const petAtualizado = await prisma.consulta.update({
+    const adocaoAtualizada = await prisma.adocao.update({
       where: { id: parseInt(id) },
       data: {
         nomepet,
@@ -74,10 +70,10 @@ const update = async (req, res) => {
       },
     });
 
-    res.status(200).json(petAtualizado); 
+    res.status(200).json(adocaoAtualizada); 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao atualizar o pet' });
+    res.status(500).json({ message: 'Erro ao atualizar a adoção' });
   }
 };
 
@@ -85,14 +81,14 @@ const remove = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const petDeletado = await prisma.consulta.delete({
+    const adocaoDeletada = await prisma.adocao.delete({
       where: { id: parseInt(id) },
     });
 
-    res.status(200).json({ message: 'Pet deletado com sucesso', pet: petDeletado });
+    res.status(200).json({ message: 'Adoção deletada com sucesso', adocao: adocaoDeletada });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao deletar o pet' });
+    res.status(500).json({ message: 'Erro ao deletar a adoção' });
   }
 };
 

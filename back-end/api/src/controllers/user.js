@@ -1,7 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-// Função para criar um user
 const create = async (req, res) => {
     try {
         const user = await prisma.user.create({
@@ -13,7 +12,6 @@ const create = async (req, res) => {
     }
 };
 
-// Função para ler todos os users
 const read = async (req, res) => {
     try {
         const users = await prisma.user.findMany();
@@ -23,7 +21,6 @@ const read = async (req, res) => {
     }
 };
 
-// Função para ler um user específico
 const readOne = async (req, res) => {
     try {
         const user = await prisma.user.findUnique({
@@ -38,7 +35,6 @@ const readOne = async (req, res) => {
     }
 };
 
-// Função para atualizar um user
 const update = async (req, res) => {
     try {
         const user = await prisma.user.update({
@@ -51,7 +47,6 @@ const update = async (req, res) => {
     }
 };
 
-// Função para remover um user
 const remove = async (req, res) => {
     try {
         const user = await prisma.user.delete({
@@ -63,5 +58,4 @@ const remove = async (req, res) => {
     }
 };
 
-// Exporta todas as funções
 module.exports = { create, read, readOne, update, remove };
