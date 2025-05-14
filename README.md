@@ -13,7 +13,7 @@
 cd back-end
 cd api
 ```
-- Crie o arquivo . env na raiz do projeto com a seguintes variaveis de a,mbiente:
+- Crie o arquivo . env dentro da pasta api com a seguintes variaveis de ambiente:
 ````bash
 EMAIL_USER=seu-email@gmail.com
 EMAIL_PASS=sua-senha
@@ -26,6 +26,8 @@ DB_NAME=cadastro
 
 DATABASE_URL="mysql://root@localhost:3306/cadastro"
 ````
+- Caso ja exista exclua o arquivo .env e a pasta migrations em prisma/migrations
+  
 - Instale as dependencias nessa ordem
 - Caso tenha a pasta migrations em prisma/migrations exclua ela e execute as dependencias
 ```bash
