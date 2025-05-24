@@ -18,7 +18,6 @@ model consulta {
   nomePet  String @db.VarChar(150)
   especiePet String 
   racaPet String @db.VarChar(25)
-  idadePet Int
   nomeProprietario String @db.VarChar(255)
   nascpet DateTime
   emailProprietario String @db.VarChar(255)

@@ -8,48 +8,45 @@
 </head>
 <body>
     <div class="container">
-        <div class="container_formulario">
-            <h1>Cadastro do Pet para Consulta</h1>
-            <form id="cadastroPet">
-                <label for="nomePet">Nome do Pet:</label>
-                <input type="text" id="nomePet" name="nomePet" required>
-                
-                <label>Espécie:</label>
-                <input type="radio" id="cachorro" name="especiePet" value="cachorro">
-                <label for="cachorro">Cachorro</label><br>
+       <div class="container_formulario">
+  <h1>Cadastro do Pet para Consulta</h1>
+  <form id="cadastroPet">
+    <label for="nomePet">Nome do Pet:</label>
+    <input type="text" id="nomePet" name="nomepet" required>
 
-                <input type="radio" id="gato" name="especiePet" value="gato">
-                <label for="gato">Gato</label><br>
+    <p>Espécie:</p>
+    <input type="radio" id="cachorro" name="especiePet" value="cachorro">
+    <label for="cachorro">Cachorro</label><br>
 
-                <input type="radio" id="peixe" name="especiePet" value="peixe">
-                <label for="peixe">Peixe</label><br>
+    <input type="radio" id="gato" name="especiePet" value="gato">
+    <label for="gato">Gato</label><br>
 
-                <input type="radio" id="passaro" name="especiePet" value="passaro">
-                <label for="passaro">Pássaro</label><br>
+    <input type="radio" id="peixe" name="especiePet" value="peixe">
+    <label for="peixe">Peixe</label><br>
 
-                <label for="racaPet">Raça:</label>
-                <input type="text" id="racaPet" name="racaPet" required>
-                
-                <label for="idadePet">Idade:</label>
-                <input type="number" id="idadePet" name="idadePet" required>
-                
-                <label for="nomeProprietario">Nome do Proprietário:</label>
-                <input type="text" id="nomeProprietario" name="nomeProprietario" required>
-                
-                <label for="nascpet">Data de Nascimento do Pet:</label>
-                <input type="date" id="nascpet" name="nascpet" required>
-                
-                <label for="emailProprietario">E-mail:</label>
-                <input type="email" id="emailProprietario" name="emailProprietario" required>
-                
-                <label for="dados">Possui algum problema de saúde ou alergias:</label>
-                <input type="text" id="dados" name="dados">
-                
-                <button type="button" onclick="Cadastrar()">Cadastrar</button>
-            </form>
+    <input type="radio" id="passaro" name="especiePet" value="passaro">
+    <label for="passaro">Pássaro</label><br>
 
-            <div class="back-button"> 
-                <a href="index.html"><button>Voltar</button></a> 
+    <label for="racaPet">Raça:</label>
+    <input type="text" id="racaPet" name="racaPet" required>
+
+    <label for="nomeProprietario">Nome do Proprietário:</label>
+    <input type="text" id="nomeProprietario" name="nomeproprietario" required>
+
+    <label for="nascpet">Data de Nascimento do Pet:</label>
+    <input type="date" id="nascpet" name="datanascpet" required>
+
+    <label for="emailProprietario">E-mail:</label>
+    <input type="email" id="emailProprietario" name="email" required>
+
+    <label for="dados">Possui algum problema de saúde ou alergias:</label>
+    <input type="text" id="dados" name="alergia">
+
+    <button type="button" onclick="Cadastrar()">Cadastrar</button>
+  </form>
+
+            <div class="back-button">
+               <a href="index.html" class="botao-voltar">Voltar</a>
             </div>
         </div>
     </div>

@@ -3,18 +3,18 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const create = async (req, res) => {
-  const { nomepet, especie, raca, nomeproprietario, datanascpet, email, alergia } = req.body;
+  const { nomePet, especiePet, racaPet, nomeproprietario, nascpet, emailProprietario, dados } = req.body;
 
   try {
     const novaConsulta = await prisma.consulta.create({
       data: {
-        nomepet,
-        especie,
-        raca,
+        nomePet,
+        especiePet,
+        racaPet,
         nomeproprietario,
-        datanascpet: new Date(datanascpet), 
-        email,
-        alergia,
+        nascpet: new Date(nascpet), 
+        emailProprietario,
+        dados,
       },
     });
     res.status(201).json(novaConsulta);  
@@ -58,19 +58,19 @@ const readOne = async (req, res) => {
 
 const update = async (req, res) => {
   const { id } = req.params;
-  const { nomepet, especie, raca, nomeproprietario, datanascpet, email, alergia } = req.body;
+  const { nomePet, especiePet, racaPet, nomeproprietario, nascpet, emailProprietario, dados } = req.body;
 
   try {
     const petAtualizado = await prisma.consulta.update({
       where: { id: parseInt(id) },
       data: {
-        nomepet,
-        especie,
-        raca,
+        nomePet,
+        especiePet,
+        racaPet,
         nomeproprietario,
-        datanascpet: new Date(datanascpet),
-        email,
-        alergia,
+        nascpet: new Date(nascpet),
+        emailProprietario,
+        dados,
       },
     });
 
