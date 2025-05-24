@@ -25,7 +25,7 @@ model consulta {
   dados String?
 }
 
-model Loginogin{
+model Login{
   id Int @id @default(autoincrement())
   email String @db.VarChar(100)
   senha String @db.VarChar(60) @unique
