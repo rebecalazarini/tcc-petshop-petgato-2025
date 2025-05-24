@@ -24,7 +24,7 @@ DB_PORT=3306
 DB_USER=root
 DB_NAME=cadastro
 
-DATABASE_URL="mysql://root@localhost:3306/cadastro"
+DATABASE_URL="mysql://root@localhost:3306/projeto"
 ````
 - Caso ja exista, exclua o arquivo .env e crie um
   
