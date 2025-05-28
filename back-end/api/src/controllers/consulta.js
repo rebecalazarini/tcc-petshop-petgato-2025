@@ -1,30 +1,33 @@
-
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const create = async (req, res) => {
-  const { nomePet, especiePet, racaPet, nomeproprietario, nascpet, emailProprietario, dados } = req.body;
+   const create = async (req, res) => {
+     const { nomePet, especiePet, racaPet, nomeProprietario, nascpet, emailProprietario, dados } = req.body;
 
-  
-  try {
-    const novaConsulta = await prisma.consulta.create({
-      data: {
-        nomePet,
-        especiePet,
-        racaPet,
-        nomeproprietario,
-        nascpet: new Date(nascpet), 
-        emailProprietario,
-        dados,
-      },
-    });
-    res.status(201).json(novaConsulta);  
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao criar consulta' });
-  }
+    const dataNascPet = new Date(nascpet);
+    console.log("Data de nascimento recebida:", nascpet); // Log para depuração
+    if (isNaN(dataNascPet.getTime()) || dataNascPet > new Date() || dataNascPet < new Date('1900-01-01')) {
+        return res.status(400).json({ message: 'Data de nascimento do pet inválida' });
+    }
+    try {
+        const novaConsulta = await prisma.consulta.create({
+            data: {
+                nomePet,
+                especiePet,
+                racaPet,
+                nomeProprietario,
+                nascpet: dataNascPet,
+                emailProprietario,
+                dados,
+            },
+        });
+        res.status(201).json(novaConsulta);  
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Erro ao criar consulta' });
+    }
 };
-
+   
 
 const read = async (req, res) => {
   try {
@@ -59,7 +62,7 @@ const readOne = async (req, res) => {
 
 const update = async (req, res) => {
   const { id } = req.params;
-  const { nomePet, especiePet, racaPet, nomeproprietario, nascpet, emailProprietario, dados } = req.body;
+  const { nomePet, especiePet, racaPet, nomeProprietario, nascpet, emailProprietario, dados } = req.body;
 
   try {
     const petAtualizado = await prisma.consulta.update({
@@ -68,7 +71,7 @@ const update = async (req, res) => {
         nomePet,
         especiePet,
         racaPet,
-        nomeproprietario,
+        nomeProprietario,
         nascpet: new Date(nascpet),
         emailProprietario,
         dados,
