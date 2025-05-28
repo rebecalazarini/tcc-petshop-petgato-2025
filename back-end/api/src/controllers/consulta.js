@@ -5,6 +5,7 @@ const prisma = new PrismaClient();
 const create = async (req, res) => {
   const { nomePet, especiePet, racaPet, nomeproprietario, nascpet, emailProprietario, dados } = req.body;
 
+  
   try {
     const novaConsulta = await prisma.consulta.create({
       data: {
