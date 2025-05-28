@@ -13,7 +13,7 @@
 cd back-end
 cd api
 ```
-- Crie o arquivo . env na raiz do projeto com a seguintes variaveis de a,mbiente:
+- Crie o arquivo . env dentro da pasta api com a seguintes variaveis de ambiente:
 ````bash
 EMAIL_USER=seu-email@gmail.com
 EMAIL_PASS=sua-senha
@@ -24,10 +24,13 @@ DB_PORT=3306
 DB_USER=root
 DB_NAME=cadastro
 
-DATABASE_URL="mysql://root@localhost:3306/cadastro"
+DATABASE_URL="mysql://root@localhost:3306/projeto"
 ````
+- Caso ja exista, exclua o arquivo .env e crie um
+  
 - Instale as dependencias nessa ordem
 - Caso tenha a pasta migrations em prisma/migrations exclua ela e execute as dependencias
+- Não esqueça que se tiver um banco de dados com o nome cadastro em seu mysql é importante excluir para poder funcionar as depndencias
 ```bash
 npm i
 npx prisma migrate dev --name init
@@ -36,6 +39,7 @@ npx nodemon server.js
 ```
 
 ## Teste no insomnia 
+- Você pode testar tanto no insomnia quanto na própria tela de cadastro e consulta no fron-end
 - Users
 ```bash
  http://localhost:3000/u
