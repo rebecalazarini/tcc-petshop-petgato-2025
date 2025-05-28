@@ -16,7 +16,7 @@ async function Cadastrar() {
 
         if (response.ok) {
             alert("Cadastro realizado com sucesso! Verifique seu email.");
-            window.location.href = "index.html"; // Redireciona para a página principal
+            window.location.href = "index.html";
         } else {
             const erro = await response.text();
             alert(`Erro ao cadastrar: ${erro}`);
@@ -24,5 +24,14 @@ async function Cadastrar() {
     } catch (error) {
         console.error("Erro na solicitação:", error);
         alert("Erro ao processar o cadastro.");
+    }
+}
+
+async function Voltar() {
+    const email = document.getElementById("Email").value;
+    const senha = document.getElementById("Senha").value;
+
+    if (!email || !senha) {
+        window.location.href = "index.html;"
     }
 }
