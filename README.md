@@ -80,3 +80,7 @@ npx nodemon server.js
 |PetGatô Swot (fofa)|
 |:-:|
 |![Matriz](fofapetshop.png)|
+
+|Exemplo PetShop Tiangulo de ferro|
+|:-:|
+|![triangulo](petshoptriangulo.png)|
