@@ -1,4 +1,4 @@
-const openButton = document.getElementById('open-button');
+ const openButton = document.getElementById('open-button');
   const closeButton = document.getElementById('close-button');
   const popup = document.getElementById('popup');
 

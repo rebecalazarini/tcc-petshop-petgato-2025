@@ -47,12 +47,4 @@ function removerProduto(index) {
     carregarCarrinho();
 }
 
-// Função para enviar o pedido
-function enviarPedido() {
-    localStorage.removeItem('carrinho');
-    alert("Pedido enviado com sucesso!");
-    window.location.href = 'index.html';
-}
-
-
 window.onload = carregarCarrinho;
