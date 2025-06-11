@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style10.css">
-    <title>Adote um Animal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style8.css">
+  <title>Adoção</title>
 </head>
-<header>
+
+  <header>
         <h1>𝓟𝓮𝓽 𝓖𝓪𝓽𝓸</h1>
          <div class="menu-toggle" id="menu-toggle">☰</div>
           <nav class="slide-menu" id="slide-menu">
@@ -22,32 +23,81 @@
         </ul>
     </nav>
       </header>
-
-   <div class="back-button">
+    
+<body>
+  <nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="back-button">
       <a href="adocao.html"><button>Voltar</button></a>
     </div>
-</div>
-<div class="container1">
-    <div class="back-button">
-    </div>
-</div>
-</header>
 
-<body>
-    <div class="product-item">
-        <div class="image-section">
-            <img src="" alt="Pug">
+      <br>
+        <div class="container1">
 
-            <h3>Thalia</h3>
-            <p>Peso:500g</p>
-            <p>Idade: 60 Dias</p>
-            <p>Raça:Pug</p>
-            <a href="adocao2.html">
-                <target="_blank">
-                    <button type="button">Adotar</button>
-            </a>
         </div>
+  </nav>
+
+  <div class="product-list">
+
+    <div class="product-item">
+      <img src="https://cdn.awsli.com.br/1845/1845715/produto/223193791/img_5837-jjkmghdktx.jpeg">
+      <h3>Nemo</h3>
+      <p>Raça:Peixe Palhaço</p>
+      <button onclick="abrirModal()" type="button">Adotar</button>
+    </div>
+
+    <div class="product-item">
+      <img
+        src="https://img.odcdn.com.br/wp-content/uploads/2022/12/baiacu.jpg">
+      <h3>Vivi</h3>
+      <p>Raça:Baiacú</p>
+      <button onclick="abrirModal()" type="button">Adotar</button>
+    </div>
+
+    <div class="product-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNvf6HBscK3Ho6eoHHElWZOBWQTCk_xe6-O6w58jxs3G7RfQC10cUP7Uh96FaNTNdXYu8&usqp=CAU">
+      <h3>Stella</h3>
+      <p>Raça:Peixe dourado</p>
+      <button onclick="abrirModal()" type="button">Adotar</button>
+    </div>
+
+    <div class="product-item">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjcAuQ_URvjgMBfhpe0Oj85KKBpAhJMHVsJA&s"
+        alt="SRD">
+      <h3>Ector</h3>
+      <p>Raça:Betta</p>
+      <button onclick="abrirModal()" type="button">Adotar</button>
+    </div>
+
+    <div class="product-item">
+      <img
+        src="https://www.agrosete.com.br/wp-content/uploads/2017/10/WhatsApp-Image-2023-08-18-at-12.01.03-800x600.jpeg"
+        alt="SRD">
+      <h3>Groselia</h3>
+      <p>Raça:Acará Bandeira</p>
+      <button onclick="abrirModal()" type="button">Adotar</button>
+    </div>
+
+  </div>
+  <br>
+  <br>
+
+   <div id="meuModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2>Quer adotar?</h2>
+      <p>Para adotar esse pet ou saber mais sobre ele, entre em contato com o protetor:</p>
+      <p><strong>Email:</strong> adocao@gatopoles.com.br</p>
+      <p><strong>Telefone:</strong> (19) 1231-3123</p>
+    </div>
+  </div>
+
+  <script src="./JS/js7.js"></script>
 
 </body>
-
 </html>
