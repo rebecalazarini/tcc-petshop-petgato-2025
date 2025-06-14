@@ -2,19 +2,14 @@
 margin: 0px;
 padding: 0px;
 box-sizing: border-box;
+}
 
-}
-.container1{
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-background: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
-color: white;
-height: 100px; 
-}
 .product-list {
+  margin-left: 10%;
+  margin-right: 10%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
