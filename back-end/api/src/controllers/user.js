@@ -8,7 +8,7 @@ const create = async (req, res) => {
         });
         return res.status(201).json(user);
     } catch (error) {
-        return res.status(400).json({ error: 'Erro ao criar usuário.' });
+        return res.status(400).json({ error: 'Email ja existente.' });
     }
 };
 
