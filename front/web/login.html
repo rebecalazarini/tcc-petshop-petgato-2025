@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/style4.css">
+	<link rel="stylesheet" href="./css/style2.css">
 	<title>Login</title>
 </head>
 <header>
@@ -13,7 +13,7 @@
           <nav class="slide-menu" id="slide-menu">
         <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="cadastrar.html">Cadastre-se</a></li>
             <li><a href="adocao.html">Adoção</a></li>
             <li><a href="consulta.html">Consulta</a></li>
             <li><a href="carrinho.html">Carrinho</a></li>
@@ -23,36 +23,42 @@
     </nav>
       </header>
 <body>
-	<main class="container">
-		<div class="containerLeft">
-			<img src="pepet3.png" alt="logo">
-		</div>
+  <div class="container">
+    <form>
+      <label for="Email">Email:</label>
+      <input type="text" id="Email" placeholder="Digite seu email: " / required>
 
-		<div class="containerRight">
-			<h1>Entrar</h1>
-			<form>
-				<label>
-					Email
-					<input type="email" id="Email" placeholder="email" required>
-				</label>
+      <label for="Senha">Senha:</label>
+      <input type="password" id="Senha" placeholder="Digite sua senha: " / required>
 
-				<label>
-					Senha
-					<input type="password" id="password" placeholder="senha" required>
-				</label>
+      <button type="button" onclick="Login()">Login</button>
+      <a href="index.html"><button type="button" onclick="Voltar()">Voltar</button></a>
+      <h4>Não tem uma conta?</h4><a href="cadastrar.html">Cadastre-se</a>
+    </form>
 
-				<button type="button" onclick="Login()">Fazer login</button>
+     </form>
+    <div class="ear-l"></div>
+    <div class="ear-r"></div>
+    <div class="panda-face">
+      <div class="blush-l"></div>
+      <div class="blush-r"></div>
+      <div class="eye-l">
+        <div class="eyeball-l"></div>
+      </div>
+      <div class="eye-r">
+        <div class="eyeball-r"></div>
+      </div>
+      <div class="nose"></div>
+      <div class="mouth"></div>
+    </div>
+    <div class="hand-l"></div>
+    <div class="hand-r"></div>
+    <div class="paw-l"></div>
+    <div class="paw-r"></div>
+  </div>
+  </div>
 
-				<a href="index.html"><button type="button" onclick="voltar()">Voltar</button></a>
-				<br>
-				<a href="cadastrar.html">Cadastre-se aqui</a>
-			</form>
-		</div>
-
-	</main>
-
-	
-
+  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Tooltip -->
 <div class="tooltip">Precisa de ajuda?</div>
