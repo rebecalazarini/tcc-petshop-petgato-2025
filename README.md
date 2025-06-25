@@ -1,6 +1,6 @@
 # tcc 
 
-# link [figma]([https://www.figma.com/design/wWW07z8xzHFdYYDbozFACe/Untitled?node-id=0-1&t=OoKi5kCqlBWhR5gL-1](https://www.figma.com/proto/wWW07z8xzHFdYYDbozFACe/Untitled?node-id=106-2403&p=f&t=WdfHVLg9q538pfCj-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=14%3A155](https://www.figma.com/proto/wWW07z8xzHFdYYDbozFACe/Untitled?node-id=106-2403&p=f&t=WdfHVLg9q538pfCj-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=14%3A155))
+# link [figma](https://www.figma.com/proto/wWW07z8xzHFdYYDbozFACe/Untitled?node-id=106-2403&p=f&t=WdfHVLg9q538pfCj-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=14%3A155)
 ## Tecnologias
 - IDE (VsCode)
 - JavaScript
