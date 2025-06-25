@@ -1,4 +1,6 @@
 # tcc 
+
+# ling figma  [figma](https://www.figma.com/design/wWW07z8xzHFdYYDbozFACe/Untitled?node-id=0-1&t=OoKi5kCqlBWhR5gL-1)
 ## Tecnologias
 - IDE (VsCode)
 - JavaScript
