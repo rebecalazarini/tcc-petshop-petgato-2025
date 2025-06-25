@@ -24,9 +24,9 @@ PORT=3000
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=root
-DB_NAME=cadastro
+DB_NAME=fullstack
 
-DATABASE_URL="mysql://root@localhost:3306/projeto"
+DATABASE_URL="mysql://root@localhost:3306/fullstack"
 ````
 - Caso ja exista, exclua o arquivo .env e crie um
   
