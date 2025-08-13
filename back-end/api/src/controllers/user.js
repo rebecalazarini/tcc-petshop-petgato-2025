@@ -1,82 +1,61 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-const Middlewares = require('../middlewares/auth');
-// const Email = require('../middlewares/email');
+
+const create = async (req, res) => {
+    try {
+        const user = await prisma.user.create({
+            data: req.body
+        });
+        return res.status(201).json(user);
+    } catch (error) {
+        return res.status(400).json({ error: 'Email ja existente.' });
+    }
+};
 
 const read = async (req, res) => {
     try {
         const users = await prisma.user.findMany();
-        res.json(users);
+        return res.status(200).json(users);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar users' });
+        return res.status(400).json({ error: error.message });
     }
-}
+};
 
-const create = async (req, res) => {
+const readOne = async (req, res) => {
     try {
-        req.body.senha = await Middlewares.createHash(req.body.senha);
-        const user = await prisma.user.create({
-            data: req.body
+        const user = await prisma.user.findUnique({
+            where: { id: parseInt(req.params.id) }
         });
-        res.status(201).json(user);
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao criar user' });
-    }
-}
-
-const reset = async (req, res) => {
-    if (!req.body.email) {
-        res.status(400).json({ error: 'Necessário o envio do email' }).end();
-    }
-    const senha = await Middlewares.createHash("senha000");
-    try {
-        const users = await prisma.user.findMany({
-            where: { email: req.body.email }
-        });
-        if (!users || users.length === 0) {
-            return res.status(400).json({ erro: "Email não encontrado" }).end();
+        if (!user) {
+            return res.status(404).json({ error: 'user não encontrado' });
         }
-        const user = await prisma.user.update({
-            where: { email: req.body.email },
-            data: { senha: senha }
-        });
-        // await Email.enviarEmail(req.body.email, "senha000");
-        res.status(202).json({user: user, senhaProvisoria: "senha000"}).end();
+        return res.status(200).json(user);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao atualizar user' });
+        return res.status(400).json({ error: error.message });
     }
-}
+};
 
 const update = async (req, res) => {
-    const { id } = req.params;
-    if (req.body.senha) req.body.senha = await Middlewares.createHash(req.body.senha);
     try {
         const user = await prisma.user.update({
-            where: { id: Number(id) },
+            where: { id: parseInt(req.params.id) },
             data: req.body
         });
-        res.status(202).json(user);
+        return res.status(200).json(user);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao atualizar user' });
+        return res.status(400).json({ error: error.message });
     }
-}
-
-const del = async (req, res) => {
-    const { id } = req.params;
-    try {
-        await prisma.user.delete({
-            where: { id: Number(id) }
-        });
-        res.status(204).send();
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao deletar user' });
-    }
-}
-
-module.exports = {
-    read,
-    create,
-    reset,
-    update,
-    del
 };
+
+const remove = async (req, res) => {
+    try {
+        const user = await prisma.user.delete({
+            where: { id: parseInt(req.params.id) }
+        });
+        return res.status(200).json(user);
+    } catch (error) {
+        return res.status(400).json({ error: error.message });
+    }
+};
+
+module.exports = { create, read, readOne, update, remove };
