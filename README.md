@@ -19,14 +19,8 @@ cd api
 ````bash
 EMAIL_USER=seu-email@gmail.com
 EMAIL_PASS=sua-senha
-PORT=3000
-
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_NAME=fullstack
-
-DATABASE_URL="mysql://root@localhost:3306/fullstack"
+SECRET_JWT=meu_segredo_jwt
+DATABASE_URL="mysql://root@localhost:3306/fullstack?timezone=UTC"
 ````
 - Caso ja exista, exclua o arquivo .env e crie um
   

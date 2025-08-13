@@ -11,19 +11,16 @@ routes.get('/', (req, res) => {
 
 routes.post('/u', User.create);
 routes.get('/u', User.read);
-routes.get('/u/:id', User.readOne);
 routes.put('/u/:id', User.update);
 routes.delete('/u/:id', User.remove);
 
 routes.post('/c', Consulta.create);
 routes.get('/c', Consulta.read);
-routes.get('/c/:id', Consulta.readOne);
 routes.put('/c/:id', Consulta.update);
 routes.delete('/c/:id', Consulta.remove);
 
 routes.post('/l', login.create);
 routes.get('/l', login.read);
-routes.get('/l/:id', login.readOne);
 routes.put('/l/:id', login.update);
 routes.delete('/l/:id', login.remove);
 
