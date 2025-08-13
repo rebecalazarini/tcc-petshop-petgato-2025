@@ -1,118 +1,59 @@
+const jsonwebtoken = require("jsonwebtoken");
+const Middlewares = require('../middlewares/auth');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const create = async (req, res) => {
-  const { email, senha } = req.body; 
+const login = async (req, res) => {
+    const { email, senha, validade } = req.body;
 
-  try {
-    const novoLogin = await prisma.login.create({
-      data: {
-        email,
-        senha,
-      },
-    });
-    res.status(201).json(novoLogin);  
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao criar login' });
-  }
+    try {
+        const user = await prisma.user.findFirst({
+            where: {
+                email: email,
+            }
+        });
+
+        if (!user) {
+            return res.status(401).json({ message: 'E-mail ou Senha incorretos!' });
+        } else {
+            const isValidPassword = await Middlewares.validatePassword(senha, user.senha);
+            if (!isValidPassword) {
+                return res.status(401).json({ message: 'E-mail ou Senha incorretos!' });
+            }
+            const token = jsonwebtoken.sign(
+                {
+                    id: user.id,
+                    nome: user.nome,
+                    email: user.email,
+                },
+                process.env.SECRET_JWT,
+                { expiresIn: validade ? validade + "min" : "60min" }
+            );
+            res.status(200).json({ token: token });
+        }
+    } catch (err) {
+        console.error('Erro no login:', err);
+        res.status(500).json({ message: 'Erro interno do servidor' });
+    }
 };
 
-const read = async (req, res) => {
-  try {
-    const logins = await prisma.login.findMany(); 
-    res.status(200).json(logins);  
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao listar os logins' });
-  }
-};
+const validaToken = (req, res) => {
+    const token = req.headers.authorization?.split(" ")[1];
 
-const readOne = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const login = await prisma.login.findUnique({
-      where: { id: parseInt(id) },
-    });
-
-    if (!login) {
-      return res.status(404).json({ message: 'Login não encontrado' });
+    if (!token) {
+        return res.status(401).send({ message: "Acesso negado. Nenhum token recebido." }).end();
     }
 
-    res.status(200).json(login); 
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao buscar o login por ID' });
-  }
-};
-
-const update = async (req, res) => {
-  const { id } = req.params;
-  const { nome, email, senha } = req.body; 
-
-  try {
-    const loginAtualizado = await prisma.login.update({
-      where: { id: parseInt(id) },
-      data: {
-        nome,
-        email,
-        senha, 
-      },
+    jsonwebtoken.verify(token, process.env.SECRET_JWT, (err, decoded) => {
+        if (err) {
+            return res.status(403).send({ message: "Token inválido ou expirado." }).end();
+        }
+        req.user = decoded;
+        res.status(200).json({ message: req.user });
     });
-
-    res.status(200).json(loginAtualizado); 
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao atualizar o login' });
-  }
-};
-const autenticar = async (req, res) => {
-  const { email, senha } = req.body;
-
-  try {
-    const usuario = await prisma.login.findUnique({
-      where: { email },
-    });
-
-    if (!usuario || usuario.senha !== senha) {
-      return res.status(401).json({ message: 'Email ou senha inválidos' });
-    }
-
-    res.status(200).json({ message: 'Login realizado com sucesso', usuario });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao autenticar o login' });
-  }
-};
-
-const remove = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const loginDeletado = await prisma.login.delete({
-      where: { id: parseInt(id) },
-    });
-
-    res.status(200).json({ message: 'Login deletado com sucesso', login: loginDeletado });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao deletar o login' });
-  }
 };
 
 module.exports = {
-  create,
-  read,
-  readOne,
-  update,
-  remove,
-  autenticar,
+    login,
+    validaToken
 };
-
-
-
-
-
-
-
