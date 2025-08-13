@@ -29,14 +29,6 @@ model Login{
   email String @db.VarChar(100)
   senha String @db.VarChar(60) @unique
 }
-
-model adocao {
-  id  Int @id @default(autoincrement())
-  nome String  @db.VarChar(30)
-  peso String @db.VarChar(3)
-  idade String @db.VarChar(3)
-  raca String @db.VarChar(10)
-}
 enum Especie {
   cachorro
   gato
