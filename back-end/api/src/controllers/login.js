@@ -33,24 +33,26 @@ const read = async (req, res) => {
 
 const update = async (req, res) => {
   const { id } = req.params;
-  const { nome, email, senha } = req.body; 
+  const { nome, email, senha } = req.body;
 
   try {
+    let dadosAtualizados = { nome, email };
+    if (senha) {
+      dadosAtualizados.senha = await bcrypt.hash(senha, 10);
+    }
+
     const loginAtualizado = await prisma.login.update({
       where: { id: parseInt(id) },
-      data: {
-        nome,
-        email,
-        senha, 
-      },
+      data: dadosAtualizados,
     });
 
-    res.status(200).json(loginAtualizado); 
+    res.status(200).json(loginAtualizado);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Erro ao atualizar o login' });
   }
 };
+// ...existing code...
 
 const autenticar = async (req, res) => {
   const { email, senha } = req.body;
