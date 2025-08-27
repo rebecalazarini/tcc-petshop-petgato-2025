@@ -6,6 +6,7 @@
 - JavaScript
 - Prisma 
 - Mysql
+- Autenticação JWT
 ## Como executar
 - Clone este repositório
 - Abra com VsCode
@@ -38,7 +39,7 @@ npx nodemon server.js
 - Você pode testar tanto no insomnia quanto na própria tela de cadastro e consulta no fron-end
 - Users
 ```bash
- http://localhost:3000/u
+ http://localhost:3000/usuarios
  exemplo:
 {
   "email": "teste@exemplo.com",
@@ -48,7 +49,7 @@ npx nodemon server.js
 
 - Cadastro do Pet
 ```bash
- http://localhost:3000/c
+ http://localhost:3000/consultas
  exemplo:
 {
 "id": 1,
@@ -65,7 +66,7 @@ npx nodemon server.js
 
 ## Sprint inicial
 - Metodologia: KANBAN
-- Papéis e responsabilidades: Rebeca Lazarini: Front-end, Larissa Santos: Back-end, Evelyn Fernandes: Banco de dados, Larissa Rocha: Teste e Crislaine Leopoldo: Documentação
+- Papéis e responsabilidades: Rebeca Lazarini: back-end, Larissa Santos: front-end, Evelyn Fernandes: Banco de dados, Larissa Rocha: Testes/relatórios e Crislaine Leopoldo: Documentação.
 - O objetivo do nosso site de pet shop é oferecer uma experiência online de fácil acesso e navegação, com uma interface intuitiva e dinâmica. As telas serão funcionais e bem organizadas, permitindo que os clientes encontrem rapidamente os produtos e serviços que procuram, além de possibilitar um processo de compra simples e eficiente.
 
 
