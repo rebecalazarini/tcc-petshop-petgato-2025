@@ -10,19 +10,24 @@ routes.get('/', (req, res) => {
     res.json({ message: 'Rota funcionando!' });
 });
 
-routes.post('/login', Login.login);
+routes.post('/login', Login.autenticar);
 
 routes.post('/usuarios', User.create);
+routes.get('/usuarios', User.read);
 
-routes.get('/usuarios', Login.authenticateToken, User.read);
-routes.put('/usuarios/:id', Login.authenticateToken, User.update);
-routes.delete('/usuarios/:id', Login.authenticateToken, User.remove);
+routes.post('/cadastro', User.create);
+routes.get('/cadastro', User.read);
+routes.patch('/cadastro', User.update);
+routes.delete('/cadastro', User.remove);
 
+routes.post('/login', Login.create);
+routes.get('/login', Login.read);
+routes.put('/login/:id', Login.update);
+routes.delete('/login/:id', Login.remove);
 
-routes.post('/consultas', Login.authenticateToken, Consulta.create);
-routes.get('/consultas', Login.authenticateToken, Consulta.read);
-routes.put('/consultas/:id', Login.authenticateToken, Consulta.update);
-routes.delete('/consultas/:id', Login.authenticateToken, Consulta.remove);
-
+routes.post('/consultas', Consulta.create);
+routes.get('/consultas', Consulta.read);
+routes.put('/consultas/:id', Consulta.update);
+routes.delete('/consultas/:id', Consulta.remove);
 
 module.exports = routes;

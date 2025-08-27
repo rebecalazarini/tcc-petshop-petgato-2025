@@ -26,8 +26,9 @@ model consulta {
 
 model Login{
   id Int @id @default(autoincrement())
-  email String @db.VarChar(100)
+  email String @db.VarChar(100) @unique 
   senha String @db.VarChar(60) @unique
+  nome String?
 }
 enum Especie {
   cachorro
