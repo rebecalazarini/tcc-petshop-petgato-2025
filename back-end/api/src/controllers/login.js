@@ -1,105 +1,63 @@
+
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const SECRET = process.env.JWT_SECRET || 'meu_segredo_jwt';
+const jwt = require('jsonwebtoken');
 
-const create = async (req, res) => {
-  const { email, senha } = req.body;
+const prisma = new PrismaClient();
+const SECRET_KEY = process.env.SECRET_KEY || 'meu_segredo_jwt';
 
-  try {
-    const senhaHash = await bcrypt.hash(senha, 10);
-    const novoLogin = await prisma.login.create({
-      data: {
-        email,
-        senha: senhaHash,
-      },
-    });
-    res.status(201).json(novoLogin);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao criar login' });
-  }
-};
-const read = async (req, res) => {
-  try {
-    const logins = await prisma.login.findMany(); 
-    res.status(200).json(logins);  
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao listar os logins' });
-  }
-};
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const user = await prisma.user.findUnique({
+            where: { email },
+        });
 
-const update = async (req, res) => {
-  const { id } = req.params;
-  const { nome, email, senha } = req.body;
+        if (!user) {
+            return res.status(401).json({ error: 'Email ou senha incorretos.' });
+        } 
+        const isMatch = await bcrypt.compare(password, user.password);
 
-  try {
-    let dadosAtualizados = { nome, email };
-    if (senha) {
-      dadosAtualizados.senha = await bcrypt.hash(senha, 10);
+        if (!isMatch) {
+            return res.status(401).json({ error: 'Email ou senha incorretos.' });
+        }
+        const payload = {
+            id: user.id,
+            email: user.email,
+        };
+
+        //Gera o token JWT com a chave secreta e tempo de expiração
+        const token = jwt.sign(
+            payload,
+            SECRET_KEY,
+            { expiresIn: '1h' } // Token expira em 1 hora
+        );
+        return res.json({ message: 'Login bem-sucedido!', token });
+
+    } catch (error) {
+        console.error('Erro ao fazer login:', error);
+        return res.status(500).json({ error: 'Erro interno do servidor.' });
     }
-
-    const loginAtualizado = await prisma.login.update({
-      where: { id: parseInt(id) },
-      data: dadosAtualizados,
-    });
-
-    res.status(200).json(loginAtualizado);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao atualizar o login' });
-  }
 };
-// ...existing code...
 
-const autenticar = async (req, res) => {
-  const { email, senha } = req.body;
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
 
-  try {
-    const usuario = await prisma.login.findUnique({
-      where: { email },
-    });
-
-    if (!usuario || !(await bcrypt.compare(senha, usuario.senha))) {
-      return res.status(401).json({ message: 'Email ou senha inválidos' });
+    if (token == null) {
+        return res.sendStatus(401);
     }
-
-    const token = jwt.sign({ id: usuario.id, email: usuario.email }, SECRET, { expiresIn: '1h' });
-
-    res.status(200).json({ message: 'Login realizado com sucesso', token });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao autenticar o login' });
-  }
-};
-const remove = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const loginDeletado = await prisma.login.delete({
-      where: { id: parseInt(id) },
+    jwt.verify(token, SECRET_KEY, (err, user) => {
+        if (err) {
+            return res.sendStatus(403);
+        }
+        
+        req.user = user;
+        next();
     });
-
-    res.status(200).json({ message: 'Login deletado com sucesso', login: loginDeletado });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao deletar o login' });
-  }
 };
 
 module.exports = {
-  create,
-  read,
-  update,
-  remove,
-  autenticar
+    login,
+    authenticateToken
 };
-
-
-
-
-
-
-

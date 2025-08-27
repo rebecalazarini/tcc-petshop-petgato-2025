@@ -1,12 +1,32 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const bcrypt = require('bcryptjs'); 
+const jwt = require('jsonwebtoken'); 
+const SECRET_KEY = process.env.SECRET_KEY || 'meu_segredo_jwt';
+
 
 const create = async (req, res) => {
     try {
-        const user = await prisma.user.create({
-            data: req.body
+        const {email, password} = req.body;
+        const existingUser = await prisma.user.findUnique({
+            where: { email },
         });
-        return res.status(201).json(user);
+        if (existingUser) {
+            return res.status(400).json({ error: 'Email ja existente.' });
+        }
+        const salt = await bcrypt.genSalt(10);
+        const user = await prisma.user.create({
+            data: {
+                email,
+                password: hashedPassword,
+            }
+        });
+        const token = jwt.sign(
+            {id:user.id, email: user.email},
+            SECRET_KEY,
+            {expiresIn: '1h'}
+        );
+        return res.status(201).json({ message: 'Usuário criado com sucesso!', token });
     } catch (error) {
         return res.status(400).json({ error: 'Email ja existente.' });
     }
