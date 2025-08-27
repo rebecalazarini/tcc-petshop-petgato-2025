@@ -1,13 +1,13 @@
 // Seleciona os elementos do formulário
 const loginForm = document.getElementById('login-form');
 const emailInput = document.getElementById('email-input');
-const passwordInput = document.getElementById('password-input');
+const senhaInput = document.getElementById('senha-input');
 
 loginForm.addEventListener('submit', async (event) => {
   event.preventDefault();  // Previne o envio do formulário
 
   const email = emailInput.value;
-  const password = passwordInput.value;
+  const senha = senhaInput.value;
 
   try {
     // Faz a requisição POST para /login
@@ -16,7 +16,7 @@ loginForm.addEventListener('submit', async (event) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, senha }),
     });
 
     const data = await response.json();

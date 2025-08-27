@@ -17,6 +17,11 @@ const create = async (req, res) => {
       return res.status(400).json({ message: 'Email já está em uso.' });
     }
 
+    if (!senha) {
+  return res.status(400).json({ message: 'Senha não fornecida.' });
+}
+
+
     // Criptografar a senha antes de salvar
     const senhaHash = await bcrypt.hash(senha, 10);
 

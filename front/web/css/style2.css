@@ -255,9 +255,7 @@
      background: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
       height: 100px;
   }
-  
-  
- /* Tooltip */
+
     .tooltip {
       position: fixed;
       bottom: 20px;
@@ -270,7 +268,6 @@
       color: #333;
     }
 
-    /* Botão abrir */
     .toggle-button {
       position: fixed;
       bottom: 20px;
@@ -290,7 +287,6 @@
       z-index: 1000;
     }
 
-    /* Popup */
     .popup {
       position: fixed;
       bottom: 90px;
