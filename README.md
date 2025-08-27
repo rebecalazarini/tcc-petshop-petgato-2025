@@ -38,7 +38,7 @@ npx nodemon server.js
 - Você pode testar tanto no insomnia quanto na própria tela de cadastro e consulta no fron-end
 - Users
 ```bash
- http://localhost:3000/u
+ http://localhost:3000/usuarios
  exemplo:
 {
   "email": "teste@exemplo.com",
@@ -48,7 +48,7 @@ npx nodemon server.js
 
 - Cadastro do Pet
 ```bash
- http://localhost:3000/c
+ http://localhost:3000/consultas
  exemplo:
 {
 "id": 1,
