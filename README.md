@@ -1,4 +1,4 @@
-# tcc 
+# tcc Pet Shop
 
 # link [figma](https://www.figma.com/proto/wWW07z8xzHFdYYDbozFACe/Untitled?node-id=106-2403&p=f&t=WdfHVLg9q538pfCj-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=14%3A155)
 ## Tecnologias
