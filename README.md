@@ -6,6 +6,7 @@
 - JavaScript
 - Prisma 
 - Mysql
+- Autenticação JWT
 ## Como executar
 - Clone este repositório
 - Abra com VsCode
