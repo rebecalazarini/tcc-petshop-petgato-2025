@@ -10,7 +10,6 @@ routes.get('/', (req, res) => {
     res.json({ message: 'Rota funcionando!' });
 });
 
-routes.post('/login', Login.autenticar);
 
 routes.post('/usuarios', User.create);
 routes.get('/usuarios', User.read);
@@ -22,12 +21,12 @@ routes.delete('/cadastro', User.remove);
 
 routes.post('/login', Login.create);
 routes.get('/login', Login.read);
-routes.put('/login/:id', Login.update);
+routes.patch('/login/:id', Login.update);
 routes.delete('/login/:id', Login.remove);
 
 routes.post('/consultas', Consulta.create);
 routes.get('/consultas', Consulta.read);
-routes.put('/consultas/:id', Consulta.update);
+routes.patch('/consultas/:id', Consulta.update);
 routes.delete('/consultas/:id', Consulta.remove);
 
 module.exports = routes;

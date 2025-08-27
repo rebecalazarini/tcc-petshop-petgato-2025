@@ -70,31 +70,6 @@ const update = async (req, res) => {
   }
 };
 
-const autenticar = async (req, res) => {
-  const { email, senha } = req.body;
-
-  console.log('Email:', email);  // Verifique se o email está correto
-  console.log('Senha:', senha);  // Verifique se a senha está correta (não em produção)
-
-  try {
-    const usuario = await prisma.login.findUnique({ where: { email } });
-
-    if (!usuario || !(await bcrypt.compare(senha, usuario.senha))) {
-      console.log('Erro: Email ou senha inválidos');
-      return res.status(401).json({ error: 'Email ou senha inválidos' });
-    }
-
-    const token = jwt.sign({ id: usuario.id, email: usuario.email }, SECRET, { expiresIn: '1h' });
-    console.log('Token gerado:', token);
-
-    res.status(200).json({ message: 'Login realizado com sucesso', token });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao autenticar o login' });
-  }
-};
-
-
 const remove = async (req, res) => {
   const { id } = req.params;
 
@@ -114,6 +89,5 @@ module.exports = {
   create,
   read,
   update,
-  remove,
-  autenticar
+  remove
 };
