@@ -64,3 +64,18 @@ async function fetchProtectedData() {
         console.error('Erro de rede:', error);
     }
 }
+
+  // Fecha ao clicar fora
+  window.addEventListener('click', function(event) {
+    if (!popup.contains(event.target) && event.target !== openButton) {
+      popup.classList.remove('show');
+    }
+  });
+
+  const menuToggle = document.getElementById('menu-toggle');
+const slideMenu = document.getElementById('slide-menu');
+
+menuToggle.addEventListener('click',() => {
+   slideMenu.classList.toggle('active');
+   menuToggle.classList.toggle('active');
+});
