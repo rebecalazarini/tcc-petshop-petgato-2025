@@ -8,7 +8,7 @@ async function Cadastrar() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/u", {
+        const response = await fetch("http://localhost:3000/cadastro", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, senha })

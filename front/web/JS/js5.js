@@ -13,7 +13,7 @@ async function Cadastrar() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/c", {
+        const response = await fetch("http://localhost:3000/consultas", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ emailProprietario, nomePet, especiePet, racaPet, nomeProprietario, nascpet, dados })
