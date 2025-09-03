@@ -16,8 +16,8 @@ routes.get('/usuarios', User.read);
 
 routes.post('/cadastro', User.create);
 routes.get('/cadastro', User.read);
-routes.patch('/cadastro', User.update);
-routes.delete('/cadastro', User.remove);
+routes.patch('/cadastro/:id', User.update);
+routes.delete('/cadastro/:id', User.remove);
 
 routes.post('/login', Login.create);
 routes.get('/login', Login.read);

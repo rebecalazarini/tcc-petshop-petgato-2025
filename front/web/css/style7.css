@@ -24,8 +24,8 @@ header{
     & button{
         background-color: rgb(255, 255, 255);
         border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
+        padding: 1%;
+        border-radius: 17%;
         font-weight: bold;
         cursor: pointer;
         color: rgb(0, 0, 0);
@@ -55,7 +55,7 @@ main{
     align-items: center;
     justify-content: space-between;
     background-color: var(--c1);
-    padding: 10px;
+    padding: 100%;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 5px var(--t2);
@@ -72,6 +72,7 @@ main{
         justify-content: space-between;
     }
 
+    
 input{
         border: none;
         padding: 5px 10px;
@@ -87,8 +88,8 @@ input{
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    width: 9vw;
-    height: 9vh;
+    width: 7vw;
+    height: 6vh;
     color: black;
 }
 #enviarPedido:hover{
@@ -120,4 +121,68 @@ input{
 #removerProduto:hover{
         background-color: black;
         color:white;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 20px auto;
+ background: linear-gradient(to right, rgb(180, 227, 241), );
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+th {
+ background: linear-gradient(to right, rgb(180, 227, 241), );
+  font-weight: bold;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #enviarPedido {
+    width: 40%;
+    height: auto;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #removerProduto {
+    width: auto;
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  #enviarPedido {
+    width: 60%;
+    font-size: 12px;
+  }
 }
