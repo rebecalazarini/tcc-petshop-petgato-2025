@@ -1,334 +1,806 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* CORES DO SITE */
+:root {
+  --font-family: 'CircularXX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --c1: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
+  --c2: rgb(180, 227, 241);
+  --c3: rgb(75, 197, 235);
+  --c4: rgba(197, 218, 226, 0.623);
+  --c5: rgb(136, 132, 132); /* COR DO TEXTO DOS BOTÕES */
+  --t1: rgba(80, 34, 74, 0.3);
+  --t2: rgba(0, 0, 0, 0.7);
+}
+
+/* CORPO DA PÁGINA */
 body {
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    margin: 0;
-    padding:0;
-    overflow-x: hidden;
-    background: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ESCONDE A ROLAGEM LATERAL */
+  display: flex;
+  flex-direction: column; /* ORGANIZA OS ELEMENTOS EM COLUNAS */
+  align-items: center; /* CENTRALIZA OS ELEMENTOS NA PÁGINA */
 }
 
-header{
-    background-color: white;
-    color: black;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-
-    & button{
-        background-color:rgb(255, 255, 255);
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        color: rgb(0, 0, 0);
-    }
-    & button:hover{
-        background-color:rgb(0, 0, 0);
-        color: rgb(255, 255, 255);
-    }
+/* CABEÇALHO UM */
+header {
+  background: var(--c1);
+  color: black;
+  width: 100%;
+  height: 85px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* MANTÉM O CABEÇALHO ACIMA DOS OUTROS ITENS DO SITE */
+  justify-content: space-around; /* DISTRIBUI OS ITENS DO CABEÇALHO */
+  align-items: center; /* ALINHA OS ITENS DO CABEÇALHO */
 }
 
-.header {
-    background: url('header.jpg') no-repeat center center/cover;
-    padding: 100px 20px;
-    text-align: center;
-    box-shadow: 0px 8px 8px rgba(255, 255, 255, 0.959); 
+header h1 {
+  font-family: 'Brush Script MT', cursive;
+  color: rgb(6, 43, 255);
+  font-size: 36.5px; /* TAMANHO DO TEXTO */
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 8%; /* POSIÇÃO DO TEXTO */
+  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DO TEXTO, VAI APARECER UMA MÃOZINHA */
 }
-.pet {
-    align-items:center;
-    width: 350px;
-    height: 350px;
+
+header img {
+  width: 37px; /* TAMANHO DAS IMAGENS */
+  border: none;
 }
+
+header button {
+  background-color: transparent;
+  border: none;
+  color: black; /* COR DO TEXTO */
+  font-weight: bold; /* TEXTO EM NEGRITO */
+  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DOS BOTÕES, VAI APARECER UMA MÃOZINHA */
+}
+
+header button:hover {
+  color: white; /* COR DO TEXTO AO PASSAR O MOUSE EM CIMA */
+  transition: 0.3s; /* TEMPO DA TRANSIÇÃO */
+  font-size: 1.8vh;
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DO TÍTULO */
+@media (max-width: 768px) {
+  header h1 {
+    width: 60%;
+    font-size: 30px;
+  }
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DAS IMAGENS */
+@media (max-width: 768px) {
+  header button img {
+    width: 25px; /* diminui o tamanho das imagens */
+  }
+}
+
+/* BARRA DE PESQUISA */
+.search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  border: none;
+  border-radius: 10px;
+}
+
+.search-icon input {
+  background: rgba(253, 249, 249, 0.795);
+  border: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 14px;
+  width: 40%;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: width 0.4s ease-in-out; /* ANIMAÇÃO DE ABRIR A BARRA DE PESQUISA */
+}
+
+.search-icon .icon {
+  position: relative;
+  top: 0;
+  left: 2%;
+}
+
+.search-icon input:focus {
+  width: 80%; /* TAMANHO DA BARRA DE PESQUISA AO CLICAR */
+  outline: none; /* REMOVE A BORDA AZUL QUE APARECE AO CLICAR NA BARRA DE PESQUISA */
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
+@media (max-width: 768px) {
+  .search-icon {
+    display: none; /* some completamente */
+  }
+}
+
+/* CONTAINER DOIS */
+.Containerheader {
+  background-color: rgba(231, 231, 250, 0.445);
+  position: relative;
+  top: 85px;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Containerheader button {
+  width: 130px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  color: var(--c5);
+  background: transparent;
+  cursor: pointer;
+  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* ESPAÇO ENTRE TEXTO E IMG */
+}
+
+.Containerheader button img {
+  display: none; /* some em todas as telas inicialmente */
+}
+
+/* Quando passar o mouse (somente em dispositivos que suportam hover), exibe a imagem */
+@media (hover: hover) and (pointer: fine) {
+  .Containerheader button:hover img {
+    display: inline-block; /* mostra a imagem ao passar o mouse */
+  }
+}
+
+/* Em telas pequenas (responsivo, tipo celular), as imagens continuam ocultas */
+@media (max-width: 768px) {
+  .Containerheader button img {
+    display: none !important; /* garante que no mobile nunca aparece */
+  }
+}
+
+/* Anúncios buttons */
+.anuncios {
+  width: 70%;
+  height: 12.6vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.anuncios button {
+  background: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  align-items: center;
+  justify-content: space-between;
+  gap: 11px; /* ESPAÇO ENTRE TEXTO E IMG */
+  padding: 3%;
+  font-size: 60%;
+  position: relative;
+  top: 5px;
+  left: -3%;
+  width: 28%;
+  border-radius: 5px;
+  height: 100%;
+  border-color: rgba(236, 231, 231, 0.205);
+}
+
+.anuncios button img {
+  width: 12%;
+  position: relative;
+  top: 0;
+  left: -6%;
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
+@media (max-width: 768px) {
+  .anuncios {
+    display: none; /* some completamente */
+  }
+}
+
+/* BANNER */
 .banner {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 20px;
-    width: 100vw;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 1.0s ease, transform 1.0s ease;
-    animation: fadeInDown 1.0s forwards;
-    border: 3px solid rgb(0, 0, 0); 
+  position: relative;
+  width: 60%;
+  top: 0px;
+  left: 0;
+  padding: 15px;
+  border-radius: 75px 75px 85px 75px;
+  text-align: center;
+  font-weight: bold; /* TEXTO EM NEGRITO */
+  overflow: hidden;
+  margin: 4vh;
 }
 
-@keyframes fadeInDown { /*Banner */
-from {
-    opacity: 0;
-    transform: translateY(-20px);
-}
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
-}
-h2{
-    color: rgb(0, 0, 0);
-    margin-top: 40px;
-    margin-bottom: 2vw;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+.banner-text {
+  display: none; /* ESCONDE O TEXTO */
+  color: black;
+  transition: color 0.5s ease; /* FAZ A TRANSIÇÃO DO TEXTO */
 }
 
-.mainContainer{
-    width: 70%;
+.banner-text.active {
+  display: block; /* MOSTRA O TEXTO */
+}
+
+/* CAROUSEL DE IMAGENS */
+.carousel {
+  position: relative;
+  top: 10px;
+  left: 0;
+  width: 80%;
+  height: 400px; /* ALTURA DO CAROUSEL AJUSTADA */
+  overflow: hidden; /* ESCONDE PARTES EXTERNAS DAS IMAGENS */
+  display: flex; /* PERMITE CENTRALIZAR AS IMAGENS */
+  justify-content: center; /* CENTRA HORIZONTALMENTE */
+  align-items: center; /* CENTRA VERTICALMENTE */
+}
+
+.carousel img {
+  width: 80%; /* LARGURA PADRÃO DAS IMAGENS */
+  height: auto;
+  opacity: 0; /* INICIALMENTE OCULTA */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* CENTRALIZA NO MEIO DO CAROUSEL */
+  transition: all 0.6s ease-in-out; /* ANIMAÇÃO SUAVE */
+  border-radius: 15px;
+  pointer-events: none; /* NÃO CLICÁVEL */
+}
+
+.carousel img.active {
+  opacity: 1; /* IMAGEM VISÍVEL */
+  z-index: 3; /* FICA ACIMA DAS OUTRAS */
+  transform: translate(-50%, -50%) scale(1); /* CENTRALIZA E AUMENTA LEVEMENTE */
+  filter: blur(0); /* SEM DESFOQUE */
+  pointer-events: auto; /* PERMITE CLICAR */
+}
+
+.carousel img.left {
+  opacity: 0.7; /* PARCIALMENTE VISÍVEL */
+  z-index: 2;
+  transform: translate(-150%, -50%) scale(0.85); /* POSICIONA À ESQUERDA E REDUZ LEVEMENTE */
+  filter: blur(3px); /* DESFOQUE LEVE */
+}
+
+.carousel img.right {
+  opacity: 0.7; /* PARCIALMENTE VISÍVEL */
+  z-index: 2;
+  transform: translate(50%, -50%) scale(0.85); /* POSICIONA À DIREITA E REDUZ LEVEMENTE */
+  filter: blur(3px); /* DESFOQUE LEVE */
+}
+
+.carousel img.hidden {
+  opacity: 0; /* INVISÍVEL */
+  z-index: 1;
+  transform: scale(0.5); /* REDUZ LEVEMENTE */
+  pointer-events: none; /* NÃO CLICÁVEL */
+}
+
+.carousel-indicators {
+  display: flex; /* Alinha as bolinhas horizontalmente */
+  gap: 10px; /* Espaçamento entre bolinhas */
+  margin-top: 20px; /* Distância do carousel */
+}
+
+.dot {
+  width: 12px; /* Largura da bolinha */
+  height: 12px; /* Altura da bolinha */
+  border-radius: 50%; /* Forma circular */
+  background: rgba(65, 63, 47, 0.5); /* Cor cinza clara */
+  cursor: pointer; /* Cursor de clique */
+  transition: background 0.3s; /* Transição suave ao mudar cor */
+}
+
+.dot.active-dot {
+  background: rgb(18, 14, 231); /* Bolinha ativa */
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .carousel {
+    width: 90%; /* AJUSTA LARGURA NO MOBILE */
+    height: 250px; /* ALTURA MENOR */
+  }
+
+  .carousel img {
+    width: 90%; /* IMAGEM OCUPA MAIS ESPAÇO */
+  }
+
+  .prev,
+  .next {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeInDown {
+  from {
+    opacity: 0; /* INICIA COM OPACIDADE 0 */
+    transform: translateY(-20px); /* INICIA 20PX ACIMA */
+  }
+  to {
+    opacity: 1; /* FINALIZA COM OPACIDADE 1 */
+    transform: translateY(0); /* FINALIZA NA POSIÇÃO ORIGINAL */
+  }
+}
+
+/* ANIMAL BUTTONS */
+.animal {
+  border: none;
+  width: 100%;
+  height: 30%;
+  position: relative;
+  top: 0;left: -7%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.animal button {
+  border: none;
+  background-color:rgb(75, 197, 235);
+  width: 10%;
+  height: 90px;
+  padding: 0.7%;
+  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  gap: 6px; /* ESPAÇO ENTRE TEXTO E IMG */
+}
+
+.animal button img {
+  width: 30%;
+  height: 50%;
+  border-radius: 80%;
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
+@media (max-width: 768px) {
+  .animal img {
+    display: none; /* some completamente */
+  }
+
+  .animal button {
+    width: 100%;
+    padding: 5px;
+    border-radius: 25%;
+  }
+
+  .animal {
     position: relative;
-}
-
-#produtos-container{
-    width: 100%;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-:root{
-    --t1:rgba(80, 34, 74, 0.3);
-    --t2:rgba(0,0,0,0.7);
-}
-
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    gap: 10px;
-    color: rgb(0, 0, 0);
-   
-    & img {
-        max-width: 200px;
-    }
-    & button{
-        background-color: black;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        color:white;
-    }
-}
-
-.modal{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
     top: 0;
-    left: 0;
-    background-color: var(--t2);
-}
-
-.janela{
-    width: fit-content;
-    height: fit-content;
-    background-color: white;
-    box-shadow: 0 0 5px var(--t1);
+    left: -1%;
+    width: 80%;
+    gap: 2%;
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: auto;
-
-    & div{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    & button{
-        background-color: black;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        color: #fff;
-    }
+  }
 }
 
-input{
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-weight: bold;
+.outros, .pet {
+  width: 30%;
+  height: 10%;
+  position: relative;
+  top: 0;left: -5%;
+  font-size: 100%;
+  color: black;
+  font-weight: bold;
+}/* --- wrapper do fundo ondulado --- */
+.section-fundo {
+  position: relative;
+  width: 100%;
+  min-height: 540px;          /* controla "a altura" do bloco — ajuste se precisar */
+  margin: 40px 0;             /* espaçamento externo (opcional) */
+  overflow: visible;
 }
 
-.oculto{
-    display: none;
+/* SVG do fundo (faz as ondulações nas extremidades) */
+.fundo-svg {
+  position: absolute;
+  left: 0;
+  top: -16%;
+  width: 200%;
+  height: 150%;
+  z-index: 0;                 /* atrás do conteúdo */
+  pointer-events: none;       /* deixa os botões clicáveis */
+  display: block;
 }
 
-@media screen and ( max-width: 770px){
-   .janela {
-    min-width: 90%;
-   }
+/* conteúdo que fica sobre o SVG */
+.fundoparcial-content {
+  position: relative;
+  z-index: 1;                 /* acima do SVG */
+  padding: 30px 20px;         /* controla o "padding" interno (altura visível) */
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  color: #fff;                /* textos brancos por padrão — ajuste se quiser */
 }
 
-#conteudo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; 
-    align-items: center;
-    padding: 20px; 
-    max-width: 300px; 
+/* ----- seus estilos de botões (adaptados) ----- */
+.animal {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;            /* quebra em linhas quando precisar */
+  margin: 14px 0;
 }
 
-#conteudo img {
-    width: 200px; 
-    height: 200px; 
-    border-radius: 5px;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+.animal button {
+  border: none;
+  background-color: rgb(75, 197, 235);
+  min-width: 160px;           /* fica mais amigável em telas pequenas */
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #003;                /* cor do texto do botão (ajuste se quiser) */
+  font-weight: 600;
 }
 
-#conteudo h3 {
-    margin: 0; 
+/* img dentro do botão */
+.animal button img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-#conteudo p {
-    margin: 5px 0; 
+/* títulos dentro (pet/outros) */
+.pet h1, .outros h1 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #fff;
 }
+
+/* responsividade */
+@media (max-width: 768px) {
+  .fundoparcial-content { padding: 20px 12px; }
+  .animal button { min-width: 48%; height: 56px; border-radius: 12px; }
+  .animal button img { display: inline-block; width: 28px; height: 28px; }
+}
+
+/* JUROS */
+.juros {
+  width: 80%;
+  height: 12.6vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 5%;
+  left: 2%;
+  gap: 2%;
+}
+
+.juros button {
+  width: 80%;
+  background: transparent;
+  justify-content: space-around;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  align-items: center;
+  justify-content: space-between;
+  gap: 11px; /* ESPAÇO ENTRE TEXTO E IMG */
+  padding: 3%;
+  font-size: 60%;
+  position: relative;
+  top: 3%;
+  left: -3%;
+  width: 28%;
+  border-radius: 5px;
+  height: 100%;
+  border-color: rgba(236, 231, 231, 0.205);
+  gap: 10%;
+}
+
+.juros button img {
+  background: transparent;
+  width: 15%;
+  height: 190%;
+  position: relative;
+  top: 0;
+  left: -6%;
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
+@media (max-width: 768px) {
+  .juros img {
+    display: none; /* some completamente */
+  }
+}
+
+/* PRODUTOS CARDS */
+.mainContainer {
+  width: 98%;
+  height: 150%;
+  position: relative;
+  top: 0;
+  left: -1%;
+  color: rgb(80, 80, 85);
+}
+/* Wrapper geral */
+.produtos-wrapper {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Container dos cards */
+#produtos-container {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease;
+}
+
+/* Cada card */
+#produtos-container .card {
+  flex: 0 0 250px;   /* largura fixa */
+  height: 400px;     /* altura fixa */
+  background: #f0f0f0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ----- BOTÕES DE NAVEGAÇÃO (Anterior / Próximo) ----- */
+.produtos-navigation {
+  position: absolute;          /* coloca por cima do container */
+  top: 50%;                    /* centraliza na altura */
+  left: 0;                     /* começa na lateral esquerda */
+  width: 100%;   
+  height: 100%;              /* ocupa toda a largura */
+  display: flex;               /* coloca os botões em linha */
+  justify-content: space-between;
+  gap: 115%;
+  transform: translateY(-10%); /* ajusta para ficar no centro exato */
+  pointer-events: none; 
+         /* evita bloquear cliques em outros elementos */
+}
+@media (max-width: 768px) {
+  .produtos-navigation {
+    gap: 10%;
+  }
+}
+
+.produtos-navigation button {
+  pointer-events: auto;        /* deixa os botões clicáveis */
+  background: rgb(75, 197, 235); /* fundo preto semitransparente */
+  color: #fff;                 /* texto branco */
+  border: none;                /* remove borda padrão */
+  border-radius: 50%;          /* formato de círculo */
+  width: 75px;                /* tamanho fixo do botão */
+  height: 7%;
+  cursor: pointer;             /* cursor em forma de mãozinha */
+  font-size: 18px; 
+  justify-content: space-around;            /* tamanho do símbolo ou texto */
+}
+
+
+
+.card {
+  height: 100%;
+  border: 3px solid rgb(0, 38, 252);
+  position: relative;
+  background-color: rgba(205, 235, 252, 0.418);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px; /* MARGIN EXTERNA */
+  border-radius: 2%;
+  justify-content: space-around;
+  border-color: rgba(240, 234, 186, 0.877);
+}
+
+.card img {
+  width: 70%;
+  position: relative;
+  top: 3%;
+  left: 0;
+  border-radius: 5%;
+  margin-bottom: 5%;
+}
+
+/* Botões dentro do card alinhados lado a lado */
+.button-group {
+  position: relative;
   
+  top: 10%;
+  left: 0;
+  display: flex; /* Alinha os botões em linha */
+  gap: 10px; /* Espaçamento entre os botões */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  margin-top: 10px; /* Espaço acima do grupo de botões */
+}
 
-/* Tooltip */
-    .tooltip {
-      position: fixed;
-      bottom: 20px;
-      right: 90px;
-      background-color: #f1f3f5;
-      padding: 8px 12px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      font-size: 14px;
-      color: #333;
-    }
+.button-group button {
+  position: relative;
+  top: -50%;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(215, 220, 250, 0.247);
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(128, 124, 124);
+  display: flex; /* Para alinhar o conteúdo interno (ex: img) */
+  align-items: center; /* Centraliza verticalmente o conteúdo do botão */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 5px; /* Espaço entre texto e imagem dentro do botão */
+  min-width: 80px; /* Largura mínima para os botões */
+}
 
-    /* Botão abrir */
-    .toggle-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      border: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      cursor: pointer;
+.button-group button img {
+  width: 20px; /* Tamanho das imagens dentro dos botões */
+  height: 20px;
+}
+
+/* MODAL */
+.modal {
+  width: 100%; /* Ocupa 100% da largura da tela */
+  height: 100%; /* Ocupa 100% da altura da tela */
+  display: flex; /* Container flexível */
+  flex-direction: column; /* Organiza filhos em coluna */
+  align-items: center; /* Centraliza filhos horizontalmente */
+  justify-content: center; /* Centraliza filhos verticalmente */
+  position: fixed; /* Posiciona fixo na tela, independente do scroll */
+  top: 0; /* Posiciona no topo da tela */
+  left: 0; /* Posiciona na esquerda da tela */
+  background-color: var(--t2); /* Fundo preto translúcido definido pela variável --t2 */
+}
+
+.janela {
+  width: fit-content; /* Largura ajusta-se ao conteúdo */
+  height: fit-content; /* Altura ajusta-se ao conteúdo */
+  background-color: white; /* Fundo branco */
+  box-shadow: 0 0 5px var(--t1); /* Sombra com cor translúcida roxa definida em --t1 */
+  padding: 10px; }
+
+  .tosavet{
+    width: 90%;
+    height: 150%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 0;left: -2%;
+    gap: 3%;
+}
+    .banho, .vet {
+      width: 70%;
+      height: 350px;
+      background-color: rgba(11, 167, 206, 0.438);
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      z-index: 1000;
-    }
+      justify-content: space-around;
+      border-radius: 25px;
+      
+      
 
-    /* Popup */
-    .popup {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 320px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      display: none;
-      z-index: 1000;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
+       & img{
+        width: 50%;
+        border-radius: 70% 0 0 0 ; 
+        position: relative;
+        top: 0;left: 10%; 
+      }
+      & h2{
+        font-size: 15px;
+        color: rgb(233, 224, 142);
+        position: relative;
+        top: 25%;left: 5%;
+      }
     }
+    /* ========== ESTILOS PARA A SEÇÃO DUPLICADA ========== */
+/* Ajustes mínimos — ficam isolados (sufixados com -dup) para não conflitar */
+.mainContainer-dup {
+  width: 100%;
+  padding: 30px 10%;
+  box-sizing: border-box;
+  color: rgb(80,80,85);
+}
 
-    .popup.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* grid dos cards */
+.produtos-grid-dup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
 
-    .popup-header {
-      background-color: #25D366;
-      color: white;
-      padding: 16px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* cartão produto */
+.card-dup {
+  background: rgba(205,235,252,0.42);
+  border-radius: 8px;
+  padding: 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  min-height: 220px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.card-dup img { width: 85%; height: 120px; object-fit: cover; border-radius:6px; }
+.card-dup h4 { margin:8px 0 4px; font-size:16px; text-align:center; }
+.card-dup p { font-size:14px; margin:2px 0; text-align:center; }
 
-    .popup-header .close-btn {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 22px;
-      cursor: pointer;
-    }
+.button-group-dup {
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+.button-group-dup button {
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.08);
+}
 
-    .popup-body {
-      padding: 16px;
-    }
+/* modal */
+.modal-dup {
+  position: fixed;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.45);
+  z-index: 9999;
+}
+.janela-dup {
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  width: min(900px, 95%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.janela-header-dup { display:flex; justify-content:space-between; align-items:center; }
+.janela-header-dup button { cursor:pointer; }
 
-    .popup-body p {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 10px;
-    }
+/* conteúdo e related */
+.conteudo-produto-dup { display:flex; gap:12px; align-items:center; margin-top:14px; }
+.conteudo-produto-dup img { width:140px; height:120px; object-fit:cover; border-radius:6px; }
+.related-products-dup { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+.related-item-dup { width: 130px; border:1px solid rgba(0,0,0,0.06); padding:8px; border-radius:6px; text-align:center; }
 
-    .contact {
-      display: flex;
-      align-items: center;
-      background-color: #f8f8f8;
-      padding: 10px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-      margin-bottom: 10px;
-    }
+/* botão de adicionar */
+.modal-actions-dup { margin-top:12px; display:flex; justify-content:flex-end; }
 
-    .contact:hover {
-      background-color: #e6e6e6;
-    }
+/* classe pra esconder (usada no seu código original também) */
+.oculto { display: none !important; }
 
-    .contact img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-
-    .contact-info {
-      flex-grow: 1;
-    }
-
-    .contact-info strong {
-      display: block;
-      color: #333;
-    }
-
-    .contact-info span {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .contact i {
-      color: #25D366;
-      font-size: 20px;
-    }
+/* responsivo simples */
+@media (max-width:900px) {
+  .produtos-grid-dup { grid-template-columns: repeat(2, 1fr); }
+  .conteudo-produto-dup { flex-direction:column; align-items:flex-start; }
+}
+@media (max-width:480px) {
+  .produtos-grid-dup { grid-template-columns: 1fr; }
+}
