@@ -21,7 +21,7 @@ cd api
 EMAIL_USER=seu-email@gmail.com
 EMAIL_PASS=sua-senha
 SECRET_JWT=meu_segredo_jwt
-DATABASE_URL="mysql://root@localhost:3306/fullstack?timezone=UTC"
+DATABASE_URL="mysql://root@localhost:3306/fullpetgato?timezone=UTC"
 ````
 - Caso ja exista, exclua o arquivo .env e crie um
   
