@@ -12,15 +12,12 @@ routes.get('/', (req, res) => {
 });
 
 
-// routes.post('/usuarios', User.create);
-// routes.get('/usuarios', User.read);
-
 routes.post('/cadastro', User.create);
 routes.get('/cadastro', User.read);
 routes.patch('/cadastro/:id', User.update);
 routes.delete('/cadastro/:id', User.remove);
 
-routes.post('/login', Login.login);
+routes.post('/login', Login.login);//post do token
 routes.post('/logado', auth.validaToken);
 
 routes.get('/usuarios', auth.validate, Login.read);

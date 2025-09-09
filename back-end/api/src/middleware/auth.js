@@ -22,7 +22,7 @@ const validate = (req, res, next) => {
 
 // Middleware para validar o token recebendo o token no corpo da requisição
 const validaToken = (req, res) => {
-    const token = req.body.token;
+    const token = req.headers.authorization?.split(" ")[1]; // Extrai o token do cabeçalho Authorization: Bearer <token>
 
     if (!token) {
         return res.status(401).send({ message: "Acesso negado. Nenhum token recebido." }).end();
@@ -35,6 +35,7 @@ const validaToken = (req, res) => {
         res.status(200).json({ valid: true, payload: decoded }).end();
     });
 }
+
 
 //Criar um hash da senha Usado na criação de usuário e no login
 const createHash = async (senha) => {
