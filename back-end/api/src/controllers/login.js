@@ -1,98 +1,91 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const SECRET = process.env.JWT_SECRET || 'meu_segredo_jwt';
+const jsonwebtoken = require("jsonwebtoken");
+const Middlewares = require('../middleware/auth');
+const bcryptjs = require('bcryptjs');
 
-const create = async (req, res) => {
-  const { email, senha } = req.body;
+const login = async (req, res) => {
+    const { email, senha } = req.body;
+    try {
+        const user = await prisma.user.findFirst({
+            where: {
+                email: email,
+            }
+        });
 
-  try {
-    // Verificar se o email já está cadastrado
-    const emailExistente = await prisma.login.findUnique({
-      where: { email },
-    });
-
-    if (emailExistente) {
-      return res.status(400).json({ message: 'Email já está em uso.' });
+        if (!user) {
+            return res.status(401).json({ message: 'E-mail ou senha incorretos!' });
+        } else {
+            const isValidsenha = await Middlewares.validatePassword(senha, user.senha);
+            if (!isValidsenha) {
+                return res.status(401).json({ message: 'E-mail ou senha incorretos!' }).end();
+            }
+            const token = jsonwebtoken.sign(
+                {
+                    id: user.id,
+                    nome: user.nome,
+                    email: user.email,
+                },
+                process.env.SECRET_JWT || 'meu_segredo_jwt',
+                { expiresIn: "30min" }
+            );
+            res.status(200).json({ token: token });
+        }
+    } catch (err) {
+        res.status(500).json({ message: 'Erro interno do servidor', error: err.message });
     }
-
-    if (!senha) {
-  return res.status(400).json({ message: 'Senha não fornecida.' });
-}
-
-
-    // Criptografar a senha antes de salvar
-    const senhaHash = await bcrypt.hash(senha, 10);
-
-    // Criar novo usuário
-    const novoLogin = await prisma.login.create({
-      data: {
-        email,
-        senha: senhaHash,
-      },
-    });
-
-    // Retornar a resposta com o novo login (sem tentar autenticar)
-    res.status(201).json(novoLogin);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao criar login' });
-  }
 };
-
 
 const read = async (req, res) => {
-  try {
-    const logins = await prisma.login.findMany(); 
-    res.status(200).json(logins);  
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao listar os logins' });
-  }
-};
+    try {
+        const users = await prisma.user.findMany();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar user' });
+    }
+}
 
+const create = async (req, res) => {
+    try {
+        req.body.senha = await Middlewares.createHash(req.body.senha);
+        const user = await prisma.user.create({
+            data: req.body
+        });
+        res.status(201).json(user);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao criar user', details: error.message });
+    }
+}
 
 const update = async (req, res) => {
-  const { id } = req.params;
-  const { nome, email, senha } = req.body;
-
-  try {
-    let dadosAtualizados = { nome, email };
-    if (senha) {
-      dadosAtualizados.senha = await bcrypt.hash(senha, 10);
+    const { id } = req.params;
+    try {
+        const user = await prisma.user.update({
+            where: { id: Number(id) },
+            data: req.body
+        });
+        res.status(202).json(user);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao atualizar user', details: error.message });
     }
+}
 
-    const loginAtualizado = await prisma.login.update({
-      where: { id: parseInt(id) },
-      data: dadosAtualizados,
-    });
-
-    res.status(200).json(loginAtualizado);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao atualizar o login' });
-  }
-};
-
-const remove = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const loginDeletado = await prisma.login.delete({
-      where: { id: parseInt(id) },
-    });
-
-    res.status(200).json({ message: 'Login deletado com sucesso', login: loginDeletado });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Erro ao deletar o login' });
-  }
-};
+const del = async (req, res) => {
+    const { id } = req.params;
+    try {
+        await prisma.user.delete({
+            where: { id: Number(id) }
+        });
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao deletar user', details: error.message });
+    }
+}
 
 module.exports = {
-  create,
-  read,
-  update,
-  remove
+    login,
+    read,
+    create,
+    update,
+    del
 };
