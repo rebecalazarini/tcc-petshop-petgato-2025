@@ -14,18 +14,16 @@ routes.get('/', (req, res) => {
 
 routes.post('/cadastro', User.create);
 routes.get('/cadastro', User.read);
-routes.patch('/cadastro/:id', User.update);
+routes.get('/cadastro/:id', User.read);
+routes.patch('/cadastro/:id', User.update); 
 routes.delete('/cadastro/:id', User.remove);
 
 routes.post('/login', Login.login);//post do token
 routes.post('/logado', auth.validaToken);
 
 routes.get('/usuarios', auth.validate, Login.read);
-
 routes.get('/usuarios/:id', Login.read);
-
 routes.post('/usuarios', Login.create);
-
 routes.patch('/usuarios/:id', auth.validate, Login.update);
 routes.delete('/usuarios/:id', auth.validate, Login.del);
 
