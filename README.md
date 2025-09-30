@@ -18,8 +18,6 @@ cd api
 ```
 - Crie o arquivo . env dentro da pasta api com a seguintes variaveis de ambiente:
 ````bash
-EMAIL_USER=seu-email@gmail.com
-EMAIL_PASS=sua-senha
 SECRET_JWT=meu_segredo_jwt
 DATABASE_URL="mysql://root@localhost:3306/fullpetgato?timezone=UTC"
 ````
