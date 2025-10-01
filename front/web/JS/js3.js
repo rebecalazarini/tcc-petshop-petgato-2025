@@ -1,4 +1,4 @@
-const dadosAPI = "http://localhost:3000/produtos"; // URL da sua API
+const dadosAPI = "https://back-end-tcc-gamma.vercel.app/produtos"; // URL da sua API
 let produtos = [];
 
 fetch(dadosAPI)
@@ -245,7 +245,7 @@ btnNext.addEventListener('click', () => {
 
  (async function () {
   const DATA_PATHS = [
-    "http://localhost:3000/produtos"
+    "https://back-end-tcc-gamma.vercel.app/produtos"
   ]; // Apenas tenta carregar da URL da API
 
   async function fetchProdutos() {
