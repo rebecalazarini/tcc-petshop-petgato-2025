@@ -40,11 +40,10 @@ function mostrarProdutos(produtos) {
 
 
 fetch("https://back-end-tcc-gamma.vercel.app/produto")
-    .then(response => {
+    .then(async response => {
         if (!response.ok) {
-            return response.text().then(text => {
-                throw new Error(text);  // Lança o erro com o corpo da resposta
-            });
+            const text = await response.text();
+          throw new Error(text); // Lança o erro com o corpo da resposta
         }
         return response.json();
     })
