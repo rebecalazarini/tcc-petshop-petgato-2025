@@ -18,8 +18,6 @@ cd api
 ```
 - Crie o arquivo . env dentro da pasta api com a seguintes variaveis de ambiente:
 ````bash
-EMAIL_USER=seu-email@gmail.com
-EMAIL_PASS=sua-senha
 SECRET_JWT=meu_segredo_jwt
 DATABASE_URL="mysql://root@localhost:3306/fullpetgato?timezone=UTC"
 ````
@@ -27,7 +25,7 @@ DATABASE_URL="mysql://root@localhost:3306/fullpetgato?timezone=UTC"
   
 - Instale as dependencias nessa ordem
 - Caso tenha a pasta migrations em prisma/migrations exclua ela e execute as dependencias
-- Não esqueça que se tiver um banco de dados com o nome cadastro em seu mysql é importante excluir para poder funcionar as depndencias
+- Não esqueça que se tiver um banco de dados com o nome cadastro em seu mysql é importante excluir para poder funcionar as dependencias
 ```bash
 npm i
 npx prisma migrate dev --name init
