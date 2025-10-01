@@ -1,19 +1,18 @@
-const dadosFront = "/assets/produtos.json";
+const dadosAPI = "http://localhost:3000/produtos"; // URL da sua API
 let produtos = [];
 
-// Busca os dados dos produtos e exibe na página
-fetch(dadosFront)
+fetch(dadosAPI)
     .then(resp => resp.json())
     .then(dados => {
         produtos = dados;
         mostrarProdutos(dados);
-        updateView(); // Atualiza a visualização após carregar os produtos
+        updateView();
     })
     .catch(error => {
-        console.error('Erro ao carregar produtos:', error);
+        console.error('Erro ao carregar produtos da API:', error);
     });
 
-// Função para exibir os produtos no container
+
 function mostrarProdutos(produtos) {
     const container = document.getElementById('produtos-container');
     container.innerHTML = ''; // Limpa o container antes de adicionar novos cards
@@ -38,7 +37,6 @@ function mostrarProdutos(produtos) {
     });
 }
 
-// Função para mostrar os detalhes do produto no modal
 function mostrarDetalhes(index) {
     const produto = produtos[index];
     const conteudo = document.getElementById('conteudo');
@@ -55,12 +53,10 @@ function mostrarDetalhes(index) {
     document.getElementById('adicionarCarrinho').setAttribute('data-id', produto.id);
 }
 
-// Função para fechar o modal
 function fecharModal() {
     document.getElementById('detalhes').classList.add('oculto');
 }
 
-// Função para adicionar produto ao carrinho
 function adicionarCarrinho() {
     const idProduto = document.getElementById('adicionarCarrinho').getAttribute('data-id');
     const produto = produtos.find(p => p.id == idProduto);
@@ -78,11 +74,11 @@ function adicionarCarrinho() {
     fecharModal();
 }
 
-// Carousel - Seleciona imagens e botões
 const imgs = document.querySelectorAll('.carousel img');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const indicatorsContainer = document.querySelector('.carousel-indicators');
+
 
 let index = 0; // índice da imagem central
 let autoSlide; // autoplay
@@ -124,7 +120,6 @@ function updateCarousel() {
     });
 }
 
-// Próxima imagem
 function next() {
     index = (index + 1) % imgs.length;
     updateCarousel();
@@ -246,32 +241,39 @@ btnNext.addEventListener('click', () => {
   updateView();
 });
 
-// Chame updateView após carregar os produtos
-// Se produtos são carregados dinamicamente, chame updateView() após mostrarProdutos()
-/* ========== JS PARA A SEÇÃO DUPLICADA (COLE APÓS O HTML ACIMA) ========== */
-(async function () {
-  const DATA_PATHS = ['/assets/produtos.json', 'produtos.json']; // tenta 2 caminhos
+
+
+ (async function () {
+  const DATA_PATHS = [
+    "http://localhost:3000/produtos"
+  ]; // Apenas tenta carregar da URL da API
+
   async function fetchProdutos() {
+    // Tenta carregar os produtos da URL especificada
     for (const p of DATA_PATHS) {
       try {
         const resp = await fetch(p);
-        if (!resp.ok) continue;
+        if (!resp.ok) {
+          console.error(`Erro ao buscar dados de ${p}: ${resp.statusText}`);
+          continue;
+        }
         const json = await resp.json();
-        return json;
+        return json; // Retorna os dados se a resposta for bem-sucedida
       } catch (e) {
-        // tenta próximo
+        console.error(`Erro ao fazer requisição para ${p}:`, e);
+        // Tenta o próximo caminho, mas no seu caso temos apenas um caminho.
       }
     }
-    throw new Error('Não foi possível carregar produtos.json (verifique o caminho).');
+    throw new Error('Não foi possível carregar os produtos da API (verifique o caminho).');
   }
 
   let produtos = [];
   try {
-    produtos = await fetchProdutos();
+    produtos = await fetchProdutos(); // Chama a função que busca os produtos
   } catch (err) {
     console.error(err);
     alert('Erro: não foi possível carregar os produtos. Verifique o arquivo produtos.json.');
-    return;
+    return; // Sai da execução caso falhe ao carregar os produtos
   }
 
   const container = document.getElementById('produtos-container-dup');
@@ -283,7 +285,7 @@ btnNext.addEventListener('click', () => {
 
   // Renderiza cards
   function renderProdutosGrid() {
-    container.innerHTML = '';
+    container.innerHTML = ''; // Limpa o container antes de renderizar novos cards
     produtos.forEach(p => {
       const card = document.createElement('div');
       card.className = 'card-dup';
@@ -304,10 +306,10 @@ btnNext.addEventListener('click', () => {
   // Escapa texto para evitar quebra de HTML
   function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, s =>
-      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[s]);
   }
 
-  // mostra modal com detalhes + produtos relacionados
+  // Mostra modal com detalhes + produtos relacionados
   function showDetails(id) {
     const produto = produtos.find(p => Number(p.id) === Number(id));
     if (!produto) {
@@ -326,10 +328,10 @@ btnNext.addEventListener('click', () => {
       </div>
     `;
 
-    // preparar botão adicionar do modal
+    // Preparar botão adicionar do modal
     btnAdicionarModal.setAttribute('data-id', produto.id);
 
-    // gerar produtos relacionados (até 3, excluindo o atual)
+    // Gerar produtos relacionados (até 3, excluindo o atual)
     renderRelated(produto.id);
 
     modal.classList.remove('oculto');
@@ -358,13 +360,24 @@ btnNext.addEventListener('click', () => {
     });
   }
 
-  // embaralha array in-place (Fisher-Yates)
-  function shuffleArray(a) {
-    for (let i = a.length - 1; i > 0; i--) {
+  // Função para embaralhar itens (produtos relacionados)
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+      [array[i], array[j]] = [array[j], array[i]]; // troca os elementos
     }
   }
+
+  // Inicia a renderização dos produtos
+  renderProdutosGrid();
+})();
+
+
+
+
+
+
+
 
   // adiciona ao carrinho (localStorage)
   function adicionarAoCarrinho(id) {
@@ -426,4 +439,3 @@ btnNext.addEventListener('click', () => {
 
   // render inicial
   renderProdutosGrid();
-})();
