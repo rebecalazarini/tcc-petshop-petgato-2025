@@ -37,6 +37,28 @@ function mostrarProdutos(produtos) {
     });
 }
 
+
+
+fetch("https://back-end-tcc-gamma.vercel.app/produto")
+    .then(response => {
+        if (!response.ok) {
+            return response.text().then(text => {
+                throw new Error(text);  // Lança o erro com o corpo da resposta
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Produtos:", data);
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
+
+
+
+
+
 function mostrarDetalhes(index) {
     const produto = produtos[index];
     const conteudo = document.getElementById('conteudo');
