@@ -36,3 +36,11 @@ enum Especie {
   peixe
   passaro
 }
+
+model Produto{
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(150)
+  descricao String @db.VarChar(255)
+  preco Float
+  imagem String @db.VarChar(255)
+}

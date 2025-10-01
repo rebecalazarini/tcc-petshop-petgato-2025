@@ -6,6 +6,7 @@ const User = require('./controllers/user.js');
 const Consulta = require('./controllers/consulta.js');
 const Login = require('./controllers/login.js');
 const auth = require('./middleware/auth.js');
+const Produtos = require('./controllers/produtos.js');
 
 routes.get('/', (req, res) => {
     res.json({ message: 'Rota funcionando!' });
@@ -31,5 +32,12 @@ routes.post('/consultas', Consulta.create);
 routes.get('/consultas', Consulta.read);
 routes.patch('/consultas/:id', Consulta.update);
 routes.delete('/consultas/:id', Consulta.remove);
+
+routes.post('/produtos', Produtos.create);
+routes.get('/produtos', Produtos.read);
+routes.get('/produtos/:id', Produtos.readById);
+routes.patch('/produtos/:id', Produtos.update);
+routes.delete('/produtos/:id', Produtos.remove);
+
 
 module.exports = routes;

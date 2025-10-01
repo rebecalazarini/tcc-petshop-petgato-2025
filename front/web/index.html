@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Cabeçalho -->
+
   <header>
     <h1>𝓟𝓮𝓽 𝓖𝓪𝓽𝓸</h1>
-    <!-- Barra de pesquisa -->
+
     <li class="search-icon">
     </li>
-    <!-- Botões do cabeçalho -->
+
     <button onclick="window.location.href='carrinho.html'">
       <img src="../web/images/caixa-de-coracao.png" alt="Pedidos" />
     </button>
@@ -27,7 +27,6 @@
     </button>
   </header>
 
-  <!-- Segundo cabeçalho -->
   <div class="Containerheader">
     <button onclick="window.location.href='consulta.html'">
       <img src="../web/images/veterinario.gif" alt="Consulta" width="40" height="40" />Consulta
@@ -42,8 +41,6 @@
       <img src="../web/images/noticias.gif" alt="Adoção" width="40" height="40" />Cadastrar
     </button>
   </div>
-
-  <!-- Cards no começo da página -->
   <br /><br /><br /><br /><br />
   <div class="anuncios">
     <br /><br />
@@ -73,14 +70,11 @@
       </p>
     </button>
   </div>
-
-  <!-- Banner pequeno -->
   <div class="banner">
     <h5 class="banner-text">Frete fixo de R$10.00 reais para todo o Brasil</h5>
     <h5 class="banner-text active">Compras acima de R$100,00 ganham um brinde</h5>
   </div>
 
-  <!-- Carousel de imagens -->
   <div class="carousel" aria-label="Galeria de imagens de Petshop">
     <br />
     <img src="racao.gif" alt="petgato" class="active" />
@@ -90,13 +84,9 @@
     <button class="next" aria-label="Próxima imagem">&#10095;</button>
     <br /><br />
   </div>
-
-  <!-- Container dos indicadores (bolinhas) -->
   <div class="carousel-indicators" aria-label="Indicadores do carousel">
-    <!-- As bolinhas serão criadas dinamicamente pelo JavaScript -->
   </div>
 
-  <!-- Cards de frete e de 3 vezes sem juros -->
   <div class="juros">
     <button onclick="window.location.href='confira.html'">
       <img src="../web/images/relogio.png" alt="Receba em algumas horas" width="40" height="40" />
@@ -131,11 +121,11 @@
   <div class="text">
     <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
   </div>
-<!-- Produtos com wrapper e navegação -->
+
 <main class="mainContainer">
   <div class="produtos-wrapper">
     <div id="produtos-container">
-      <!-- cards aqui -->
+     
     </div>
   
   <div class="produtos-navigation" style="width: 80%; display: flex; justify-content: space-between; margin: 10px auto;">
@@ -144,16 +134,14 @@
   </div></div>
 </main>
 <br><br><br>
-  <!-- Botões de animais -->
-   <!-- substitua sua antiga div.fundoparcial por esta estrutura -->
+
 <section class="section-fundo">
-  <!-- SVG que desenha o bloco ondulado (topo + base) -->
+
   <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
-    <!-- o path abaixo cria ondas no topo e nas extremidades inferiores -->
     <path fill="#B4E3F1" d="M0,80 C150,0 350,0 600,80 C850,160 1050,160 1440,80 L1440,320 C1200,260 1000,260 800,320 C600,380 400,380 200,320 L0,320 Z"></path>
   </svg>
 <br>
-  <!-- aqui vai todo o seu conteúdo existente (copie/cole tudo dentro) -->
+
   <div class="fundoparcial-content"><br><br><br><br>
     <div class="pet"><h1><b style="font-size: 35px;">Tudo para Pets:</b></h1></div>
 
@@ -190,6 +178,7 @@
     </div>
 
 </section>
+
 <br><br><br><br><br><br>
 <div class="cb">
   <h1><b style="font-size: 45px;">Cuidados Básicos:</b></h1><br>
@@ -206,12 +195,13 @@
   <img src="../web/images/veterinario.png">
 </div>
 </div>
+
 <br><br><br><br><br><br>
-<!-- ========== SEÇÃO DUPLICADA DE PRODUTOS (COLE NO FINAL DA PÁGINA) ========== -->
+
 <main class="mainContainer-dup">
   <div id="produtos-container-dup" class="produtos-grid-dup"></div>
 
-  <!-- MODAL DE DETALHES -->
+
   <div id="detalhes-dup" class="modal-dup oculto">
     <div class="janela-dup">
       <div class="janela-header-dup">
@@ -229,34 +219,7 @@
       </div>
     </div>
   </div>
-</main>
-
-
-  <!-- Ícone de WhatsApp -->
-  <div class="tooltip">Precisa de ajuda?</div>
-
-  <!-- Botão abrir WhatsApp -->
-  <button class="toggle-button" id="open-button">
-    <i class="fab fa-whatsapp"></i>
-  </button>
-
-  <!-- Popup WhatsApp -->
-  <div class="popup" id="popup">
-    <div class="popup-header">
-      <div>Inicie uma conversa com nosso administrativo para tirar alguma dúvida!</div>
-      <button class="close-btn" id="close-button">&times;</button>
-    </div>
-    <div class="popup-body">
-      <div class="contact" onclick="window.open('https://wa.me/19995601381','_blank')">
-        <img src="" alt="Pet Gatô" />
-        <div class="contact-info">
-          <strong>Pet Gatô</strong>
-          <span>Pet Gatô</span>
-        </div>
-        <i class="fab fa-whatsapp"></i>
-      </div>
-    </div>
-  </div>
+</main> 
 
   <script src="./JS/js3.js"></script>
 </body>
