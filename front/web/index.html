@@ -9,31 +9,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-
+  <!-- Cabeçalho -->
   <header>
     <h1>𝓟𝓮𝓽 𝓖𝓪𝓽𝓸</h1>
-
-<<<<<<< HEAD
-    <button onclick="window.location.href='carrinho.html'">
-      <img src="../web/images/adicionar-ao-carrinho.png" alt="Carrinho" />
-    </button>
-    <button onclick="window.location.href='login.html'">
-      <img src="../web/images/pessoa.png" alt="Login" />
-    </button>
-
-=======
+    <!-- Barra de pesquisa -->
     <li class="search-icon">
     </li>
-
+    <!-- Botões do cabeçalho -->
+    <button onclick="window.location.href='carrinho.html'">
+      <img src="../web/images/caixa-de-coracao.png" alt="Pedidos" />
+    </button>
     <button onclick="window.location.href='carrinho.html'">
       <img src="../web/images/adicionar-ao-carrinho.png" alt="Carrinho" />
     </button>
     <button onclick="window.location.href='login.html'">
       <img src="../web/images/pessoa.png" alt="Login" />
     </button>
->>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
   </header>
 
+  <!-- Segundo cabeçalho -->
   <div class="Containerheader">
     <button onclick="window.location.href='consulta.html'">
       <img src="../web/images/veterinario.gif" alt="Consulta" width="40" height="40" />Consulta
@@ -47,61 +41,9 @@
     <button onclick="window.location.href='cadastrar.html'">
       <img src="../web/images/noticias.gif" alt="Adoção" width="40" height="40" />Cadastrar
     </button>
-<<<<<<< HEAD
-  </div>
-  
-  <br /><br /><br /><br /><br />
-  
-  <div class="anuncios">
-    <br /><br />
-    <button onclick="window.location.href='doacoes.html'">
-      <img src="../web/images/doacao.gif" alt="Doação" width="40" height="40" />
-      <p style="color: black;">
-        <b style="color: rgb(75, 197, 235);">Brinquedos que fazem a diferença!</b><br />
-        Doe e ajude a levar felicidade para quem mais precisa.<br />
-        <b style="color: rgb(75, 197, 235);">Doe agora -></b>
-      </p>
-    </button>
-
-    <button onclick="window.location.href='consulta.html'">
-      <img src="../web/images/veterinario.gif" alt="Acupuntura" width="40" height="40" />
-      <p style="color: black;">
-        <b style="color: rgb(75, 197, 235);">Consulta para pets:</b><br />
-        amor e saúde em cada ponto!<br />
-        <b style="color: rgb(75, 197, 235);">Agende Agora! -></b>
-      </p>
-      <br />
-    </button>
-
-    <button onclick="window.location.href='adocao.html'">
-      <img src="../web/images/salve-os-animais.gif" alt="Blog" width="40" height="40" />
-      <p style="color: black;">
-        <b style="color: rgb(75, 197, 235);">Amor e cuidado!</b><br />
-        Faça a vida de um animalzinho feliz hoje,Adote um pet!<br />
-        <b style="color: rgb(75, 197, 235);">Adote Agora -></b>
-      </p>
-    </button>
-  </div>
-  
-  <div class="banner">
-    <h5 class="banner-text">Frete fixo de R$10.00 reais para todo o Brasil</h5>
-    <h5 class="banner-text active">Compras acima de R$100,00 ganham um brinde</h5>
   </div>
 
-  <div class="carousel" aria-label="Galeria de imagens de Petshop">
-    <br />
-    <img src="racao.gif" alt="petgato" class="active" />
-    <img src="petisco.gif" alt="petshop" />
-    <img src="tosa.gif" alt="cachorro" />
-    <button class="prev" aria-label="Imagem anterior">&#10094;</button>
-    <button class="next" aria-label="Próxima imagem">&#10095;</button>
-    <br /><br />
-  </div>
-  <div class="carousel-indicators" aria-label="Indicadores do carousel">
-  </div>
-
-=======
-  </div>
+  <!-- Cards no começo da página -->
   <br /><br /><br /><br /><br />
   <div class="anuncios">
     <br /><br />
@@ -131,11 +73,14 @@
       </p>
     </button>
   </div>
+
+  <!-- Banner pequeno -->
   <div class="banner">
     <h5 class="banner-text">Frete fixo de R$10.00 reais para todo o Brasil</h5>
     <h5 class="banner-text active">Compras acima de R$100,00 ganham um brinde</h5>
   </div>
 
+  <!-- Carousel de imagens -->
   <div class="carousel" aria-label="Galeria de imagens de Petshop">
     <br />
     <img src="racao.gif" alt="petgato" class="active" />
@@ -145,10 +90,13 @@
     <button class="next" aria-label="Próxima imagem">&#10095;</button>
     <br /><br />
   </div>
+
+  <!-- Container dos indicadores (bolinhas) -->
   <div class="carousel-indicators" aria-label="Indicadores do carousel">
+    <!-- As bolinhas serão criadas dinamicamente pelo JavaScript -->
   </div>
 
->>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
+  <!-- Cards de frete e de 3 vezes sem juros -->
   <div class="juros">
     <button onclick="window.location.href='confira.html'">
       <img src="../web/images/relogio.png" alt="Receba em algumas horas" width="40" height="40" />
@@ -183,11 +131,11 @@
   <div class="text">
     <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
   </div>
-
+<!-- Produtos com wrapper e navegação -->
 <main class="mainContainer">
   <div class="produtos-wrapper">
     <div id="produtos-container">
-     
+      <!-- cards aqui -->
     </div>
   
   <div class="produtos-navigation" style="width: 80%; display: flex; justify-content: space-between; margin: 10px auto;">
@@ -196,14 +144,16 @@
   </div></div>
 </main>
 <br><br><br>
-
+  <!-- Botões de animais -->
+   <!-- substitua sua antiga div.fundoparcial por esta estrutura -->
 <section class="section-fundo">
-
+  <!-- SVG que desenha o bloco ondulado (topo + base) -->
   <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+    <!-- o path abaixo cria ondas no topo e nas extremidades inferiores -->
     <path fill="#B4E3F1" d="M0,80 C150,0 350,0 600,80 C850,160 1050,160 1440,80 L1440,320 C1200,260 1000,260 800,320 C600,380 400,380 200,320 L0,320 Z"></path>
   </svg>
 <br>
-
+  <!-- aqui vai todo o seu conteúdo existente (copie/cole tudo dentro) -->
   <div class="fundoparcial-content"><br><br><br><br>
     <div class="pet"><h1><b style="font-size: 35px;">Tudo para Pets:</b></h1></div>
 
@@ -240,7 +190,6 @@
     </div>
 
 </section>
-
 <br><br><br><br><br><br>
 <div class="cb">
   <h1><b style="font-size: 45px;">Cuidados Básicos:</b></h1><br>
@@ -257,13 +206,32 @@
   <img src="../web/images/veterinario.png">
 </div>
 </div>
+<br><br><br><br><br><br>
+<!-- ========== SEÇÃO DUPLICADA DE PRODUTOS (COLE NO FINAL DA PÁGINA) ========== -->
+<main class="mainContainer-dup">
+  <div id="produtos-container-dup" class="produtos-grid-dup"></div>
 
-</main> 
+  <!-- MODAL DE DETALHES -->
+  <div id="detalhes-dup" class="modal-dup oculto">
+    <div class="janela-dup">
+      <div class="janela-header-dup">
+        <h3>Produtos Relacionados</h3>
+        <button id="fechar-detalhes-dup" aria-label="Fechar">X</button>
+      </div>
+
+      <div id="conteudo-dup" class="conteudo-produto-dup"></div>
+
+      <h4 style="margin:10px 0 5px 0">Você também pode gostar:</h4>
+      <div id="related-dup" class="related-products-dup"></div>
+
+      <div class="modal-actions-dup">
+        <button id="adicionarCarrinho-dup">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </div>
+</main>
+
 
   <script src="./JS/js3.js"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f

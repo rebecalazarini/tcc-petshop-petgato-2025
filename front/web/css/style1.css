@@ -26,12 +26,6 @@ body {
   flex-direction: column; /* ORGANIZA OS ELEMENTOS EM COLUNAS */
   align-items: center; /* CENTRALIZA OS ELEMENTOS NA PÁGINA */
 }
-@media (max-width: 768px) {
-  body {
-    width: 100%;
-    overflow: hidden;
-  }
-}
 
 /* CABEÇALHO UM */
 header {
@@ -57,11 +51,7 @@ header h1 {
   align-items: center;
   top: 0px;
   left: 8%; /* POSIÇÃO DO TEXTO */
-<<<<<<< HEAD
-  cursor: pointer;
-=======
   cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DO TEXTO, VAI APARECER UMA MÃOZINHA */
->>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 }
 
 header img {
@@ -74,11 +64,7 @@ header button {
   border: none;
   color: black; /* COR DO TEXTO */
   font-weight: bold; /* TEXTO EM NEGRITO */
-<<<<<<< HEAD
-  cursor: pointer;
-=======
   cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DOS BOTÕES, VAI APARECER UMA MÃOZINHA */
->>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 }
 
 header button:hover {
@@ -87,28 +73,14 @@ header button:hover {
   font-size: 1.8vh;
 }
 
-<<<<<<< HEAD
-=======
 /* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DO TÍTULO */
->>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 @media (max-width: 768px) {
   header h1 {
     width: 60%;
     font-size: 30px;
   }
 }
-@media (max-width: 768px) {
-  header {
-    width: 78%;
-    font-size: 30px;
-  }
-}
 
-<<<<<<< HEAD
-@media (max-width: 768px) {
-  header button img {
-    width: 25px;
-=======
 /* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DAS IMAGENS */
 @media (max-width: 768px) {
   header button img {
@@ -118,14 +90,43 @@ header button:hover {
 
 /* BARRA DE PESQUISA */
 .search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 60%;
+  border: none;
+  border-radius: 10px;
+}
+
+.search-icon input {
+  background: rgba(253, 249, 249, 0.795);
+  border: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 14px;
+  width: 40%;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: width 0.4s ease-in-out; /* ANIMAÇÃO DE ABRIR A BARRA DE PESQUISA */
+}
+
+.search-icon .icon {
+  position: relative;
+  top: 0;
+  left: 2%;
+}
+
+.search-icon input:focus {
+  width: 80%; /* TAMANHO DA BARRA DE PESQUISA AO CLICAR */
+  outline: none; /* REMOVE A BORDA AZUL QUE APARECE AO CLICAR NA BARRA DE PESQUISA */
 }
 
 /* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
 @media (max-width: 768px) {
   .search-icon {
     display: none; /* some completamente */
->>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
   }
 }
 
@@ -138,8 +139,9 @@ header button:hover {
   width: 100%;
   height: 45px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  gap: 5%;
+  justify-content: center;
 }
 
 .Containerheader button {
@@ -209,6 +211,7 @@ header button:hover {
   left: -6%;
 }
 
+/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
 @media (max-width: 768px) {
   .anuncios {
     display: none; /* some completamente */
@@ -408,17 +411,10 @@ header button:hover {
 .section-fundo {
   position: relative;
   width: 100%;
-  min-height: 0;          /* controla "a altura" do bloco — ajuste se precisar */
+  min-height: 540px;          /* controla "a altura" do bloco — ajuste se precisar */
   margin: 40px 0;             /* espaçamento externo (opcional) */
   overflow: visible;
 }
-
-@media (max-width: 768px) {
-  .section-fundo {
-    width: 40%;
-    position: relative;
-    top: 0;left: 0;
-  }}
 
 /* SVG do fundo (faz as ondulações nas extremidades) */
 .fundo-svg {
@@ -468,11 +464,6 @@ header button:hover {
   color: #003;                /* cor do texto do botão (ajuste se quiser) */
   font-weight: 600;
 }
-
-@media (max-width: 768px) {
-  .fundo-svg, .fundoparcial-content, .animal, .pet, .section-fundo  {
-    display: none; /* some completamente */
-  }}
 
 /* img dentro do botão */
 .animal button img {
@@ -542,8 +533,8 @@ header button:hover {
 
 /* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
 @media (max-width: 768px) {
-  .juros {
-    display: none; 
+  .juros img {
+    display: none; /* some completamente */
   }
 }
 
@@ -695,15 +686,7 @@ header button:hover {
   background-color: white; /* Fundo branco */
   box-shadow: 0 0 5px var(--t1); /* Sombra com cor translúcida roxa definida em --t1 */
   padding: 10px; }
-.cb{
-  width: 100%;
-}
 
-@media (max-width: 768px) {
-  .cb {
-    display: none; /* some completamente */
-
-  }}
   .tosavet{
     width: 90%;
     height: 150%;
@@ -713,16 +696,6 @@ header button:hover {
     top: 0;left: -2%;
     gap: 3%;
 }
-
-@media (max-width: 768px) {
-  .tosavet {
-    display: none; /* some completamente */
-
-  }
-.h2 {
-    width: 0;
-    font-size: 1px;
-  }}
     .banho, .vet {
       width: 70%;
       height: 350px;
