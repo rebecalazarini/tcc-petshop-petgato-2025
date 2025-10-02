@@ -1,121 +1,203 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style1.css">
-    <title>Pet Shop</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style1.css" />
+  <link rel="icon" href="../web/images/icon.jpg" type="image/x-icon" />
+  <title>Pet Gatô: o melhor petshop online, em todos os aspectos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-
 <body>
 
-    <header>
-        <h1>𝓟𝓮𝓽 𝓖𝓪𝓽𝓸</h1>
-        <button onclick="window.location.href='cadastrar.html'">Cadastrar</button>
-        <button onclick="window.location.href='login.html'">Login</button>
-        <button onclick="window.location.href='adocao.html'">Adoção</button>
-        <button onclick="window.location.href='consulta.html'">Consulta</button>
-        <button onclick="window.location.href='carrinho.html'">Carrinho</button>
-    </header>
+  <header>
+    <h1>𝓟𝓮𝓽 𝓖𝓪𝓽𝓸</h1>
 
-    <div class="banner">
-        <h1>Promoção Especial!</h1>
-        <h5>Compras acima de R$100,00 ganham um brinde</h5>
-        <h5>Frete fixo de R$10.00 reais para todo o Brasil</h5>
-    </div>
-    <div class="header">
-        <img src="pepet3.png" class="pet" alt="logo">
-    </div>
+    <button onclick="window.location.href='carrinho.html'">
+      <img src="../web/images/adicionar-ao-carrinho.png" alt="Carrinho" />
+    </button>
+    <button onclick="window.location.href='login.html'">
+      <img src="../web/images/pessoa.png" alt="Login" />
+    </button>
 
+  </header>
 
-    <br>
-    <br>
-
-    <main class="mainContainer">
-        <div id="produtos-container">
-            <div id="detalhes" class="modal oculto">
-                <div class="janela">
-                    <div>
-                        <h3>Detalhes do Produto</h3>
-                        <button onclick="document.getElementById('detalhes').classList.add('oculto')">X</button>
-                    </div>
-                    <div id="conteudo"></div>
-                    <button id="adicionarCarrinho" onclick="adicionarCarrinho()">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- Tooltip -->
-<div class="tooltip">Precisa de ajuda?</div>
-
-<!-- Botão abrir -->
-<button class="toggle-button" id="open-button">
-  <i class="fab fa-whatsapp"></i>
-</button>
-
-<!-- Popup -->
-<div class="popup" id="popup">
-  <div class="popup-header">
-    <div>Iniciar uma conversa</div>
-    <button class="close-btn" id="close-button">&times;</button>
+  <div class="Containerheader">
+    <button onclick="window.location.href='consulta.html'">
+      <img src="../web/images/veterinario.gif" alt="Consulta" width="40" height="40" />Consulta
+    </button>
+    <button onclick="window.location.href='adocao.html'">
+      <img src="../web/images/salve-os-animais.gif" alt="Adoção" width="40" height="40" />Adoção
+    </button>
+    <button onclick="window.location.href='doacoes.html'">
+      <img src="../web/images/doacao.gif" alt="Doações" width="40" height="40" />Doações
+    </button>
+    <button onclick="window.location.href='cadastrar.html'">
+      <img src="../web/images/noticias.gif" alt="Adoção" width="40" height="40" />Cadastrar
+    </button>
   </div>
-  <div class="popup-body">
-    <p>Olá! Escolha alguém do nosso time para conversar pelo WhatsApp ;)</p>
+  
+  <br /><br /><br /><br /><br />
+  
+  <div class="anuncios">
+    <br /><br />
+    <button onclick="window.location.href='doacoes.html'">
+      <img src="../web/images/doacao.gif" alt="Doação" width="40" height="40" />
+      <p style="color: black;">
+        <b style="color: rgb(75, 197, 235);">Brinquedos que fazem a diferença!</b><br />
+        Doe e ajude a levar felicidade para quem mais precisa.<br />
+        <b style="color: rgb(75, 197, 235);">Doe agora -></b>
+      </p>
+    </button>
 
-     <div class="contact" onclick="window.open('https://wa.me/19987735021','_blank')">
-     <img src="./file negueba.jpg" alt="Rebeca PetGato">
+    <button onclick="window.location.href='consulta.html'">
+      <img src="../web/images/veterinario.gif" alt="Acupuntura" width="40" height="40" />
+      <p style="color: black;">
+        <b style="color: rgb(75, 197, 235);">Consulta para pets:</b><br />
+        amor e saúde em cada ponto!<br />
+        <b style="color: rgb(75, 197, 235);">Agende Agora! -></b>
+      </p>
+      <br />
+    </button>
 
-      <div class="contact-info">
-        <strong>Rebeca PetGato</strong>
-        <span>Adoção/Atendimento</span>
-      </div>
-      <i class="fab fa-whatsapp"></i>
+    <button onclick="window.location.href='adocao.html'">
+      <img src="../web/images/salve-os-animais.gif" alt="Blog" width="40" height="40" />
+      <p style="color: black;">
+        <b style="color: rgb(75, 197, 235);">Amor e cuidado!</b><br />
+        Faça a vida de um animalzinho feliz hoje,Adote um pet!<br />
+        <b style="color: rgb(75, 197, 235);">Adote Agora -></b>
+      </p>
+    </button>
+  </div>
+  
+  <div class="banner">
+    <h5 class="banner-text">Frete fixo de R$10.00 reais para todo o Brasil</h5>
+    <h5 class="banner-text active">Compras acima de R$100,00 ganham um brinde</h5>
+  </div>
+
+  <div class="carousel" aria-label="Galeria de imagens de Petshop">
+    <br />
+    <img src="racao.gif" alt="petgato" class="active" />
+    <img src="petisco.gif" alt="petshop" />
+    <img src="tosa.gif" alt="cachorro" />
+    <button class="prev" aria-label="Imagem anterior">&#10094;</button>
+    <button class="next" aria-label="Próxima imagem">&#10095;</button>
+    <br /><br />
+  </div>
+  <div class="carousel-indicators" aria-label="Indicadores do carousel">
+  </div>
+
+  <div class="juros">
+    <button onclick="window.location.href='confira.html'">
+      <img src="../web/images/relogio.png" alt="Receba em algumas horas" width="40" height="40" />
+      <p style="color: rgb(112, 109, 109);">
+        <b>Receba em algumas horas!</b><br />
+        Confira as regras ->
+      </p>
+    </button>
+    <button onclick="window.location.href='confira.html'">
+      <img src="../web/images/cartao.png" alt="Parcele em 3x sem juros" width="40" height="40" />
+      <p style="color: rgb(112, 109, 109);">
+        <b>Parcele em 3x sem juros!</b><br />
+        Confira as regras ->
+      </p>
+    </button>
+    <button onclick="window.location.href='confira.html'">
+      <img src="../web/images/entrega-rapida.png" alt="Frete Grátis" width="40" height="40" />
+      <p style="color: rgb(112, 109, 109);">
+        <b>Frete Grátis!</b><br />
+        Confira as regras ->
+      </p>
+    </button>
+    <button onclick="window.location.href='confira.html'">
+      <img src="../web/images/petshop.png" alt="Retire e troque seu pedido na loja" width="40" height="40" />
+      <p style="color: rgb(112, 109, 109);">
+        <b>Retire e troque seu pedido na loja!</b><br />
+        Confira as regras ->
+      </p>
+    </button>
+  </div>
+  <br><br><br>
+  <div class="text">
+    <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
+  </div>
+
+<main class="mainContainer">
+  <div class="produtos-wrapper">
+    <div id="produtos-container">
+     
+    </div>
+  
+  <div class="produtos-navigation" style="width: 80%; display: flex; justify-content: space-between; margin: 10px auto;">
+    <button id="btn-prev">Anterior</button>
+    <button id="btn-next">Próximo</button>
+  </div></div>
+</main>
+<br><br><br>
+
+<section class="section-fundo">
+
+  <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#B4E3F1" d="M0,80 C150,0 350,0 600,80 C850,160 1050,160 1440,80 L1440,320 C1200,260 1000,260 800,320 C600,380 400,380 200,320 L0,320 Z"></path>
+  </svg>
+<br>
+
+  <div class="fundoparcial-content"><br><br><br><br>
+    <div class="pet"><h1><b style="font-size: 35px;">Tudo para Pets:</b></h1></div>
+
+    <div class="animal">
+      <button onclick="window.location.href='pedidos.html'">
+        <img src="../web/images/cachorro.gif" alt="Cachorros" />Cachorros
+      </button>
+      <button onclick="window.location.href='favorito.html'">
+        <img src="../web/images/gato.gif" alt="Gatos" />Gatos
+      </button>
+      <button onclick="window.location.href='pedidos.html'">
+        <img src="../web/images/peixe-palhaco.gif" alt="Peixes" />Outros pets
+      </button>
     </div>
 
-    <div class="contact" onclick="window.open('https://wa.me/19995601381','_blank')">
-      <img src="cricri.jpg" alt="Cris PetGato">
-      <div class="contact-info">
-        <strong>Cris PetGato</strong>
-        <span>Financeiro/Creche</span>
-      </div>
-      <i class="fab fa-whatsapp"></i>
+    <div class="pet"><h1><b style="font-size: 35px;">Outros:</b></h1></div>
+
+    <div class="animal">
+      <button onclick="window.location.href='pedidos.html'">
+        <img src="../web/images/cachorro.gif" alt="Cachorros" />Ração,petisco e Biscoito
+      </button>
+      <button onclick="window.location.href='favorito.html'">
+        <img src="../web/images/gato.gif" alt="Gatos" />Areias, Banheiro, Higiene e Limpeza
+      </button>
+      <button onclick="window.location.href='pedidos.html'">
+        <img src="../web/images/peixe-palhaco.gif" alt="Peixes" />Farmácia
+      </button>
+      <button onclick="window.location.href='favorito.html'">
+        <img src="../web/images/animais.gif" alt="Passáros" />Casas e Aquários
+      </button>
+       <button onclick="window.location.href='favorito.html'">
+        <img src="../web/images/animais.gif" alt="Passáros" />Coleiras, Guia e Peitoral
+      </button>
     </div>
 
-    <div class="contact" onclick="window.open('https://wa.me/19987106708','_blank')">
-      <img src="larissa.jpeg" alt="Larissa PetGato">
-      <div class="contact-info">
-        <strong>Larissa PetGato</strong>
-        <span>Atendimento/Veterinaria</span>
-      </div>
-      <i class="fab fa-whatsapp"></i>
-    </div>
+</section>
 
-     <div class="contact" onclick="window.open('https://wa.me/19987106708','_blank')">
-      <img src="ls.jpg" alt="Larissa Santos PetGato">
-      <div class="contact-info">
-        <strong>Larissa Santos PetGato</strong>
-        <span>Suporte Técnico/Financeiro</span>
-      </div>
-      <i class="fab fa-whatsapp"></i>
-    </div>
+<br><br><br><br><br><br>
+<div class="cb">
+  <h1><b style="font-size: 45px;">Cuidados Básicos:</b></h1><br>
+</div><br><br><br>
+<div class="tosavet"><br>
+  <div class="banho">
+  <h2><b style="font-size: 50px;">Banho<br> & Tosa</b><br><br>
+  Higiene e Conforto para o seu melhor amigo!</h2>
+  <img src="../web/images/banho-tosa-pet-shop.jpg">
+</div><br>
+<div class="vet">
+  <h2><br><br><b style="font-size: 50px;">Veterinário</b><br><br>
+  A saúde de seu pet, a sua prioridade</h2>
+  <img src="../web/images/veterinario.png">
+</div>
+</div>
 
-     <div class="contact" onclick="window.open('https://wa.me/19987106708','_blank')">
-      <img src="./ivete.jpg" alt="Evelyn PetGato">
-      <div class="contact-info">
-        <strong>Evelyn PetGato</strong>
-        <span>Creche/Suporte</span>
-      </div>
-      <i class="fab fa-whatsapp"></i>
-    </div>
+</main> 
 
+  <script src="./JS/js3.js"></script>
 </body>
-<script src="./JS/js3.js"></script>
-
 </html>

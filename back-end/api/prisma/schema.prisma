@@ -16,7 +16,7 @@ model User {
 model consulta {
   id Int @id @default(autoincrement())
   nomePet  String @db.VarChar(150)
-  especiePet String 
+  especiePet Especie 
   racaPet String @db.VarChar(25)
   nomeProprietario String @db.VarChar(255)
   nascpet DateTime
@@ -26,20 +26,21 @@ model consulta {
 
 model Login{
   id Int @id @default(autoincrement())
-  email String @db.VarChar(100)
+  email String @db.VarChar(100) @unique 
   senha String @db.VarChar(60) @unique
-}
-
-model adocao {
-  id  Int @id @default(autoincrement())
-  nome String  @db.VarChar(30)
-  peso String @db.VarChar(3)
-  idade String @db.VarChar(3)
-  raca String @db.VarChar(10)
+  nome String?
 }
 enum Especie {
   cachorro
   gato
   peixe
   passaro
+}
+
+model Produto{
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(150)
+  descricao String @db.VarChar(255)
+  preco Float
+  imagem String @db.VarChar(255)
 }

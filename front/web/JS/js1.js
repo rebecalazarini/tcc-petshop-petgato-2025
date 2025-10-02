@@ -8,7 +8,7 @@ async function Cadastrar() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/u", {
+        const response = await fetch("http://localhost:3000/cadastro", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, senha })
@@ -35,19 +35,6 @@ async function Voltar() {
         window.location.href = "index.html;"
     }
 }
-
- const openButton = document.getElementById('open-button');
-  const closeButton = document.getElementById('close-button');
-  const popup = document.getElementById('popup');
-
-  openButton.addEventListener('click', () => {
-    popup.classList.add('show');
-  });
-
-  closeButton.addEventListener('click', () => {
-    popup.classList.remove('show');
-  });
-
   // Fecha ao clicar fora
   window.addEventListener('click', function(event) {
     if (!popup.contains(event.target) && event.target !== openButton) {
