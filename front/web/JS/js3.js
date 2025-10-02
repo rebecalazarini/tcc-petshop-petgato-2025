@@ -1,19 +1,31 @@
-const dadosFront = "/assets/produtos.json";
+const dadosAPI = "https://back-end-tcc-gamma.vercel.app/produto"; // URL da sua API
 let produtos = [];
 
+<<<<<<< HEAD
 // Busca os dados dos produtos e exibe na página
 fetch(dadosFront)
+=======
+fetch(dadosAPI)
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
     .then(resp => resp.json())
     .then(dados => {
         produtos = dados;
         mostrarProdutos(dados);
+<<<<<<< HEAD
         updateView(); // Atualiza a visualização após carregar os produtos
+=======
+        updateView();
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
     })
     .catch(error => {
-        console.error('Erro ao carregar produtos:', error);
+        console.error('Erro ao carregar produtos da API:', error);
     });
 
+<<<<<<< HEAD
 // Função para exibir os produtos no container
+=======
+
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 function mostrarProdutos(produtos) {
     const container = document.getElementById('produtos-container');
     container.innerHTML = ''; // Limpa o container antes de adicionar novos cards
@@ -24,8 +36,13 @@ function mostrarProdutos(produtos) {
                 <h2>${produto.nome}</h2>
                 <p>R$ ${produto.preco.toFixed(2)}</p>
                 <div class="button-group">
+<<<<<<< HEAD
                     <button class="botao1" onclick="mostrarDetalhes(${index}})">
                         <img src="../web/images/favorito.png" alt="carrinho.html">
+=======
+                    <button class="botao1" onclick="mostrarDetalhes(${index})">
+                        <img src="../web/images/favorito.png" alt="Favorito">
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
                     </button>
                     <button class="botao1" onclick="mostrarDetalhes(${index})">
                         <img src="../web/images/adicionar-ao-carrinho.png" alt="Adicionar ao carrinho">
@@ -38,7 +55,27 @@ function mostrarProdutos(produtos) {
     });
 }
 
-// Função para mostrar os detalhes do produto no modal
+
+
+fetch("https://back-end-tcc-gamma.vercel.app/produto")
+    .then(async response => {
+        if (!response.ok) {
+            const text = await response.text();
+          throw new Error(text); // Lança o erro com o corpo da resposta
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Produtos:", data);
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
+
+
+
+
+
 function mostrarDetalhes(index) {
     const produto = produtos[index];
     const conteudo = document.getElementById('conteudo');
@@ -55,12 +92,10 @@ function mostrarDetalhes(index) {
     document.getElementById('adicionarCarrinho').setAttribute('data-id', produto.id);
 }
 
-// Função para fechar o modal
 function fecharModal() {
     document.getElementById('detalhes').classList.add('oculto');
 }
 
-// Função para adicionar produto ao carrinho
 function adicionarCarrinho() {
     const idProduto = document.getElementById('adicionarCarrinho').getAttribute('data-id');
     const produto = produtos.find(p => p.id == idProduto);
@@ -78,11 +113,33 @@ function adicionarCarrinho() {
     fecharModal();
 }
 
+<<<<<<< HEAD
 // Carousel - Seleciona imagens e botões
+=======
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 const imgs = document.querySelectorAll('.carousel img');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const indicatorsContainer = document.querySelector('.carousel-indicators');
+
+<<<<<<< HEAD
+let index = 0; // índice da imagem central
+let autoSlide; // autoplay
+
+// Cria as bolinhas de acordo com a quantidade de imagens
+imgs.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active-dot'); // primeira bolinha ativa
+    dot.addEventListener('click', () => {
+        index = i;
+        updateCarousel();
+        resetAuto();
+    });
+    indicatorsContainer.appendChild(dot);
+});
+
+=======
 
 let index = 0; // índice da imagem central
 let autoSlide; // autoplay
@@ -100,6 +157,7 @@ imgs.forEach((_, i) => {
     indicatorsContainer.appendChild(dot);
 });
 
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 const dots = document.querySelectorAll('.dot');
 
 // Atualiza classes das imagens e bolinhas
@@ -124,7 +182,10 @@ function updateCarousel() {
     });
 }
 
+<<<<<<< HEAD
 // Próxima imagem
+=======
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 function next() {
     index = (index + 1) % imgs.length;
     updateCarousel();
@@ -246,6 +307,7 @@ btnNext.addEventListener('click', () => {
   updateView();
 });
 
+<<<<<<< HEAD
 // Chame updateView após carregar os produtos
 // Se produtos são carregados dinamicamente, chame updateView() após mostrarProdutos()
 /* ========== JS PARA A SEÇÃO DUPLICADA (COLE APÓS O HTML ACIMA) ========== */
@@ -263,15 +325,49 @@ btnNext.addEventListener('click', () => {
       }
     }
     throw new Error('Não foi possível carregar produtos.json (verifique o caminho).');
+=======
+
+
+ (async function () {
+  const DATA_PATHS = [
+    "https://back-end-tcc-gamma.vercel.app/produto"
+  ]; // Apenas tenta carregar da URL da API
+
+  async function fetchProdutos() {
+    // Tenta carregar os produtos da URL especificada
+    for (const p of DATA_PATHS) {
+      try {
+        const resp = await fetch(p);
+        if (!resp.ok) {
+          console.error(`Erro ao buscar dados de ${p}: ${resp.statusText}`);
+          continue;
+        }
+        const json = await resp.json();
+        return json; // Retorna os dados se a resposta for bem-sucedida
+      } catch (e) {
+        console.error(`Erro ao fazer requisição para ${p}:`, e);
+        // Tenta o próximo caminho, mas no seu caso temos apenas um caminho.
+      }
+    }
+    throw new Error('Não foi possível carregar os produtos da API (verifique o caminho).');
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
   }
 
   let produtos = [];
   try {
+<<<<<<< HEAD
     produtos = await fetchProdutos();
   } catch (err) {
     console.error(err);
     alert('Erro: não foi possível carregar os produtos. Verifique o arquivo produtos.json.');
     return;
+=======
+    produtos = await fetchProdutos(); // Chama a função que busca os produtos
+  } catch (err) {
+    console.error(err);
+    alert('Erro: não foi possível carregar os produtos. Verifique o arquivo produtos.json.');
+    return; // Sai da execução caso falhe ao carregar os produtos
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
   }
 
   const container = document.getElementById('produtos-container-dup');
@@ -282,6 +378,7 @@ btnNext.addEventListener('click', () => {
   const btnAdicionarModal = document.getElementById('adicionarCarrinho-dup');
 
   // Renderiza cards
+<<<<<<< HEAD
   function renderProdutosGrid() {
     container.innerHTML = '';
     produtos.forEach(p => {
@@ -300,10 +397,31 @@ btnNext.addEventListener('click', () => {
       container.appendChild(card);
     });
   }
+=======
+  // function renderProdutosGrid() {
+  //   container.innerHTML = ''; // Limpa o container antes de renderizar novos cards
+  //   produtos.forEach(p => {
+  //     const card = document.createElement('div');
+  //     card.className = 'card-dup';
+  //     card.innerHTML = `
+  //       <img src="${p.imagem || ''}" alt="${escapeHtml(p.nome || '')}">
+  //       <h4>${escapeHtml(p.nome || '')}</h4>
+  //       <p>${(p.descricao || '')}</p>
+  //       <p><strong>R$ ${Number(p.preco ?? 0).toFixed(2)}</strong></p>
+  //       <div class="button-group-dup">
+  //         <button data-action="ver" data-id="${p.id}">Ver Detalhes</button>
+  //         <button data-action="add" data-id="${p.id}">Adicionar</button>
+  //       </div>
+  //     `;
+  //     container.appendChild(card);
+  //   });
+  // }
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 
   // Escapa texto para evitar quebra de HTML
   function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, s =>
+<<<<<<< HEAD
       ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
   }
 
@@ -365,6 +483,77 @@ btnNext.addEventListener('click', () => {
       [a[i], a[j]] = [a[j], a[i]];
     }
   }
+=======
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[s]);
+  }
+
+  // Mostra modal com detalhes + produtos relacionados
+  // function showDetails(id) {
+  //   const produto = produtos.find(p => Number(p.id) === Number(id));
+  //   if (!produto) {
+  //     alert('Produto não encontrado.');
+  //     return;
+  //   }
+
+  //   const frete = (Number(produto.preco ?? 0) * 0.1).toFixed(2);
+  //   conteudo.innerHTML = `
+  //     <img src="${produto.imagem || ''}" alt="${escapeHtml(produto.nome)}">
+  //     <div>
+  //       <h4>${escapeHtml(produto.nome)}</h4>
+  //       <p>${escapeHtml(produto.descricao || '')}</p>
+  //       <p><strong>Preço: R$ ${Number(produto.preco ?? 0).toFixed(2)}</strong></p>
+  //       <p>Frete estimado: R$ ${frete}</p>
+  //     </div>
+  //   `;
+
+  //   // Preparar botão adicionar do modal
+  //   btnAdicionarModal.setAttribute('data-id', produto.id);
+
+  //   // Gerar produtos relacionados (até 3, excluindo o atual)
+  //   renderRelated(produto.id);
+
+  //   modal.classList.remove('oculto');
+  // }
+
+  // // Gera N produtos relacionados (aleatórios)
+  // function renderRelated(currentId, count = 3) {
+  //   const others = produtos.filter(p => Number(p.id) !== Number(currentId));
+  //   shuffleArray(others);
+  //   const selecionados = others.slice(0, count);
+
+  //   related.innerHTML = '';
+  //   selecionados.forEach(p => {
+  //     const item = document.createElement('div');
+  //     item.className = 'related-item-dup';
+  //     item.innerHTML = `
+  //       <img src="${p.imagem || ''}" alt="${escapeHtml(p.nome)}" style="width:100%;height:70px;object-fit:cover;border-radius:4px">
+  //       <div style="font-size:13px;margin:6px 0">${escapeHtml(p.nome)}</div>
+  //       <div style="font-weight:bold">R$ ${Number(p.preco ?? 0).toFixed(2)}</div>
+  //       <div style="margin-top:6px">
+  //         <button data-action="ver-related" data-id="${p.id}">Ver</button>
+  //         <button data-action="add-related" data-id="${p.id}">Adicionar</button>
+  //       </div>
+  //     `;
+  //     related.appendChild(item);
+  //   });
+  // }
+
+ // Função para embaralhar itens (produtos relacionados)
+//   function shuffleArray(array) {
+//     for (let i = array.length - 1; i > 0; i--) {
+//       const j = Math.floor(Math.random() * (i + 1));
+//       [array[i], array[j]] = [array[j], array[i]]; // troca os elementos
+//     }
+//   }
+
+//   // Inicia a renderização dos produtos
+//   renderProdutosGrid();
+// })();
+
+
+
+
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 
   // adiciona ao carrinho (localStorage)
   function adicionarAoCarrinho(id) {
@@ -423,7 +612,10 @@ btnNext.addEventListener('click', () => {
   modal.addEventListener('click', (ev) => {
     if (ev.target === modal) modal.classList.add('oculto');
   });
+<<<<<<< HEAD
 
   // render inicial
   renderProdutosGrid();
+=======
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 })();

@@ -1,26 +1,13 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const { PrismaClient } = require("@prisma/client");
-require("dotenv").config();
+const express = require('express');
+const cors = require('cors');
+const routes = require('../src/routes');
 
-const routes = require('./src/routes.js');
-
-const prisma = new PrismaClient();
+const port = process.env.PORT || 3001;
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Middleware
+app.use(express.json());
 app.use(cors());
-app.use(bodyParser.json());
-app.use('/', routes);
+app.use(routes);
 
-
-   // Servidor rodando
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+app.listen(port, (req, res) => {
+    console.log('API respondendo em http://localhost:' + port)
 });
-
-
-
-

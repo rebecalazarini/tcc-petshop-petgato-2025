@@ -57,7 +57,11 @@ header h1 {
   align-items: center;
   top: 0px;
   left: 8%; /* POSIÇÃO DO TEXTO */
+<<<<<<< HEAD
   cursor: pointer;
+=======
+  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DO TEXTO, VAI APARECER UMA MÃOZINHA */
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 }
 
 header img {
@@ -70,7 +74,11 @@ header button {
   border: none;
   color: black; /* COR DO TEXTO */
   font-weight: bold; /* TEXTO EM NEGRITO */
+<<<<<<< HEAD
   cursor: pointer;
+=======
+  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DOS BOTÕES, VAI APARECER UMA MÃOZINHA */
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 }
 
 header button:hover {
@@ -79,6 +87,10 @@ header button:hover {
   font-size: 1.8vh;
 }
 
+<<<<<<< HEAD
+=======
+/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DO TÍTULO */
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
 @media (max-width: 768px) {
   header h1 {
     width: 60%;
@@ -92,9 +104,28 @@ header button:hover {
   }
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
   header button img {
     width: 25px;
+=======
+/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DAS IMAGENS */
+@media (max-width: 768px) {
+  header button img {
+    width: 25px; /* diminui o tamanho das imagens */
+  }
+}
+
+/* BARRA DE PESQUISA */
+.search-icon {
+  width: 60%;
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
+@media (max-width: 768px) {
+  .search-icon {
+    display: none; /* some completamente */
+>>>>>>> 2a95f5996f7cb2709bf426d7c5eed39b7fd9940f
   }
 }
 

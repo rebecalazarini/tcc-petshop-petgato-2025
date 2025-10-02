@@ -215,3 +215,17 @@ header{
 .close:hover {
   color: black;
 }
+h2{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
