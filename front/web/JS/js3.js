@@ -46,32 +46,6 @@ async function buscarProdutos() {
         console.error('Erro ao buscar produtos:', error);
     }
 }
-async function adicionarProduto(nome, descricao, preco, imagem) {
-    try {
-        const promiseLocal = fetch(urlLocal, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nome, descricao, preco, imagem })
-        });
-
-        const promiseVercel = fetch(urlVercel, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nome, descricao, preco, imagem })
-        });
-        const [responseLocal, responseVercel] = await Promise.all([promiseLocal, promiseVercel]);
-
-        if (!responseLocal.ok && !responseVercel.ok) {
-            throw new Error('Falha ao adicionar produto nas duas APIs');
-        }
-
-        alert("Produto adicionado com sucesso nas duas APIs!");
-    } catch (error) {
-        console.error('Erro ao adicionar produto:', error);
-    }
-}
-
-
 function mostrarDetalhes(id) {
     const produto = produtos.find(p => p.id === id);
     alert(`Detalhes do produto: ${produto.nome}\nPreço: R$ ${produto.preco.toFixed(2)}`);
