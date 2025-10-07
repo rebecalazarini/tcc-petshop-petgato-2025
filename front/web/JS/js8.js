@@ -70,25 +70,7 @@ async function adicionarProduto(nome, descricao, preco, imagem) {
         console.error('Erro ao adicionar produto:', error);
     }
 }
-function mostrarProdutos(produtos) {
-    const container = document.getElementById('produtos-container');
-    container.innerHTML = ''; 
-    produtos.forEach((produto) => {
-        const card = `
-            <div class="card">
-                <img src="${produto.imagem}" alt="${produto.nome}">
-                <h2>${produto.nome}</h2>
-                <p>R$ ${produto.preco.toFixed(2)}</p>
-                <div class="button-group">
-                    <button class="botao1" onclick="mostrarDetalhes(${produto.id})">
-                        <i class="fa fa-info-circle"></i> Detalhes
-                    </button>
-                </div>
-            </div>
-        `;
-        container.innerHTML += card;
-    });
-}
+
 
 function mostrarDetalhes(id) {
     const produto = produtos.find(p => p.id === id);
@@ -346,7 +328,6 @@ btnNext.addEventListener('click', () => {
     fetchProdutos(categoriaSelecionada);
   };
 
-  // Chama a API ao carregar a página
   fetchProdutos();
 buscarProdutos();
 adicionarProduto();

@@ -115,18 +115,33 @@
     <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
   </div>
 
- <!-- Produtos com wrapper e navegação -->
-   <main class="mainContainer">
-  <div class="produtos-wrapper">
-    <div id="produtos-container">
-      <!-- cards aqui -->
+ 
+<main>
+    <!-- Filtro de Categoria -->
+    <div class="filter-container">
+        <select id="categoriaFilter">
+            <option value="todos">Todos os Produtos</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="outros">Outros Pets</option>
+            <option value="farmacia">Farmácia</option>
+        </select>
     </div>
-  
-  <div class="produtos-navigation" style="width: 80%; display: flex; justify-content: space-between; margin: 10px auto;">
-    <button id="btn-prev">Anterior</button>
-    <button id="btn-next">Próximo</button>
-  </div></div>
+
+    <!-- Cards de Produtos -->
+    <div class="produtos-container" id="produtos-container">
+        <!-- Os produtos serão inseridos aqui -->
+    </div>
+
+    <!-- Navegação -->
+    <div class="nav-buttons">
+        <button id="btn-prev">Anterior</button>
+        <button id="btn-next">Próximo</button>
+    </div>
 </main>
+
+
+
 <br><br><br>
 <section class="section-fundo">
   <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">

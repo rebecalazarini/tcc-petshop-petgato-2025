@@ -1,3 +1,27 @@
+function mostrarProdutos(produtos) {
+    const container = document.getElementById('produtos-container');
+    container.innerHTML = ''; 
+    produtos.forEach((produto) => {
+        const card = `
+            <div class="card">
+                <img src="${produto.imagem}" alt="${produto.nome}">
+                <h2>${produto.nome}</h2>
+                <p>R$ ${produto.preco.toFixed(2)}</p>
+                <div class="button-group">
+                    <button class="botao1" onclick="mostrarDetalhes(${produto.id})">
+                        <i class="fa fa-info-circle"></i> Detalhes
+                    </button>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
+
+function atualizarPagina() {
+  window.location.reload();
+}
+
 const urlLocal = "http://localhost:3000/produto";
 const urlVercel = "https://back-end-tcc-gamma.vercel.app/produto";
 
@@ -46,25 +70,7 @@ async function adicionarProduto(nome, descricao, preco, imagem) {
         console.error('Erro ao adicionar produto:', error);
     }
 }
-function mostrarProdutos(produtos) {
-    const container = document.getElementById('produtos-container');
-    container.innerHTML = ''; 
-    produtos.forEach((produto) => {
-        const card = `
-            <div class="card">
-                <img src="${produto.imagem}" alt="${produto.nome}">
-                <h2>${produto.nome}</h2>
-                <p>R$ ${produto.preco.toFixed(2)}</p>
-                <div class="button-group">
-                    <button class="botao1" onclick="mostrarDetalhes(${produto.id})">
-                        <i class="fa fa-info-circle"></i> Detalhes
-                    </button>
-                </div>
-            </div>
-        `;
-        container.innerHTML += card;
-    });
-}
+
 
 function mostrarDetalhes(id) {
     const produto = produtos.find(p => p.id === id);
@@ -255,5 +261,73 @@ btnNext.addEventListener('click', () => {
   updateView();
 });
 
+ const apiUrl = 'http://localhost:3000/produto'; // Substitua pela sua URL da API
+  const productsPerPage = 4;
+  let produtos = [];
+
+  // Função para chamar a API e carregar os produtos
+  function fetchProdutos(categoria = 'todos') {
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Armazenando os produtos
+        produtos = categoria === 'todos' ? data : data.filter(produto => produto.categoria === categoria);
+        renderProdutos();
+      })
+      .catch(error => {
+        console.error('Erro ao carregar os produtos:', error);
+      });
+  }
+
+  // Função para renderizar os produtos na tela
+  function renderProdutos() {
+    const start = currentPage * productsPerPage;
+    const end = start + productsPerPage;
+    const produtosParaMostrar = produtos.slice(start, end);
+
+    const container = document.getElementById("produtos-container");
+    container.innerHTML = ''; // Limpa os produtos antigos
+
+    produtosParaMostrar.forEach(produto => {
+      const cardHTML = `
+        <div class="produto-card">
+          <img src="${produto.imagem}" alt="${produto.nome}">
+          <h3>${produto.nome}</h3>
+          <p>${produto.descricao}</p>
+          <p class="preco">R$ ${produto.preco}</p>
+        </div>
+      `;
+      container.innerHTML += cardHTML;
+    });
+
+    // Atualiza a navegação
+    document.getElementById('btn-prev').disabled = currentPage === 0;
+    document.getElementById('btn-next').disabled = (currentPage + 1) * productsPerPage >= produtos.length;
+  }
+
+  // Função para ir para a próxima página
+  document.getElementById('btn-next').onclick = function() {
+    if ((currentPage + 1) * productsPerPage < produtos.length) {
+      currentPage++;
+      renderProdutos();
+    }
+  };
+
+  // Função para ir para a página anterior
+  document.getElementById('btn-prev').onclick = function() {
+    if (currentPage > 0) {
+      currentPage--;
+      renderProdutos();
+    }
+  };
+
+  // Função para quando a categoria for alterada
+  document.getElementById('categoriaFilter').onchange = function() {
+    const categoriaSelecionada = this.value;
+    currentPage = 0; // Reseta para a primeira página
+    fetchProdutos(categoriaSelecionada);
+  };
+
+  fetchProdutos();
 buscarProdutos();
-changeBannerText();
+adicionarProduto();
