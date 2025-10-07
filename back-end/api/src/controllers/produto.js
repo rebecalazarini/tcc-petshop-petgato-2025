@@ -30,6 +30,24 @@ const read = async (req, res) => {
     }
 };
 
+// Suponha que você tenha uma função de buscar produtos no banco de dados, que pode ser assíncrona:
+async function buscarProdutos() {
+  // Simulando a busca no banco de dados
+  return [
+    { id: 1, nome: 'Produto 1', especie: 'Espécie 1', raca: 'Raça 1', dados: 'Dados do produto 1' },
+    { id: 2, nome: 'Produto 2', especie: 'Espécie 2', raca: 'Raça 2', dados: 'Dados do produto 2' },
+  ];
+}
+
+// Função que vai ser chamada pela rota /produtos para retornar os produtos
+exports.listarProdutos = async (req, res) => {
+  try {
+    const produtos = await buscarProdutos(); // Aqui você chama a função de buscar os produtos
+    res.json(produtos);  // Retorna os produtos em formato JSON
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao buscar produtos' });
+  }
+};
 
 const readById = async (req, res) => {
     try {
@@ -82,4 +100,5 @@ module.exports = {
     readById,
     update,
     remove,
+    buscarProdutos
 };

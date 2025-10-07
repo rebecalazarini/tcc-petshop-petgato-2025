@@ -67,5 +67,5 @@ routes.get('/produto', Produto.read);
 routes.get('/produto/:id', Produto.readById);
 routes.patch('/produto/:id', Produto.update);
 routes.delete('/produto/:id', Produto.remove);
-
+routes.get('/produto', Produto.buscarProdutos);
 module.exports = routes;
