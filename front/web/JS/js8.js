@@ -1,57 +1,25 @@
-// Abrir o modal
-document.getElementById("novoProdutoBtn").onclick = function() {
-  document.getElementById("novoProdutoModal").style.display = "block";
+function mostrarProdutos(produtos) {
+    const container = document.getElementById('produtos-container');
+    container.innerHTML = ''; 
+    produtos.forEach((produto) => {
+        const card = `
+            <div class="card">
+                <img src="${produto.imagem}" alt="${produto.nome}">
+                <h2>${produto.nome}</h2>
+                <p>R$ ${produto.preco.toFixed(2)}</p>
+                <div class="button-group">
+                    <button class="botao1" onclick="mostrarDetalhes(${produto.id})">
+                        <i class="fa fa-info-circle"></i> Detalhes
+                    </button>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
 }
 
-// Fechar o modal
-function closeModal() {
-  document.getElementById("novoProdutoModal").style.display = "none";
-}
-
-// Fechar o modal se o usuário clicar fora dele
-window.onclick = function(event) {
-  if (event.target === document.getElementById("novoProdutoModal")) {
-    closeModal();
-  }
-}
-
-// Submeter o formulário
-document.getElementById("produtoForm").onsubmit = function(event) {
-  event.preventDefault(); // Impede o comportamento padrão do form
-
-  const nome = document.getElementById("nomeProduto").value;
-  const descricao = document.getElementById("descricaoProduto").value;
-  const preco = document.getElementById("precoProduto").value;
-  const imagem = document.getElementById("imagemProduto").files[0];
-
-  const formData = new FormData();
-  formData.append("nomeProduto", nome);
-  formData.append("descricaoProduto", descricao);
-  formData.append("precoProduto", preco);
-  if (imagem) formData.append("imagemProduto", imagem);
-
-  // Enviar para a API
-  fetch('http://localhost:3000/produto', {
-    method: 'POST',
-    body: formData,
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert('Produto cadastrado com sucesso!');
-    closeModal();
-    atualizarPagina(); // Função para atualizar a página com o novo produto
-  })
-  .catch(error => {
-    console.error('Erro ao cadastrar o produto:', error);
-    alert('Erro ao cadastrar o produto. Tente novamente.');
-  });
-}
-
-// Função para atualizar a página com o novo produto
 function atualizarPagina() {
-  // Você pode adicionar aqui uma lógica para recarregar os produtos ou atualizá-los sem precisar recarregar a página inteira
-  // Exemplo: chamando uma função que pega os produtos da API e atualiza o front-end
-  window.location.reload(); // Apenas para recarregar a página
+  window.location.reload();
 }
 
 const urlLocal = "http://localhost:3000/produto";

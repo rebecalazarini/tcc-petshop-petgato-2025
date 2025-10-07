@@ -255,9 +255,5 @@ btnNext.addEventListener('click', () => {
   updateView();
 });
 
-
-function changeBannerText() {
-}
-
 buscarProdutos();
 changeBannerText();
