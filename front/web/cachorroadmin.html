@@ -138,6 +138,14 @@
       
       <label for="imagem">URL da Imagem:</label>
       <input type="url" id="imagem" name="imagem" placeholder="https://exemplo.com/imagem.jpg" required><br><br>
+      
+      <label for="categoria">Categoria:</label>
+      <select id="categoria" name="categoria" required>
+        <option value="cachorro">Cachorro</option>
+        <option value="gato">Gato</option>
+        <option value="outros">Outros</option>
+        <option value="farmacia">Farmácia</option>
+      </select><br><br>
 
       <button type="submit">Cadastrar Produto</button>
     </form>
@@ -184,12 +192,14 @@
     const descricao = document.getElementById("descricao").value;
     const preco = document.getElementById("preco").value;
     const imagem = document.getElementById("imagem").value;
+    const categoria = document.getElementById("categoria").value;  // Obter a categoria selecionada
 
     const produtoData = {
-      nome: nome,             // Refatorado para corresponder ao nome do campo no banco
-      descricao: descricao,   // Refatorado para corresponder ao nome do campo no banco
+      nome: nome,             // Correspondente ao modelo de banco
+      descricao: descricao,   // Correspondente ao modelo de banco
       preco: parseFloat(preco), // Convertendo para número de ponto flutuante
-      imagem: imagem          // Refatorado para corresponder ao nome do campo no banco
+      imagem: imagem,         // Correspondente ao modelo de banco
+      categoria: categoria    // Enviar a categoria (novo campo)
     };
 
     // Enviar para as duas APIs

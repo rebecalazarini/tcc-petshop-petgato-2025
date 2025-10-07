@@ -274,18 +274,59 @@ header button:hover {
     transform: translateY(0); 
   }
 }
+/* ANIMAL BUTTONS */
+.animal {
+  border: none;
+  width: 100%;
+  height: 40%;
+  position: relative;
+  top: 0;left: -7%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .animal button {
   border: none;
   background-color:rgb(75, 197, 235);
-  width: 10%;
+  width: 20%;
   height: 90px;
   padding: 0.7%;
-  display: flex; 
+  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
   align-items: center;
   justify-content: center;
   border-radius: 5%;
-  gap: 6px;
+  gap: 50px; /* ESPAÇO ENTRE TEXTO E IMG */
 }
+
+.animal button img {
+  width: 30%;
+  height: 50%;
+  border-radius: 80%;
+}
+
+/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
+@media (max-width: 768px) {
+  .animal img {
+    display: none; /* some completamente */
+  }
+
+  .animal button {
+    width: 100%;
+    padding: 5px;
+    border-radius: 25%;
+  }
+
+  .animal {
+    position: relative;
+    top: 0;
+    left: -1%;
+    width: 80%;
+    gap: 2%;
+    padding: 10px;
+  }
+}
+
 .outros, .pet {
   width: 30%;
   height: 10%;
@@ -294,46 +335,57 @@ header button:hover {
   font-size: 100%;
   color: black;
   font-weight: bold;
-}
+}/* --- wrapper do fundo ondulado --- */
 .section-fundo {
   position: relative;
   width: 100%;
-  min-height: 540px;     
-  margin: 40px 0;            
+  min-height: 0;          /* controla "a altura" do bloco — ajuste se precisar */
+  margin: 40px 0;             /* espaçamento externo (opcional) */
   overflow: visible;
 }
+
+@media (max-width: 768px) {
+  .section-fundo {
+    width: 40%;
+    position: relative;
+    top: 0;left: 0;
+  }}
+
+/* SVG do fundo (faz as ondulações nas extremidades) */
 .fundo-svg {
   position: absolute;
   left: 0;
   top: -16%;
   width: 200%;
-  height: 150%;
-  z-index: 0;                
-  pointer-events: none;       
+  height: 150%;                /* atrás do conteúdo */
+  pointer-events: none;       /* deixa os botões clicáveis */
   display: block;
 }
+
+/* conteúdo que fica sobre o SVG */
 .fundoparcial-content {
-  position: relative;
-  z-index: 1;                
-  padding: 30px 20px;       
+  position: relative;             /* acima do SVG */
+  padding: 30px 20px;         /* controla o "padding" interno (altura visível) */
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-  color: #fff;              
+  color: #fff;                /* textos brancos por padrão — ajuste se quiser */
 }
+
+/* ----- seus estilos de botões (adaptados) ----- */
 .animal {
   display: flex;
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;           
+  flex-wrap: wrap;            /* quebra em linhas quando precisar */
   margin: 14px 0;
 }
 
 .animal button {
   border: none;
   background-color: rgb(75, 197, 235);
-  min-width: 160px;         
+  min-width: 160px;           /* fica mais amigável em telas pequenas */
   height: 72px;
   display: flex;
   align-items: center;
@@ -342,15 +394,24 @@ header button:hover {
   gap: 8px;
   padding: 8px 12px;
   cursor: pointer;
-  color: #003;   
+  color: #003;                /* cor do texto do botão (ajuste se quiser) */
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .fundo-svg, .fundoparcial-content, .animal, .pet, .section-fundo  {
+    display: none; /* some completamente */
+  }}
+
+/* img dentro do botão */
 .animal button img {
   width: 36px;
   height: 36px;
   object-fit: cover;
   border-radius: 8px;
 }
+
+/* títulos dentro (pet/outros) */
 .pet h1, .outros h1 {
   margin: 0 0 8px 0;
   font-size: 20px;

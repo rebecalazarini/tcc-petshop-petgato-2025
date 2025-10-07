@@ -126,16 +126,35 @@
   <div class="text">
     <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
   </div>
-<main class="mainContainer">
-  <div class="produtos-wrapper">
 
-    <div id="produtos-container"></div>
-  
-  <div class="produtos-navigation" style="width: 80%; display: flex; justify-content: space-between; margin: 10px auto;">
-    <button id="btn-prev">Anterior</button>
-    <button id="btn-next">Próximo</button>
-  </div></div>
+<main>
+    <!-- Filtro de Categoria -->
+    <div class="filter-container">
+        <select id="categoriaFilter">
+            <option value="todos">Todos os Produtos</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="outros">Outros Pets</option>
+            <option value="farmacia">Farmácia</option>
+        </select>
+    </div>
+
+    <!-- Cards de Produtos -->
+    <div class="produtos-container" id="produtos-container">
+        <!-- Os produtos serão inseridos aqui -->
+    </div>
+
+    <!-- Navegação -->
+    <div class="nav-buttons">
+        <button id="btn-prev">Anterior</button>
+        <button id="btn-next">Próximo</button>
+    </div>
 </main>
+
+
+
+
+
 <br><br><br>
 <section class="section-fundo">
   <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
@@ -146,38 +165,23 @@
   <div class="fundoparcial-content"><br><br><br><br>
     <div class="pet"><h1><b style="font-size: 35px;">Tudo para Pets:</b></h1></div>
 
-    <div class="animal">
-      <button onclick="window.location.href='cachorroadmin.html'">
-        <img src="../web/images/cachorro.gif" alt="Cachorros" />Cachorros
-      </button>
-      <button onclick="window.location.href='favorito.html'">
-        <img src="../web/images/gato.gif" alt="Gatos" />Gatos
-      </button>
-      <button onclick="window.location.href='pedidos.html'">
-        <img src="../web/images/peixe-palhaco.gif" alt="Peixes" />Outros pets
-      </button>
+   <div class="pet">
+       <h1><b style="font-size: 35px;">Categorias:</b></h1>
+      </div>
+      <div class="animal">
+        <button onclick="window.location.href='cachorroadmin.html'">
+          <img src="../web/images/cachorro.gif" alt="Cachorros" />Cachorros
+        </button>
+        <button onclick="window.location.href='gatos.html'">
+          <img src="../web/images/gato.gif" alt="Gatos" />Gatos
+        </button>  
+        <button onclick="window.location.href='pets.html'">
+          <img src="../web/images/peixe-palhaco.gif" alt="Peixes" />Outros pets
+        </button>
+        <button onclick="window.location.href='farmacia.html'">
+          <img src="../web/images/farmacia.gif" alt="Peixes" />Farmácia
+        </button>
     </div>
-
-    <div class="pet"><h1><b style="font-size: 35px;">Outros:</b></h1></div>
-
-    <div class="animal">
-      <button onclick="window.location.href='pedidos.html'">
-        <img src="../web/images/cachorro.gif" alt="Cachorros" />Ração,petisco e Biscoito
-      </button>
-      <button onclick="window.location.href='favorito.html'">
-        <img src="../web/images/gato.gif" alt="Gatos" />Areias, Banheiro, Higiene e Limpeza
-      </button>
-      <button onclick="window.location.href='pedidos.html'">
-        <img src="../web/images/peixe-palhaco.gif" alt="Peixes" />Farmácia
-      </button>
-      <button onclick="window.location.href='favorito.html'">
-        <img src="../web/images/animais.gif" alt="Passáros" />Casas e Aquários
-      </button>
-       <button onclick="window.location.href='favorito.html'">
-        <img src="../web/images/animais.gif" alt="Passáros" />Coleiras, Guia e Peitoral
-      </button>
-    </div>
-
 </section>
 <br><br><br><br><br><br>
 <div class="cb">
