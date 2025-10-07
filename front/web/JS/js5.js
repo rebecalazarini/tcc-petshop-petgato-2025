@@ -12,25 +12,59 @@ async function Cadastrar() {
         return;
     }
 
+ const urlLocal = 'http://localhost:3000/consultas';
+    const urlVercel = 'https://back-end-tcc-gamma.vercel.app/consultas';
+
     try {
-        const response = await fetch("http://localhost:3000/consultas", {
+        // Cria as promessas para as duas requisições
+        const promiseLocal = fetch(urlLocal, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ emailProprietario, nomePet, especiePet, racaPet, nomeProprietario, nascpet, dados })
+            body: JSON.stringify({ 
+                emailProprietario, 
+                nomePet, 
+                especiePet, 
+                racaPet, 
+                nomeProprietario, 
+                nascpet, 
+                dados 
+            })
         });
 
-        if (response.ok) {
-            alert("Cadastro realizado com sucesso!.");
+        const promiseVercel = fetch(urlVercel, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ 
+                emailProprietario, 
+                nomePet, 
+                especiePet, 
+                racaPet, 
+                nomeProprietario, 
+                nascpet, 
+                dados 
+            })
+        });
+
+        // Espera as duas promessas serem resolvidas
+        const [responseLocal, responseVercel] = await Promise.all([promiseLocal, promiseVercel]);
+
+        // Verifica se ambas as respostas foram bem-sucedidas
+        if (responseLocal.ok || responseVercel.ok) {
+            alert("Cadastro realizado com sucesso!");
             window.location.href = "index.html";
         } else {
-            const erro = await response.text();
-            alert(`Erro ao cadastrar: ${erro}`);
+            // Se ambas as requisições falharem
+            const erroLocal = await responseLocal.text();
+            const erroVercel = await responseVercel.text();
+            alert(`Erro ao cadastrar na local: ${erroLocal}\nErro ao cadastrar na Vercel: ${erroVercel}`);
         }
+
     } catch (error) {
         console.error("Erro na solicitação:", error);
         alert("Erro ao processar o cadastro.");
     }
 }
+
 
  const openButton = document.getElementById('open-button');
   const closeButton = document.getElementById('close-button');
