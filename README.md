@@ -79,11 +79,3 @@ npx nodemon server.js
 |Exemplo PetShop Tiangulo de ferro|
 |:-:|
 |![triangulo](petshoptriangulo.png)|
-
-|DC|
-|:-:|
-|![dc](./assets/dc(uml).png)|
-
-|Diagrama de atividadas|
-|:-:|
-|![dc](./assets/diagramaatividades.png)|
