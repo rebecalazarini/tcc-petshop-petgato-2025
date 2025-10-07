@@ -300,7 +300,7 @@ header button:hover {
   font-size: 100%;
   color: black;
   font-weight: bold;
-}/* --- wrapper do fundo ondulado --- */
+}
 .section-fundo {
   position: relative;
   width: 100%;
@@ -517,6 +517,30 @@ header button:hover {
   margin-top: 10px; /* Espaço acima do grupo de botões */
 }
 
+#btn-prev{
+  position: relative;
+  top: -50%;
+  left: -10%;
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(215, 220, 250, 0.247);
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(128, 124, 124);
+}
+
+#btn-next{
+  position: relative;
+  top: -50%;
+  left: 10%;
+  background-color: rgb(243, 19, 19);
+  border-color: rgba(215, 220, 250, 0.247);
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(128, 124, 124);
+}
+
 .button-group button {
   position: relative;
   top: -50%;
@@ -550,8 +574,6 @@ header button:hover {
       justify-content: space-around;
       border-radius: 25px;
       
-      
-
        & img{
         width: 50%;
         border-radius: 70% 0 0 0 ; 

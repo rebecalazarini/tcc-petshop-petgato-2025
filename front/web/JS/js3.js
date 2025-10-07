@@ -51,7 +51,6 @@ function mostrarDetalhes(id) {
     alert(`Detalhes do produto: ${produto.nome}\nPreço: R$ ${produto.preco.toFixed(2)}`);
 }
 
-
 function adicionarCarrinho() {
     const idProduto = document.getElementById('adicionarCarrinho').getAttribute('data-id');
     const produto = produtos.find(p => p.id == idProduto);
@@ -64,7 +63,6 @@ function adicionarCarrinho() {
     } else {
         carrinho.push({ ...produto, quantidade: 1 });
     }
-
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     fecharModal();
 }
@@ -74,11 +72,9 @@ const imgs = document.querySelectorAll('.carousel img');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const indicatorsContainer = document.querySelector('.carousel-indicators');
-
 let index = 0; // índice da imagem central
 let autoSlide; // autoplay
-
-// Cria as bolinhas de acordo com a quantidade de imagens
+// Cria bolinhas indicadores
 imgs.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
@@ -90,7 +86,6 @@ imgs.forEach((_, i) => {
     });
     indicatorsContainer.appendChild(dot);
 });
-
 const dots = document.querySelectorAll('.dot');
 
 // Atualiza classes das imagens e bolinhas
@@ -108,7 +103,6 @@ function updateCarousel() {
             img.classList.add('hidden'); // fora do foco
         }
     });
-
     // Atualiza bolinhas
     dots.forEach((dot, i) => {
         dot.classList.toggle('active-dot', i === index);
@@ -235,7 +229,7 @@ btnNext.addEventListener('click', () => {
   updateView();
 });
 
- const apiUrl = 'http://localhost:3000/produto'; // Substitua pela sua URL da API
+ const apiUrl = 'http://localhost:3000/produto';
   const productsPerPage = 4;
   let produtos = [];
 
@@ -260,7 +254,6 @@ btnNext.addEventListener('click', () => {
     const produtosParaMostrar = produtos.slice(start, end);
 
     const container = document.getElementById("produtos-container");
-    container.innerHTML = ''; // Limpa os produtos antigos
 
     produtosParaMostrar.forEach(produto => {
       const cardHTML = `
@@ -302,6 +295,6 @@ btnNext.addEventListener('click', () => {
     fetchProdutos(categoriaSelecionada);
   };
 
-  fetchProdutos();
+fetchProdutos();
 buscarProdutos();
 adicionarProduto();
