@@ -174,8 +174,34 @@
       font-weight: bold;
       color: #0077aa;
     }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
   </style>
-    </style>
 </head>
 <body>
 
@@ -195,8 +221,34 @@
     </button>
 </div>
 
+
 <!-- Produtos -->
 <div id="produtosLista" class="produtos-container"></div>
+
+<!-- Modal de edição -->
+<div id="modal-editar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModalEditar()">&times;</span>
+    <h2>Editar Produto</h2>
+    <form id="form-editar">
+      <label for="editar-nome">Nome:</label>
+      <input type="text" id="editar-nome" required>
+
+      <label for="editar-descricao">Descrição:</label>
+      <textarea id="editar-descricao" required></textarea>
+
+      <label for="editar-preco">Preço:</label>
+      <input type="number" id="editar-preco" step="0.01" required>
+
+      <label for="editar-imagem">Imagem (URL):</label>
+      <input type="url" id="editar-imagem" required>
+
+      <input type="hidden" id="editar-id">
+
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+</div>
 
 <!-- Modal para cadastrar novo produto -->
 <div id="novoProdutoModal" class="modal">
@@ -230,30 +282,70 @@
 </div>
 
 <script>
-  // Chamada à API para pegar os produtos
-  fetch('http://localhost:3000/produto')
-    .then(response => response.json())
-    .then(produtos => {
-      let produtosHTML = '';
-      produtos.forEach(produto => {
-        produtosHTML += `
-          <div class="produto-card">
-            <img src="${produto.imagem}" alt="${produto.nome}">
-            <h3>${produto.nome}</h3>
-            <p>${produto.descricao}</p>
-            <p class="preco">R$ ${produto.preco}</p>
-          </div>
-        `;
-      });
-      document.getElementById('produtosLista').innerHTML = produtosHTML;
-    })
-    .catch(error => {
-      console.error('Erro ao carregar os produtos:', error);
-      document.getElementById('produtosLista').innerHTML = '<p>Erro ao carregar produtos. Tente novamente.</p>';
-    });
+  const urlLocal = 'http://localhost:3000/produto';
+  const urlVercel = 'https://back-end-tcc-gamma.vercel.app/produto';
 
-  // Modal - abrir e fechar
-  document.getElementById("novoProdutoBtn").onclick = function() {
+  // Carregar produtos
+  let produtos = [];
+
+  function buscarProdutos() {
+    fetch(urlLocal)
+      .then(response => response.json())
+      .then(data => {
+        produtos = data; // salvar para uso em edição
+        exibirProdutos();
+      })
+      .catch(error => {
+        console.error('Erro ao carregar os produtos:', error);
+        document.getElementById('produtosLista').innerHTML = '<p>Erro ao carregar produtos.</p>';
+      });
+  }
+
+  function exibirProdutos() {
+    const container = document.getElementById('produtosLista');
+    container.innerHTML = '';
+
+    produtos.forEach(produto => {
+      const card = document.createElement('div');
+      card.className = 'produto-card';
+
+      card.innerHTML = `
+        <img src="${produto.imagem}" alt="${produto.nome}">
+        <div class="info">
+          <h3>${produto.nome}</h3>
+          <p>${produto.descricao}</p>
+          <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
+          <div class="acoes">
+            <button onclick="excluirProduto(${produto.id})">Excluir</button>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+  // Exemplo de função para excluir (você pode ativar se quiser)
+  function excluirProduto(id) {
+    if (!confirm("Tem certeza que deseja excluir este produto?")) return;
+
+    Promise.all([
+      fetch(`${urlLocal}/${id}`, { method: "DELETE" }),
+      fetch(`${urlVercel}/${id}`, { method: "DELETE" })
+    ])
+      .then(([res1, res2]) => {
+        if (!res1.ok && !res2.ok) throw new Error("Erro ao excluir");
+        alert("Produto excluído com sucesso!");
+        buscarProdutos();
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Erro ao excluir produto.");
+      });
+  }
+
+  // Modal "Cadastrar Novo Produto"
+  document.getElementById("novoProdutoBtn").onclick = function () {
     document.getElementById("novoProdutoModal").style.display = "block";
   };
 
@@ -261,54 +353,50 @@
     document.getElementById("novoProdutoModal").style.display = "none";
   }
 
-  // Submeter o formulário
-  document.getElementById("produtoForm").onsubmit = function(event) {
+  document.getElementById("produtoForm").onsubmit = function (event) {
     event.preventDefault();
 
     const nome = document.getElementById("nome").value;
     const descricao = document.getElementById("descricao").value;
-    const preco = document.getElementById("preco").value;
+    const preco = parseFloat(document.getElementById("preco").value);
     const imagem = document.getElementById("imagem").value;
-    const categoria = document.getElementById("categoria").value;  // Obter a categoria selecionada
+    const categoria = document.getElementById("categoria").value;
 
     const produtoData = {
-      nome: nome,             // Correspondente ao modelo de banco
-      descricao: descricao,   // Correspondente ao modelo de banco
-      preco: parseFloat(preco), // Convertendo para número de ponto flutuante
-      imagem: imagem,         // Correspondente ao modelo de banco
-      categoria: categoria    // Enviar a categoria (novo campo)
+      nome,
+      descricao,
+      preco,
+      imagem,
+      categoria
     };
 
-    // Enviar para as duas APIs
-    const urlLocal = 'http://localhost:3000/produto';
-    const urlVercel = 'https://back-end-tcc-gamma.vercel.app/produto';
-
-    const requestLocal = fetch(urlLocal, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(produtoData),
-    });
-
-    const requestVercel = fetch(urlVercel, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(produtoData),
-    });
-
-    // Aguarde ambas as requisições serem resolvidas
-    Promise.all([requestLocal, requestVercel])
-      .then(responses => Promise.all(responses.map(response => response.json())))
-      .then(data => {
-        alert('Produto cadastrado com sucesso nas duas APIs!');
+    Promise.all([
+      fetch(urlLocal, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(produtoData),
+      }),
+      fetch(urlVercel, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(produtoData),
+      })
+    ])
+      .then(responses => Promise.all(responses.map(r => r.json())))
+      .then(() => {
+        alert("Produto cadastrado com sucesso!");
         closeModal();
-        window.location.reload(); // Atualiza a página
+        buscarProdutos();
       })
       .catch(error => {
-        console.error('Erro ao cadastrar o produto:', error);
-        alert('Erro ao cadastrar o produto. Tente novamente.');
+        console.error("Erro ao cadastrar:", error);
+        alert("Erro ao cadastrar produto.");
       });
   };
-</script>
 
+  // Inicializa carregando os produtos
+  window.onload = buscarProdutos;
+
+</script>
 </body>
 </html>
