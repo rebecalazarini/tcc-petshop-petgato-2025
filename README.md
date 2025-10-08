@@ -78,3 +78,7 @@ npx nodemon server.js
 |Exemplo PetShop Tiangulo de ferro|
 |:-:|
 |![triangulo](petshoptriangulo.png)|
+|:-:|
+|![uml](UML.png)|
+|![dc](I1.png)|
+
