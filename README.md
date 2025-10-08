@@ -81,4 +81,37 @@ npx nodemon server.js
 |:-:|
 |![uml](UML.png)|
 |![dc](I1.png)|
+ ## Relatório de testes
+  [relatorio caixa preta](Relatório%20Back-end.pdf)
+  [relatorio caixa branca](Relatório%20Back-end.pdf)
+
+- Requisitos funicionais
+- Clientes/Usuários
+  - RF01: O sistema deve permitir o cadastro e login de clientes (nome, email, senha).
+  - RF02: O cliente pode cadastrar seus pets (nome, espécie, raça, data de nascimento).
+- Produtos e Compras
+  - RF03: O sistema exibe o catálogo de produtos por categorias (cachorro, gato, peixe e pássaro.)
+  -  RF04: O cliente pode adicionar e remover produtos do carrinho de compras.
+- Agendamento de Serviços
+  - RF05: O cliente pode agendar serviços (banho e tosa, veterinário) selecionando data, hora e pet.
+- Administração (Back-end)
+  - RF10: O administrador deve poder gerenciar o estoque (adicionar/remover produtos, atualizar quantidades).
+  - RF11: O administrador deve poder visualizar e confirmar os agendamentos de serviços.
+  - RF12: O sistema deve gerar um token para o login por 30min.
+  - RF13: O sistema deve criptografar a senha dos usuários.
+
+- Requisitos não funcionais 
+- Desempenho
+  - RNF01: A página inicial e as páginas de produtos carregam no máximo 3 segundos, mesmo com 500 usuários simultâneos.
+  - RNF02: O processamento de uma transação de pagamento deve ser concluído em no máximo 5 segundos.
+- Usabilidade
+  - RNF03: A navegação do site é intuitiva, permitindo que o usuário encontre um produto em no máximo 3 cliques.
+  - RNF04: O site está responsivo, funcionando perfeitamente em dispositivos móveis (smartphones e tablets).
+- Segurança
+  - RNF05: Todos os dados de login e pagamento devem ser transmitidos usando o protocolo de segurança JWT. 
+- Escalabibidade
+  - RNF06: O sistema deve ser capaz de suportar um aumento de 100% no volume de pedidos durante períodos promocionais (ex: Black Friday) sem degradação do desempenho.
+- Tecnológicos
+  - RNF7: O sistema deve ser compatível com os navegadores web mais recentes (Chrome, Firefox, Safari e Edge).
+  - RNF8: O site deve integrar-se com o serviço de API do Correios para cálculo de frete. Ou ter um frete fixo pra todas as compras.
 
