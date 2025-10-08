@@ -75,11 +75,11 @@ npx nodemon server.js
 
 |PetGatô Swot (fofa)|
 
-|![Matriz](fofapetshop.png)|
-|Exemplo PetShop Tiangulo de ferro|
-|![triangulo](petshoptriangulo.png)|
-|![uml](UML.png)|
-|![dc](I1.png)|
+![Matriz](fofapetshop.png)
+- Exemplo PetShop Tiangulo de ferro
+![triangulo](petshoptriangulo.png)
+![uml](UML.png)
+![dc](I1.png)
  ## Relatório de testes
   [relatorio caixa preta](Relatório%20Back-end.pdf)
   [relatorio caixa branca](Relatório%20Back-end.pdf)
