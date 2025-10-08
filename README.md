@@ -83,6 +83,7 @@ npx nodemon server.js
  ## Relatório de testes
   [relatorio caixa preta](Relatório%20Back-end.pdf)
   [relatorio caixa branca](Relatório%20Back-end.pdf)
+  [relatorio ront-end](relatorio%20de%20front.pdf)
 
 - Requisitos funicionais
 - Clientes/Usuários
