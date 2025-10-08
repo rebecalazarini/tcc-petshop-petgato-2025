@@ -83,8 +83,7 @@ npx nodemon server.js
  ## Relatório de testes
   [relatorio caixa preta](Relatório%20Back-end.pdf)
   [relatorio caixa branca](Relatório%20Back-end.pdf)
-  [relatorio front-end](relatorio%20front-end.pdf.pdf)
-
+  [relatorio front-end](relatorio%20front-end.pdf)
 - Requisitos funicionais
 - Clientes/Usuários
   - RF01: O sistema deve permitir o cadastro e login de clientes (nome, email, senha).
