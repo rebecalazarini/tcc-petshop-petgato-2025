@@ -7,6 +7,7 @@ function mostrarProdutos(produtos) {
                 <img src="${produto.imagem}" alt="${produto.nome}">
                 <h2>${produto.nome}</h2>
                 <p>R$ ${produto.preco.toFixed(2)}</p>
+                <p>${produto.descricao}</p>
                 <div class="button-group">
                     <button class="botao1" onclick="mostrarDetalhes(${produto.id})">
                         <i class="fa fa-info-circle"></i> Detalhes
@@ -46,9 +47,10 @@ async function buscarProdutos() {
         console.error('Erro ao buscar produtos:', error);
     }
 }
+
 function mostrarDetalhes(id) {
     const produto = produtos.find(p => p.id === id);
-    alert(`Detalhes do produto: ${produto.nome}\nPreço: R$ ${produto.preco.toFixed(2)}`);
+    alert(`Detalhes do produto: ${produto.nome}\nPreço: R$ ${produto.preco.toFixed(2)}\nDescrição: ${produto.descricao}`);
 }
 
 function adicionarCarrinho() {
@@ -63,18 +65,20 @@ function adicionarCarrinho() {
     } else {
         carrinho.push({ ...produto, quantidade: 1 });
     }
+
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     fecharModal();
 }
 
-// Carousel - Seleciona imagens e botões
 const imgs = document.querySelectorAll('.carousel img');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const indicatorsContainer = document.querySelector('.carousel-indicators');
+
 let index = 0; // índice da imagem central
 let autoSlide; // autoplay
-// Cria bolinhas indicadores
+
+// Cria as bolinhas de acordo com a quantidade de imagens
 imgs.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
@@ -86,9 +90,9 @@ imgs.forEach((_, i) => {
     });
     indicatorsContainer.appendChild(dot);
 });
+
 const dots = document.querySelectorAll('.dot');
 
-// Atualiza classes das imagens e bolinhas
 function updateCarousel() {
     imgs.forEach((img, i) => {
         img.classList.remove('active', 'left', 'right', 'hidden');
@@ -103,31 +107,26 @@ function updateCarousel() {
             img.classList.add('hidden'); // fora do foco
         }
     });
-    // Atualiza bolinhas
     dots.forEach((dot, i) => {
         dot.classList.toggle('active-dot', i === index);
     });
 }
 
-// Próxima imagem
 function next() {
     index = (index + 1) % imgs.length;
     updateCarousel();
 }
 
-// Imagem anterior
 function prev() {
     index = (index - 1 + imgs.length) % imgs.length;
     updateCarousel();
 }
 
-// Reinicia autoplay
 function resetAuto() {
     clearInterval(autoSlide);
     autoSlide = setInterval(next, 4000);
 }
 
-// Eventos dos botões
 nextBtn.addEventListener('click', () => {
     next();
     resetAuto();
@@ -137,27 +136,19 @@ prevBtn.addEventListener('click', () => {
     resetAuto();
 });
 
-// Inicia autoplay
 autoSlide = setInterval(next, 4000);
-
-// Inicializa carousel
 updateCarousel();
 
-// Banner texto com mudança de cor
 const texts = document.querySelectorAll('.banner-text');
 let currentIndex = 0;
 
 function changeText() {
-    // Remove a classe 'active' de todos os textos e reseta cor
     texts.forEach((text) => {
         text.classList.remove('active');
         text.style.color = '#f7f7f7ff';
     });
-    // Ativa o texto atual e muda a cor para uma cor aleatória
     texts[currentIndex].classList.add('active');
     texts[currentIndex].style.color = getRandomColor();
-
-    // Atualiza o índice para o próximo texto
     currentIndex = (currentIndex + 1) % texts.length;
 }
 
@@ -170,11 +161,8 @@ function getRandomColor() {
     return color;
 }
 
-// Inicia o carousel de textos
 changeText();
 setInterval(changeText, 3000);
-
-// Banner background color change
 const banner = document.querySelector(".banner");
 const bannerTexts = document.querySelectorAll(".banner-text");
 let bannerIndex = 0;
@@ -182,8 +170,6 @@ let bannerIndex = 0;
 function showNextText() {
     bannerTexts.forEach(text => text.classList.remove("active"));
     bannerTexts[bannerIndex].classList.add("active");
-
-    // Muda a cor do banner conforme o texto ativo
     if (bannerIndex === 0) banner.style.backgroundColor = "#00a6f3f6";
     else if (bannerIndex === 1) banner.style.backgroundColor = "#0303fffb";
     else if (bannerIndex === 2) banner.style.backgroundColor = "#eeff00ff";
@@ -229,11 +215,9 @@ btnNext.addEventListener('click', () => {
   updateView();
 });
 
- const apiUrl = 'http://localhost:3000/produto';
+ const apiUrl = 'http://localhost:3000/produto'; // Substitua pela sua URL da API
   const productsPerPage = 4;
   let produtos = [];
-
-  // Função para chamar a API e carregar os produtos
   function fetchProdutos(categoria = 'todos') {
     fetch(apiUrl)
       .then(response => response.json())
@@ -246,14 +230,13 @@ btnNext.addEventListener('click', () => {
         console.error('Erro ao carregar os produtos:', error);
       });
   }
-
-  // Função para renderizar os produtos na tela
   function renderProdutos() {
     const start = currentPage * productsPerPage;
     const end = start + productsPerPage;
     const produtosParaMostrar = produtos.slice(start, end);
 
     const container = document.getElementById("produtos-container");
+    container.innerHTML = ''; // Limpa os produtos antigos
 
     produtosParaMostrar.forEach(produto => {
       const cardHTML = `
@@ -295,6 +278,6 @@ btnNext.addEventListener('click', () => {
     fetchProdutos(categoriaSelecionada);
   };
 
-fetchProdutos();
+  fetchProdutos();
 buscarProdutos();
 adicionarProduto();

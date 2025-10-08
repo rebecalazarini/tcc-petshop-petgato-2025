@@ -337,15 +337,7 @@ header button:hover {
   color: #fff;                /* textos brancos por padrão — ajuste se quiser */
 }
 
-/* ----- seus estilos de botões (adaptados) ----- */
-.animal {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;            /* quebra em linhas quando precisar */
-  margin: 14px 0;
-}
+
 
 .animal button {
   border: none;
@@ -522,23 +514,23 @@ header button:hover {
   top: -50%;
   left: -10%;
   background-color: rgb(255, 255, 255);
-  border-color: rgba(215, 220, 250, 0.247);
+  border-color: rgba(0, 0, 0, 0.247);
   padding: 5px 10px;
   font-weight: bold;
   cursor: pointer;
-  color: rgb(128, 124, 124);
+  color: rgb(0, 0, 0);
 }
 
 #btn-next{
   position: relative;
   top: -50%;
   left: 10%;
-  background-color: rgb(243, 19, 19);
-  border-color: rgba(215, 220, 250, 0.247);
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(0, 0, 0, 0.247);
   padding: 5px 10px;
   font-weight: bold;
   cursor: pointer;
-  color: rgb(128, 124, 124);
+  color: rgb(0, 0, 0);
 }
 
 .button-group button {

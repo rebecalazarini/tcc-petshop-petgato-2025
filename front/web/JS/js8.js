@@ -7,6 +7,7 @@ function mostrarProdutos(produtos) {
                 <img src="${produto.imagem}" alt="${produto.nome}">
                 <h2>${produto.nome}</h2>
                 <p>R$ ${produto.preco.toFixed(2)}</p>
+                <p>${produto.descricao}</p>
                 <div class="button-group">
                     <button class="botao1" onclick="mostrarDetalhes(${produto.id})">
                         <i class="fa fa-info-circle"></i> Detalhes
@@ -71,10 +72,9 @@ async function adicionarProduto(nome, descricao, preco, imagem) {
     }
 }
 
-
 function mostrarDetalhes(id) {
     const produto = produtos.find(p => p.id === id);
-    alert(`Detalhes do produto: ${produto.nome}\nPreço: R$ ${produto.preco.toFixed(2)}`);
+    alert(`Detalhes do produto: ${produto.nome}\nPreço: R$ ${produto.preco.toFixed(2)}\nDescrição: ${produto.descricao}`);
 }
 
 
