@@ -1,5 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const express = require('express');
+const cors = require('cors');
 
    const create = async (req, res) => {
      const { nomePet, especiePet, racaPet, nomeProprietario, nascpet, emailProprietario, dados } = req.body;
