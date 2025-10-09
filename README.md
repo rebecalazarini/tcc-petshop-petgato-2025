@@ -1,13 +1,13 @@
 # tcc Pet Shop
 
 ## Integrantes:
-[Rebeca Lazarini](https://github.com/rebecalazarini)
-[Evelyn Fernandes](https://github.com/EvelynFerna)
-[Crislaine Leopoldo](https://github.com/CrislaineL)
-[Larissa Santos](https://github.com/larissadossantosdarocha)
-[Larissa Vitória](https://github.com/larissavitoria06)
+- [Rebeca Lazarini](https://github.com/rebecalazarini)
+- [Evelyn Fernandes](https://github.com/EvelynFerna)
+- [Crislaine Leopoldo](https://github.com/CrislaineL)
+- [Larissa Santos](https://github.com/larissadossantosdarocha)
+- [Larissa Vitória](https://github.com/larissavitoria06)
 
-[petgato mobile](https://github.com/larissadossantosdarocha/tcc)
+- [petgato mobile](https://github.com/larissadossantosdarocha/tcc)
 
 ## Tecnologias
 - IDE (VsCode)
