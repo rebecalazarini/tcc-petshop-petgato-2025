@@ -9,18 +9,25 @@
   --c2: rgb(180, 227, 241);
   --c3: rgb(75, 197, 235);
   --c4: rgba(197, 218, 226, 0.623);
-  --c5: rgb(136, 132, 132); 
-  --t1: rgba(80, 34, 74, 0.3);
+  --c5: rgba(157, 201, 56, 0.795); 
+  --c6: rgb(25, 1, 161);
+  --t1: rgb(53, 54, 56);
   --t2: rgba(0, 0, 0, 0.7);
 }
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; 
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center; 
+}
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    overflow: hidden;
+  }
 }
 header {
   background: var(--c1);
@@ -32,39 +39,45 @@ header {
   top: 0;
   left: 0;
   z-index: 1000; 
-  justify-content: space-around; /* DISTRIBUI OS ITENS DO CABEÇALHO */
-  align-items: center; /* ALINHA OS ITENS DO CABEÇALHO */
+  justify-content: space-around;
+  align-items: center;
 }
 header h1 {
   font-family: 'Brush Script MT', cursive;
   color: rgb(6, 43, 255);
-  font-size: 36.5px; /* TAMANHO DO TEXTO */
+  font-size: 36.5px;
   position: relative;
   justify-content: center;
   align-items: center;
   top: 0px;
-  left: 8%; /* POSIÇÃO DO TEXTO */
-  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DO TEXTO, VAI APARECER UMA MÃOZINHA */
+  left: 8%; 
+  cursor: pointer;
 }
 header img {
-  width: 37px; /* TAMANHO DAS IMAGENS */
+  width: 37px; 
   border: none;
 }
 header button {
   background-color: transparent;
   border: none;
-  color: black; /* COR DO TEXTO */
-  font-weight: bold; /* TEXTO EM NEGRITO */
-  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DOS BOTÕES, VAI APARECER UMA MÃOZINHA */
+  color: black; 
+  font-weight: bold; 
+  cursor: pointer; 
 }
 header button:hover {
-  color: white; /* COR DO TEXTO AO PASSAR O MOUSE EM CIMA */
-  transition: 0.3s; /* TEMPO DA TRANSIÇÃO */
+  color: white; 
+  transition: 0.3s; 
   font-size: 1.8vh;
 }
 @media (max-width: 768px) {
   header h1 {
     width: 60%;
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    width: 78%;
     font-size: 30px;
   }
 }
@@ -81,9 +94,8 @@ header button:hover {
   width: 100%;
   height: 45px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  gap: 5%;
-  justify-content: center;
 }
 .Containerheader button {
   width: 130px;
@@ -93,11 +105,25 @@ header button:hover {
   color: var(--c5);
   background: transparent;
   cursor: pointer;
+  display: flex; 
   align-items: center;
   justify-content: center;
+  gap: 6px;
 }
 
-/* Anúncios buttons */
+.Containerheader button img {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .Containerheader button:hover img {
+    display: inline-block; 
+  }
+}
+@media (max-width: 768px) {
+  .Containerheader button img {
+    display: none !important; 
+  }
+}
 .anuncios {
   width: 70%;
   height: 12.6vh;
@@ -105,15 +131,14 @@ header button:hover {
   justify-content: space-around;
   align-items: center;
 }
-
 .anuncios button {
   background: transparent;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
-  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  display: flex; 
   align-items: center;
   justify-content: space-between;
-  gap: 11px; /* ESPAÇO ENTRE TEXTO E IMG */
+  gap: 11px; 
   padding: 3%;
   font-size: 60%;
   position: relative;
@@ -124,6 +149,18 @@ header button:hover {
   height: 100%;
   border-color: rgba(236, 231, 231, 0.205);
 }
+.anuncios button img {
+  width: 12%;
+  position: relative;
+  top: 0;
+  left: -6%;
+}
+
+@media (max-width: 768px) {
+  .anuncios {
+    display: none; 
+  }
+}
 .banner {
   position: relative;
   width: 60%;
@@ -132,17 +169,17 @@ header button:hover {
   padding: 15px;
   border-radius: 75px 75px 85px 75px;
   text-align: center;
-  font-weight: bold; /* TEXTO EM NEGRITO */
+  font-weight: bold; 
   overflow: hidden;
   margin: 4vh;
 }
 .banner-text {
-  display: none; /* ESCONDE O TEXTO */
+  display: none; 
   color: black;
-  transition: color 0.5s ease; /* FAZ A TRANSIÇÃO DO TEXTO */
+  transition: color 0.5s ease; 
 }
 .banner-text.active {
-  display: block; /* MOSTRA O TEXTO */
+  display: block; 
 }
 .carousel {
   position: relative;
@@ -158,73 +195,65 @@ header button:hover {
 .carousel img {
   width: 80%; 
   height: auto;
-  opacity: 0; 
+  opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
   transition: all 0.6s ease-in-out; 
   border-radius: 15px;
-  pointer-events: none; 
+  pointer-events: none;
 }
 .carousel img.active {
-  opacity: 1;
-  z-index: 3;
+  opacity: 1; 
   transform: translate(-50%, -50%) scale(1);
   filter: blur(0);
-  pointer-events: auto;
+  pointer-events: auto; 
 }
 .carousel img.left {
   opacity: 0.7; 
-  z-index: 2;
   transform: translate(-150%, -50%) scale(0.85); 
-  filter: blur(3px); 
+  filter: blur(3px);
 }
 .carousel img.right {
   opacity: 0.7; 
-  z-index: 2;
   transform: translate(50%, -50%) scale(0.85); 
   filter: blur(3px);
 }
-
 .carousel img.hidden {
-  opacity: 0;
-  z-index: 1;
-  transform: scale(0.5); 
+  opacity: 0; 
+  transform: scale(0.5);
   pointer-events: none; 
 }
-
 .carousel-indicators {
-  display: flex; 
+  display: flex;
   gap: 10px; 
   margin-top: 20px; 
 }
-
 .dot {
-  width: 12px; 
+  width: 12px;
   height: 12px; 
   border-radius: 50%; 
   background: rgba(65, 63, 47, 0.5); 
-  cursor: pointer;
+  cursor: pointer; 
   transition: background 0.3s; 
 }
-
 .dot.active-dot {
-  background: rgb(18, 14, 231); 
+  background: rgb(18, 14, 231);
 }
 @media (max-width: 768px) {
   .carousel {
-    width: 90%;
-    height: 250px; 
+    width: 90%; 
+    height: 250px;
   }
 
   .carousel img {
-    width: 90%; 
+    width: 90%;
   }
 
   .prev,
   .next {
-    font-size: 12px;
+    font-size: 16px;
     padding: 8px;
   }
 }
@@ -234,12 +263,10 @@ header button:hover {
     transform: translateY(-20px); 
   }
   to {
-    opacity: 1;
+    opacity: 1; 
     transform: translateY(0); 
   }
 }
-
-/* ANIMAL BUTTONS */
 .animal {
   border: none;
   width: 100%;
@@ -254,23 +281,24 @@ header button:hover {
 .animal button {
   border: none;
   background-color:rgb(75, 197, 235);
-  width: 20%;
+  width: 40%;
   height: 90px;
   padding: 0.7%;
-  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  display: flex; 
   align-items: center;
   justify-content: center;
+  font-size: 15px;
   border-radius: 5%;
-  gap: 50px; /* ESPAÇO ENTRE TEXTO E IMG */
-}
+  gap: 70px; 
 
-.animal button img {
-  width: 30%;
-  height: 50%;
+  img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;left: -10%;
   border-radius: 80%;
 }
-
-/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
+}
 @media (max-width: 768px) {
   .animal img {
     display: none; /* some completamente */
@@ -304,8 +332,8 @@ header button:hover {
 .section-fundo {
   position: relative;
   width: 100%;
-  min-height: 0;          /* controla "a altura" do bloco — ajuste se precisar */
-  margin: 40px 0;             /* espaçamento externo (opcional) */
+  min-height: 0;         
+  margin: 40px 0;          
   overflow: visible;
 }
 
@@ -315,8 +343,6 @@ header button:hover {
     position: relative;
     top: 0;left: 0;
   }}
-
-/* SVG do fundo (faz as ondulações nas extremidades) */
 .fundo-svg {
   position: absolute;
   left: 0;
@@ -326,23 +352,27 @@ header button:hover {
   pointer-events: none;       /* deixa os botões clicáveis */
   display: block;
 }
-
-/* conteúdo que fica sobre o SVG */
 .fundoparcial-content {
-  position: relative;             /* acima do SVG */
-  padding: 30px 20px;         /* controla o "padding" interno (altura visível) */
+  position: relative;            
+  padding: 30px 20px;        
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-  color: #fff;                /* textos brancos por padrão — ajuste se quiser */
+  color: #fff;               
 }
-
-
+.animal {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;           
+  margin: 14px 0;
+}
 
 .animal button {
   border: none;
   background-color: rgb(75, 197, 235);
-  min-width: 160px;           /* fica mais amigável em telas pequenas */
+  min-width: 160px;           
   height: 72px;
   display: flex;
   align-items: center;
@@ -351,37 +381,29 @@ header button:hover {
   gap: 8px;
   padding: 8px 12px;
   cursor: pointer;
-  color: #003;                /* cor do texto do botão (ajuste se quiser) */
+  color: #003;              
   font-weight: 600;
 }
-
 @media (max-width: 768px) {
   .fundo-svg, .fundoparcial-content, .animal, .pet, .section-fundo  {
-    display: none; /* some completamente */
+    display: none; 
   }}
-
-/* img dentro do botão */
 .animal button img {
   width: 36px;
   height: 36px;
   object-fit: cover;
   border-radius: 8px;
 }
-
-/* títulos dentro (pet/outros) */
 .pet h1, .outros h1 {
   margin: 0 0 8px 0;
   font-size: 20px;
   color: #fff;
 }
-
-/* responsividade */
 @media (max-width: 768px) {
   .fundoparcial-content { padding: 20px 12px; }
   .animal button { min-width: 48%; height: 56px; border-radius: 12px; }
   .animal button img { display: inline-block; width: 28px; height: 28px; }
 }
-/* JUROS */
 .juros {
   width: 80%;
   height: 12.6vh;
@@ -393,14 +415,13 @@ header button:hover {
   left: 2%;
   gap: 2%;
 }
-
 .juros button {
   width: 80%;
   background: transparent;
   justify-content: space-around;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 11px; 
@@ -415,7 +436,6 @@ header button:hover {
   border-color: rgba(236, 231, 231, 0.205);
   gap: 10%;
 }
-
 .juros button img {
   background: transparent;
   width: 15%;
@@ -423,6 +443,19 @@ header button:hover {
   position: relative;
   top: 0;
   left: -6%;
+}
+@media (max-width: 768px) {
+  .juros {
+    display: none; 
+  }
+}
+.mainContainer {
+  width: 98%;
+  height: 150%;
+  position: relative;
+  top: 0;
+  left: -1%;
+  color: rgb(80, 80, 85);
 }
 .produtos-wrapper {
   position: relative;
@@ -437,7 +470,7 @@ header button:hover {
 }
 #produtos-container .card {
   flex: 0 0 250px;  
-  height: 400px;   
+  height: 400px;    
   background: #f0f0f0;
   border-radius: 12px;
   display: flex;
@@ -446,14 +479,15 @@ header button:hover {
   text-align: center;
 }
 .produtos-navigation {
-  position: absolute;    
-  top: 50%;                      
+  position: absolute;         
+  top: 50%;                 
+  left: 0;                  
   width: 100%;   
-  height: 100%;           
-  display: flex;         
+  height: 100%;              
+  display: flex;               
   justify-content: space-between;
-  gap: 110%;
-  transform: translateY(-10%);
+  gap: 115%;
+  transform: translateY(-10%); 
   pointer-events: none; 
 }
 @media (max-width: 768px) {
@@ -462,18 +496,17 @@ header button:hover {
   }
 }
 .produtos-navigation button {
-  pointer-events: auto;
-  background: rgb(0, 0, 0);
+  pointer-events: auto;       
+  background: rgb(75, 197, 235);
   color: #fff;                
-  border: none;                
-  border-radius: 15%;  
-  padding: 5px;                
+  border: none;              
+  border-radius: 50%;         
+  width: 75px;               
   height: 7%;
-  cursor: pointer;             
-  font-size: 14px; 
-  justify-content: space-around;
+  cursor: pointer;            
+  font-size: 18px; 
+  justify-content: space-around;            
 }
-
 .card {
   height: 100%;
   border: 3px solid rgb(0, 38, 252);
@@ -482,7 +515,7 @@ header button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: 10px; /* MARGIN EXTERNA */
   border-radius: 2%;
   justify-content: space-around;
   border-color: rgba(240, 234, 186, 0.877);
@@ -496,43 +529,16 @@ header button:hover {
   border-radius: 5%;
   margin-bottom: 5%;
 }
-
-/* Botões dentro do card alinhados lado a lado */
 .button-group {
   position: relative;
   
   top: 10%;
   left: 0;
-  display: flex; /* Alinha os botões em linha */
-  gap: 10px; /* Espaçamento entre os botões */
-  justify-content: center; /* Centraliza os botões horizontalmente */
-  margin-top: 10px; /* Espaço acima do grupo de botões */
+  display: flex; 
+  gap: 10px; 
+  justify-content: center;
+  margin-top: 10px; 
 }
-
-#btn-prev{
-  position: relative;
-  top: -50%;
-  left: -10%;
-  background-color: rgb(255, 255, 255);
-  border-color: rgba(0, 0, 0, 0.247);
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-}
-
-#btn-next{
-  position: relative;
-  top: -50%;
-  left: 10%;
-  background-color: rgb(255, 255, 255);
-  border-color: rgba(0, 0, 0, 0.247);
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-}
-
 .button-group button {
   position: relative;
   top: -50%;
@@ -543,21 +549,113 @@ header button:hover {
   font-weight: bold;
   cursor: pointer;
   color: rgb(128, 124, 124);
-  display: flex; /* Para alinhar o conteúdo interno (ex: img) */
-  align-items: center; /* Centraliza verticalmente o conteúdo do botão */
-  justify-content: center; /* Centraliza horizontalmente */
-  gap: 5px; /* Espaço entre texto e imagem dentro do botão */
-  min-width: 80px; /* Largura mínima para os botões */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 5px; 
+  min-width: 80px; 
 }
+
+.button-group button img {
+  width: 20px; 
+  height: 20px;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+.janela {
+  background-color: #b4e3f1;
+  position: relative;
+  top: 0;
+  width: 60%;
+  max-height: 80%;
+  box-shadow: 0 0 5px var(--t1);
+  padding: 20px;
+  overflow-y: auto; 
+  border-radius: 8px;
+
+  button{
+    background: red;
+    position: relative;
+    width: 100%;
+    top: 10px;
+    padding: 8px;
+    
+  }
+  img{
+    width: 50%;
+    height: 50%;
+
+  }
+}
+.fundoparcial-content, .tosavet {
+  position: relative;
+  z-index: 1;
+}
+
+.cb{
+  width: 100%;
+  position: relative;
+  top: 0;left: 204px;
+}
+
+@media (max-width: 768px) {
+  .cb {
+    display: none; 
+
+  }}
   .tosavet{
-    width: 90%;
+    width: 74%;
     height: 150%;
     display: flex;
     justify-content: space-around;
     position: relative;
-    top: 0;left: -2%;
+    top: 0;left: -4.3%;
     gap: 3%;
+
+    .vet button{
+      width: 70%;
+      height: 350px;
+      border: none;
+      background-color: rgba(11, 167, 206, 0);
+      display: flex;
+      justify-content: space-around;
+      border-radius: 25px;
+
+       & img{
+        width: 70%;
+        border-radius: 70% 0 0 0 ; 
+        position: relative;
+        top: 0;left: 10%; 
+      }
+      & h2{
+        font-size: 15px;
+        color: rgb(233, 224, 142);
+        position: relative;
+        top: 25%;left: -7%;
+      }
+
+    }
 }
+@media (max-width: 768px) {
+  .tosavet {
+    display: none; 
+
+  }
+.h2 {
+    width: 0;
+    font-size: 1px;
+  }}
     .banho, .vet {
       width: 70%;
       height: 350px;
@@ -565,7 +663,6 @@ header button:hover {
       display: flex;
       justify-content: space-around;
       border-radius: 25px;
-      
        & img{
         width: 50%;
         border-radius: 70% 0 0 0 ; 
@@ -579,6 +676,70 @@ header button:hover {
         top: 25%;left: 5%;
       }
     }
+.mainContainer-dup {
+  width: 100%;
+  padding: 30px 10%;
+  box-sizing: border-box;
+  color: rgb(80,80,85);
+}
+.produtos-grid-dup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+.card-dup {
+  background: rgba(205,235,252,0.42);
+  border-radius: 8px;
+  padding: 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  min-height: 220px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.card-dup img { width: 85%; height: 120px; object-fit: cover; border-radius:6px; }
+.card-dup h4 { margin:8px 0 4px; font-size:16px; text-align:center; }
+.card-dup p { font-size:14px; margin:2px 0; text-align:center; }
+
+.button-group-dup {
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+.button-group-dup button {
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.08);
+}
+.modal-dup {
+  position: fixed;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.45);
+  z-index: 9999;
+}
+.janela-dup {
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  width: min(900px, 95%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.janela-header-dup { display:flex; justify-content:space-between; align-items:center; }
+.janela-header-dup button { cursor:pointer; }
+.conteudo-produto-dup { display:flex; gap:12px; align-items:center; margin-top:14px; }
+.conteudo-produto-dup img { width:140px; height:120px; object-fit:cover; border-radius:6px; }
+.related-products-dup { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+.related-item-dup { width: 130px; border:1px solid rgba(0,0,0,0.06); padding:8px; border-radius:6px; text-align:center; }
+.modal-actions-dup { margin-top:12px; display:flex; justify-content:flex-end; }
+.oculto { display: none !important; }
+
 @media (max-width:900px) {
   .produtos-grid-dup { grid-template-columns: repeat(2, 1fr); }
   .conteudo-produto-dup { flex-direction:column; align-items:flex-start; }
@@ -586,6 +747,7 @@ header button:hover {
 @media (max-width:480px) {
   .produtos-grid-dup { grid-template-columns: 1fr; }
 }
+
 .blog {
   width: 80%;
   position: relative;
@@ -666,38 +828,148 @@ header button:hover {
   }
 }
 
+.promos{
+  width: 80%;
+  position: relative;
+  top: 0;left: -2%;
+  display: flex;
+  gap: 3%;
+}
+.prim{
+    width: 5%;
+    position: relative;
+    background: rgba(244, 248, 0, 0.13);
+    top: 0;left: 3%;
+    height: auto;
+    border: var(--c3) 3px solid;
+    padding: 10px;
+    border-radius: 15px;
+
+    h2{
+      font-size: 25px;
+      color: var(--c6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    }
+     p{
+      font-size: 15px;
+      color: var(--c6);
+      text-align: justify;
+    }
 
 
+    img{
+      width: 20vw;
+      height: 20vh;
+      position: relative;
+      top: 0;left: 0;
+      border-radius: 15px;
+    }
+  }
 
+.petgato{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+  img{
+    width: 2%;
+    height: 20px;
+    position: relative;
+    top: 3px;left: -10px;
+  }
+}
+.carousel-promos {
+  width: 80%;
+  position: relative;
+  top: 0;
+  left: -2%;
+  overflow: hidden;
+  border-radius: 15px; 
+  margin: 20px auto; 
+}
+.promos {
+  display: flex;
+  gap: 3%;
+  transition: transform 0.4s ease-in-out;
+  width: max-content; 
+  padding: 10px 0; 
+}
+.prim {
+  width: 17%;
+  min-width: 100px; 
+  flex-shrink: 0; 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  img{
+    width: 100%;
+    height: 190px;
+  }
+}
+.carousel-btn-prev,
+.carousel-btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(75, 197, 235, 0.8); 
+  color: white;
+  border: none;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10; 
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-btn-prev {
+  left: 10px;
+}
+.carousel-btn-next {
+  right: 10px;
+}
+.carousel-btn-prev:hover,
+.carousel-btn-next:hover {
+  background: var(--c3, rgb(75, 197, 235));
+  transform: translateY(-50%) scale(1.1);
+}
+@media (max-width: 768px) {
+  .carousel-promos {
+    width: 95%;
+  }
+  .prim {
+    width: 45%;
+    min-width: 140px;
+  }
+  .carousel-btn-prev,
+  .carousel-btn-next {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
 .footer {
   width: 100%;
-  background-color:var(--c2); /* Verde escuro para tema pet/natureza */
+  background-color:var(--c2); 
   color: #5c5757;
   padding: 40px 0 20px;
   font-family: 'Arial', sans-serif;
 }
 
 .footer-content {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
@@ -707,6 +979,7 @@ header button:hover {
 }
 
 .footer-section {
+  width: 100%;
   flex: 1;
   min-width: 250px;
   margin: 20px;
@@ -717,7 +990,7 @@ header button:hover {
   margin-bottom: 15px;
   color: #002efd;
   font-size: 18px;
-  border-bottom: 2px solid #ffe711; /* Verde claro para destaque */
+  border-bottom: 2px solid #ffe711;
   padding-bottom: 5px;
 }
 
@@ -736,7 +1009,7 @@ header button:hover {
 }
 
 .footer-section ul li a {
-  color: #020a7e; /* Verde claro para links */
+  color: #020a7e;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -800,8 +1073,6 @@ header button:hover {
   font-size: 12px;
   color: #1e9962;
 }
-
-/* Responsividade para Mobile */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -827,3 +1098,44 @@ header button:hover {
     border-radius: 4px;
   }
 }
+
+.promocao{
+  width: 90%;
+  position: relative;
+  top: 0;left: -2%;
+  display: flex;
+
+  gap: 3%;
+}
+.prinm{
+    width: 60%;
+    position: relative;
+    top: 0;left: 3%;
+    height: 500px;
+    padding: 10px;
+    border-radius: 15px;
+
+    h2{
+      font-size: 25px;
+      color: var(--c6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    }
+     p{
+      font-size: 15px;
+      color: var(--c6);
+      text-align: justify;
+    }
+
+
+    img{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0;left: 0;
+      border-radius: 15px;
+    }
+  }
