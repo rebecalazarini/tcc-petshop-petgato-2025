@@ -1,8 +1,7 @@
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -43,11 +42,5 @@ model Produto{
   descricao String @db.VarChar(255)
   preco Float
   imagem String @db.VarChar(255)
-  categoria Categoria
-}
-enum Categoria {
-  cachorro
-  gato
-  outros
-  farmacia
+  categoria Especie
 }

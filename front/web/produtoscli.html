@@ -124,49 +124,38 @@
   </div>
 
   <script>
-    // URLs das duas APIs
-    const apiLocal = 'http://localhost:3000/produto';
-    const apiVercel = 'https://back-end-tcc-gamma.vercel.app/produto';
+    const apiLocal = 'http://localhost:3001/produto';
+    const apiVercel = 'https://backend-tcc-petshop-petgato-2025.vercel.app/produto';
 
-    // Função que busca produtos das duas APIs simultaneamente
     async function buscarTodosProdutos() {
       try {
-        // Promise.all para esperar ambas as respostas
         const [resLocal, resVercel] = await Promise.all([
           fetch(apiLocal),
           fetch(apiVercel)
         ]);
-
-        // Se alguma falhar, não trava o código — captura erro mais abaixo
         const dadosLocal = resLocal.ok ? await resLocal.json() : [];
         const dadosVercel = resVercel.ok ? await resVercel.json() : [];
 
-        // Combina os arrays — se quiser eliminar duplicatas, pode fazer filtragem aqui
+       
         const todos = [...dadosLocal, ...dadosVercel];
 
         return todos;
       } catch (erro) {
         console.error('Erro ao buscar produtos das APIs:', erro);
-        return [];  // retorna array vazio em caso de erro
+        return [];  
       }
     }
-
-    // Função para exibir produtos no DOM, filtrando por categoria se necessário
     async function exibirProdutos(categoria = 'todos') {
       const todosProdutos = await buscarTodosProdutos();
-
-      // Filtrar se categoria for diferente de 'todos'
       let produtosFiltrados = todosProdutos;
       if (categoria && categoria !== 'todos') {
         produtosFiltrados = todosProdutos.filter(p => {
-          // Supondo que cada produto tenha propriedade `categoria`
-          // Se não tiver exatamente esse nome, ajuste conforme sua API
           return p.categoria === categoria;
         });
       }
 
       const container = document.getElementById('produtosLista');
-      container.innerHTML = '';  // limpa antes de inserir
+      container.innerHTML = '';
 
       if (produtosFiltrados.length === 0) {
         container.innerHTML = `<p>Nenhum produto encontrado para a categoria "${categoria}".</p>`;
@@ -189,14 +178,10 @@
         container.appendChild(card);
       });
     }
-
-    // Evento de mudança no select de categoria
     document.getElementById('categoriaFilter').addEventListener('change', function() {
       const cat = this.value;
       exibirProdutos(cat);
     });
-
-    // Exibir todos ao carregar a página
     window.addEventListener('DOMContentLoaded', (event) => {
       exibirProdutos('todos');
     });

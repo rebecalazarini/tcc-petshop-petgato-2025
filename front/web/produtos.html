@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Pet Gato</title>
     <style>
-        /* Estilo para os botões */
         .Containerheader button {
             margin: 10px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
         }
-
-        /* Estilo dos Cards */
         .produtos-container {
             display: flex;
             flex-wrap: wrap;
@@ -53,8 +50,6 @@
         .produto-card:hover {
             transform: scale(1.05);
         }
-
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -282,8 +277,8 @@
 </div>
 
 <script>
-  const urlLocal = 'http://localhost:3000/produto';
-  const urlVercel = 'https://back-end-tcc-gamma.vercel.app/produto';
+  const urlLocal = 'http://localhost:3001/produto';
+  const urlVercel = 'https://backend-tcc-petshop-petgato-2025.vercel.app/produto';
 
   // Carregar produtos
   let produtos = [];
@@ -393,8 +388,6 @@
         alert("Erro ao cadastrar produto.");
       });
   };
-
-  // Inicializa carregando os produtos
   window.onload = buscarProdutos;
 
 </script>
