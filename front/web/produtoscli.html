@@ -124,20 +124,16 @@
   </div>
 
   <script>
-    const apiLocal = 'http://localhost:3001/produto';
     const apiVercel = 'https://backend-tcc-petshop-petgato-2025.vercel.app/produto';
 
     async function buscarTodosProdutos() {
       try {
-        const [resLocal, resVercel] = await Promise.all([
-          fetch(apiLocal),
+        const [resVercel] = await Promise.all([
           fetch(apiVercel)
         ]);
-        const dadosLocal = resLocal.ok ? await resLocal.json() : [];
         const dadosVercel = resVercel.ok ? await resVercel.json() : [];
 
-       
-        const todos = [...dadosLocal, ...dadosVercel];
+        const todos = [...dadosVercel];
 
         return todos;
       } catch (erro) {
