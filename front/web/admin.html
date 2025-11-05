@@ -42,7 +42,7 @@
       </p>
       <br />
     </button>
-    <button onclick="window.location.href='adocaoadmin.html'">
+    <button onclick="window.location.href='pet1.html'">
       <img src="../web/images/salve-os-animais.gif" alt="Blog" width="40" height="40" />
       <p style="color: black;">
         <b style="color: rgb(75, 197, 235);">Amor e cuidado!</b><br />
@@ -99,32 +99,11 @@
     </button>
   </div>
   <br><br><br>
-  <div class="text">
-    <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
-  </div>
 
 <main>
-    <!-- Filtro de Categoria -->
-    <div class="filter-container">
-        <select id="categoriaFilter">
-            <option value="todos">Todos os Produtos</option>
-            <option value="cachorro">Cachorro</option>
-            <option value="gato">Gato</option>
-            <option value="outros">Outros Pets</option>
-            <option value="farmacia">Farmácia</option>
-        </select>
-    </div>
-
-    <!-- Cards de Produtos -->
-    <div class="produtos-container" id="produtos-container">
-        <!-- Os produtos serão inseridos aqui -->
-    </div>
-
-    <!-- Navegação -->
-    <div class="nav-buttons">
-        <button id="btn-prev">Anterior</button>
-        <button id="btn-next">Próximo</button>
-    </div>
+   <div class="text">
+    <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
+  </div>
 </main>
 
 
@@ -141,45 +120,331 @@
   <div class="fundoparcial-content"><br><br><br><br>
     <div class="pet"><h1><b style="font-size: 35px;">Tudo para Pets:</b></h1></div>
 
-   <div class="pet">
-       <h1><b style="font-size: 35px;">Categorias:</b></h1>
-      </div>
+   <section class="section-fundo">
+    <!-- SVG que desenha o bloco ondulado (topo + base) -->
+    <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#B4E3F1" d="M0,80 C150,0 350,0 600,80 C850,160 1050,160 1440,80 L1440,320 C1200,260 1000,260 800,320 C600,380 400,380 200,320 L0,320 Z"></path>
+    </svg>
+    <br />
+    <div class="fundoparcial-content">
+      <div class="pet">
+      </div><br>
       <div class="animal">
         <button onclick="window.location.href='produtos.html'">
-          <img src="../web/images/cachorro.gif" alt="Cachorros" />Cachorros
+          <img src="../web/images/pet-food.png" />Produtos para seus pets 
         </button>
-        <button onclick="window.location.href='produtos.html'">
-          <img src="../web/images/gato.gif" alt="Gatos" />Gatos
-        </button>  
-        <button onclick="window.location.href='produtos.html'">
-          <img src="../web/images/peixe-palhaco.gif" alt="Peixes" />Outros pets
-        </button>
-        <button onclick="window.location.href='produtos.html'">
-          <img src="../web/images/farmacia.gif" alt="Farmacia" />Farmácia
-        </button>
+      </div><br>
     </div>
+  </section>
 </section>
-<br><br><br><br><br><br>
-<div class="cb">
-  <h1><b style="font-size: 45px;">Cuidados Básicos:</b></h1><br>
-</div><br><br><br>
-<div class="tosavet"><br>
-  <div class="banho">
-  <h2><b style="font-size: 50px;">Banho<br> & Tosa</b><br><br>
-  Higiene e Conforto para o seu melhor amigo!</h2>
-  <img src="../web/images/banho-tosa-pet-shop.jpg">
-</div><br>
-<div class="vet">
-  <h2><br><br><b style="font-size: 50px;">Veterinário</b><br><br>
-  A saúde de seu pet, a sua prioridade</h2>
-  <img src="../web/images/veterinario.png">
-</div>
-</div>
+
 <br><br><br><br><br><br>
 
+  <br /><br /><br /><br /><br /><br />
 
-</main>
+  <div class="cb">
+    <h1><b style="font-size: 45px;">Cuidados Básicos:</b></h1><br />
+  </div>
+  <br /><br /><br />
 
+  <div class="tosavet">
+    <br />
+    <div class="banho">
+      <h2><b style="font-size: 50px;">Banho<br /> & Tosa</b><br /><br />
+        Higiene e Conforto para o seu melhor amigo!
+      </h2>
+      <img src="../web/images/banho-tosa-pet-shop.jpg" alt="Banho e Tosa" />
+    </div>
+    <br />
+    <div class="vet"><button onclick="window.location.href='consulta.html'">
+      <h2><b style="font-size: 50px;">Veterinário</b><br /><br />
+        A saúde de seu pet, a sua prioridade
+      </h2>
+      <img src="../web/images/veterinario.png" alt="Veterinário" /></button>
+    </div>
+  </div>
+<br><br><br><br><br><br><br><br>
+  <div class="video">
+    <img src="../web/images/Frete grátis 1.gif" alt="Saúde Pet" />
+  </div><br>
+  <div class="petgato">
+  <h2><b style="font-size: 15px; color: rgb(0, 17, 255);"><img src="../web/images/favorito.png" > Aqui no Pet Gatô, você encontra tudo o que o seu pet precisa.</b></h2><br><br><br>
+  </div>
+  <div class="carousel-promos">
+
+    <div class="promos">
+      <div class="prim">
+        <img src="../web/images/dois.png" alt="Promoções" /><br><br>
+        <h2><b style="font-size: 20px;">Cuidadora de animais!</b></h2>
+      </div>
+      <div class="prim">
+        <img src="../web/images/tres.png" alt="Promoções" /><br><br>
+        <h2><b style="font-size: 20px;">Tudo que você precisa!</b></h2><br>
+      </div>
+      <div class="prim">
+        <img src="../web/images/cinco.png" alt="Promoções" /><br><br>
+        <center><h2><b style="font-size: 20px;">Vacinação do seu animal preferido!</b></h2><br>
+      </center></div>
+      <div class="prim">
+        <img src="../web/images/seis.png" alt="Promoções" /><br><br>
+        <h2><b style="font-size: 20px;">Promoções Imperdíveis</b></h2><br>
+      </div>
+      <div class="prim">
+        <img src="../web/images/sete.png" alt="Promoções" /><br><br>
+        <h2><b style="font-size: 20px;">Higiene Básica!</b></h2><br>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+
+
+  <div class="carousel-indicators" aria-label="Indicadores do carousel">
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br>
+  <div class="ôblog" >
+<h1><b style="font-size: 45px; color: rgb(0, 17, 255);">Blog Pet Gatô:</b></h1>
+  </div>
+
+<div class="blog">
+    <br />
+<div class="petum">
+  
+      <div class="imn"> <img src="./images/blog1.jpg" alt="Banho e Tosa" /></div>
+      <h2><b> Cuidados Essenciais para Filhotes</b>
+      </h2><br>
+    <p>A vacinação é fundamental para proteger o animal contra doenças graves, como cinomose e parvovirose. Já a vermifugação previne vermes intestinais que podem afetar...</p>
+    <br><h3>21/09/2025 | 6min de leitura</h3>
+
+    <button onclick="window.location.href='pet3.html'"><h4>Leia mais</h4> <img src="../web/images/seta.gif"/></button>
+  </div>
+
+    <div class="petum">
+      <div class="imn"> <img src="../web/images/download.avif" alt="Banho e Tosa" /></div>
+      <h2><b > O que fazer se o Seu Pet estiver vesgo</b>
+      </h2><br><br>
+    <p> Alteração nos nervos que controlam os músculos dos olhos, o que pode causar desalinhamento ocular. Isso pode vir a...</p>
+    <br><h3>17/09/2025 | 5min de leitura</h3>
+    <br>
+    <button onclick="window.location.href='pet1.html'"><h4>Leia mais</h4> <img src="../web/images/seta.gif"/></button>
+  </div>
+  <div class="petum">
+      <div class="imn"> <img src="./images/blog3.jpg" alt="Banho e Tosa" /></div>
+      <h2><b > Como Proteger Seu Pet Durante o Verão</b>
+      </h2><br><br>
+    <p>O calor intenso pode prejudicar a saúde do seu pet. O asfalto quente pode queimar as patas dos animais e o calor excessivo pode levar à...</p>
+    <br><h3>08/10/2025 | 4min de leitura</h3>
+    
+    <button onclick="window.location.href='pet2.html'"><h4>Leia mais</h4> <img src="../web/images/seta.gif"/></button>
+  </div>
+  </div>
+<br><br><br><br><br><br><br><br><br><br>
+
+<div class="desp">
+  <h1><b style="font-size: 45px; color: rgb(0, 17, 255);">Animais Desaparecidos:</b></h1><br><br><br><br><br>
+</div>
+    <div class="promocao">
+      <div class="prinm">
+        <img src="../web/images/desaparecido1.png" alt="Promoções" /><br><br>
+      </div>
+      <div class="prinm">
+        <img src="../web/images/desaparecido4.png" alt="Promoções" /><br><br>
+      </div>
+      <div class="prinm">
+        <img src="../web/images/desaparecido5.png" alt="Promoções" /><br><br>
+      </div>
+      <div class="prinm">
+        <img src="../web/images/desaparecido6.png" alt="Promoções" /><br><br>
+      </div>
+    </div>
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<div class="bomba">
+  <h1>Indicações de quem entende:🌍😺🐶</h1>
+  <div class="container-carrossel">
+    <div class="carrosselum">
+       <div class="cardt">
+        <img src="./images/viajar.jpg" alt="Produto 1">
+        <h5 style="font-size: 16px;">Viajar com quem mais ama</h5>
+        <p style="font-size: 12px;">Proporcionar uma viajem para o seu pet, agora é possivel!</p>
+       <div class="vejamais">
+        <a href="https://www.petworktravel.com.br/pt/" target="_blank">
+  <button>
+    <b style="color: blue;">Veja mais <img src="../web/images/seta.gif" alt="seta"/></b>
+  </button>
+</a>
+</div>
+      </div>
+      <div class="cardt">
+        <img src="./images/creche.jpg" alt="Produto 1">
+        <h5 style="font-size: 16px;">Um lugar para socializar!</h5>
+        <p style="font-size: 12px;">Um lugar onde seu pet pode ficar,durante seu trabalho.</p>
+        
+        <div class="vejamais">
+        <a href="https://www.dogresort.com.br/" target="_blank">
+  <button>
+    <b style="color: blue;">Veja mais <img src="../web/images/seta.gif" alt="seta"/></b>
+  </button>
+</a>
+</div>
+      </div>
+      <div class="cardt">
+        <img src="./images/spa.jpg" alt="Produto 1">
+        <h5 style="font-size: 16px;">Relaxar é um privilegio!</h5>
+        <p style="font-size: 12px;">Proporcione uma experiencia única para seu pet.</p>
+        
+        <div class="vejamais">
+        <a href="https://daycarepet.com.br/pet-spa" target="_blank">
+  <button>
+    <b style="color: blue;">Veja mais <img src="../web/images/seta.gif" alt="seta"/></b>
+  </button>
+</a>
+</div>
+      </div>
+      <div class="cardt">
+        <img src="./images/bolsinha.jpg" alt="Produto 1">
+        <h5 style="font-size: 16px;">Hospetagem de elite!</h5>
+        <p style="font-size: 12px;">Hotel/Creche feito sob medida para seu companheiro.</p>
+         
+        <div class="vejamais">
+        <a href="https://alfdogpetcreche.com.br/?gad_source=1&gad_campaignid=22605562734&gbraid=0AAAAA_N_39wBy_VWFi3drNWCBdbE0xsyL&gclid=Cj0KCQjwjL3HBhCgARIsAPUg7a68OBxpd7M9LsIHzy9hWk-RfsrNovDAHp7dDqHwNaugCEnF5_C9EiIaAri-EALw_wcB" target="_blank">
+  <button>
+    <b style="color: blue;">Veja mais <img src="../web/images/seta.gif" alt="seta"/></b>
+  </button>
+</a>
+</div>
+      </div>
+      <div class="cardt">
+        <img src="./images/lama.jpg" alt="Produto 1">
+        <h5 style="font-size: 16px;">Conheça passeios para fazer com o seu pet!</h5>
+        <p style="font-size: 12px;">Passear com o seu animalzinho é essencial, conheça alguns luga...</p>
+     
+ 
+        <div class="vejamais">
+        <a href="https://passeios.petsturistas.com.br/" target="_blank">
+  <button>
+    <b style="color: blue;">Veja mais <img src="../web/images/seta.gif" alt="seta"/></b>
+  </button>
+</a>
+</div> </div>
+      </div>
+
+
+  
+  </div>
+
+</div>
+
+<br><br><br><br><br><br>
+  <footer class="footer">
+  <div class="footer-content">
+    <!-- Seção Sobre -->
+    <div class="footer-section">
+      <h3>Sobre o PetShop</h3>
+      <p>Somos uma loja dedicada ao bem-estar dos seus pets. Oferecemos produtos de qualidade e serviços personalizados para cães, gatos e outros animais.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- Seção Links Úteis -->
+    <div class="footer-section">
+      <h3>Links Úteis</h3>
+      <ul>
+        <li><a href="#">Produtos para Cães</a></li>
+        <li><a href="#">Produtos para Gatos</a></li>
+        <li><a href="#">Serviços de Banho e Tosa</a></li>
+        <li><a href="#">Consultas Veterinárias</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+      </ul>
+    </div>
+
+    <!-- Seção Contato -->
+    <div class="footer-section">
+      <h3>Contato</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro, São Paulo - SP</p>
+      <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+      <p><i class="fas fa-envelope"></i> contato@petshop.com.br</p>
+      <p><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h | Sáb: 9h às 14h</p>
+    </div>
+
+    <!-- Seção Newsletter -->
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <p>Receba dicas e promoções exclusivas!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Seu e-mail" required>
+        <button type="submit">Inscrever</button>
+      </form>
+    </div>
+  </div>
+  <!-- Direitos Autorais -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 PetShop. Todos os direitos reservados. Desenvolvido com ❤️ para pets.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.carousel-promos');
+  if (!carousel) return; // Sai se não encontrar o carousel
+  
+  const track = carousel.querySelector('.promos');
+  const items = track.querySelectorAll('.prim');
+  const prevBtn = carousel.querySelector('.carousel-btn-prev');
+  const nextBtn = carousel.querySelector('.carousel-btn-next');
+
+  if (items.length <= 1) return; // Não precisa se houver 1 ou menos itens
+
+  let currentIndex = 0;
+  let itemWidth = 0;
+  let gap = 0;
+  const totalItems = items.length;
+
+  function calculateDimensions() {
+    gap = parseFloat(getComputedStyle(track).gap) || 0; // Pega o gap em px
+    itemWidth = items[0].offsetWidth + gap; // Largura total por item
+  }
+
+  function updateCarousel() {
+    const offset = -currentIndex * itemWidth;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  function moveNext() {
+    currentIndex = (currentIndex + 1) % totalItems; // Rotativo: volta ao 0
+    updateCarousel();
+  }
+
+  function movePrev() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Rotativo: vai ao fim
+    updateCarousel();
+  }
+
+  prevBtn.addEventListener('click', movePrev);
+  nextBtn.addEventListener('click', moveNext);
+
+  // Inicializa
+  calculateDimensions();
+  updateCarousel();
+
+  // Recalcula em resize da janela
+  window.addEventListener('resize', () => {
+    calculateDimensions();
+    updateCarousel();
+  });
+
+  // Opcional: Navegação com teclado (setas esquerda/direita)
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement === carousel || carousel.contains(document.activeElement)) { // Só se focado no carousel
+      if (e.key === 'ArrowLeft') movePrev();
+      if (e.key === 'ArrowRight') moveNext();
+    }
+  });
+});
+</script>
 
   <script src="./JS/js8.js"></script>
 </body>

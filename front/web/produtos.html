@@ -82,16 +82,16 @@
             color: black;
         }
 
-    header {
+   header {
       text-align: center;
       padding: 20px;
-      background-color: #b3e5ff; /* tom de azul bebê médio */
+      background-color: rgb(27, 2, 168); 
     }
 
     header h1 {
       margin: 0;
       font-size: 2em;
-      color: #005b99;
+      color: #f3faff;
     }
 
     header button {
@@ -108,18 +108,6 @@
     header button:hover {
       background-color: #0077aa;
     }
-
-    .filter-container {
-      margin: 20px 0;
-    }
-
-    .filter-container select {
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #0099cc;
-      border-radius: 5px;
-    }
-
     .produtos-container {
       display: flex;
       flex-wrap: wrap;
@@ -127,7 +115,6 @@
       gap: 20px;
       padding: 0 20px 40px;
     }
-
     .produto-card {
       width: 250px;
       background-color: white;
@@ -208,7 +195,7 @@
 </header>
 
 <div class="Containerheader">
-    <button onclick="window.location.href='consulta.html'">
+    <button onclick="window.location.href='consultaadmin.html'">
         Consulta
     </button>
     <button id="novoProdutoBtn">
@@ -216,11 +203,8 @@
     </button>
 </div>
 
-
-<!-- Produtos -->
 <div id="produtosLista" class="produtos-container"></div>
 
-<!-- Modal de edição -->
 <div id="modal-editar" class="modal">
   <div class="modal-content">
     <span class="close" onclick="fecharModalEditar()">&times;</span>
@@ -245,7 +229,6 @@
   </div>
 </div>
 
-<!-- Modal para cadastrar novo produto -->
 <div id="novoProdutoModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -277,17 +260,14 @@
 </div>
 
 <script>
-  const urlLocal = 'http://localhost:3001/produto';
   const urlVercel = 'https://backend-tcc-petshop-petgato-2025.vercel.app/produto';
-
-  // Carregar produtos
   let produtos = [];
 
   function buscarProdutos() {
-    fetch(urlLocal)
+    fetch(urlVercel)
       .then(response => response.json())
       .then(data => {
-        produtos = data; // salvar para uso em edição
+        produtos = data;
         exibirProdutos();
       })
       .catch(error => {
@@ -325,11 +305,10 @@
     if (!confirm("Tem certeza que deseja excluir este produto?")) return;
 
     Promise.all([
-      fetch(`${urlLocal}/${id}`, { method: "DELETE" }),
       fetch(`${urlVercel}/${id}`, { method: "DELETE" })
     ])
-      .then(([res1, res2]) => {
-        if (!res1.ok && !res2.ok) throw new Error("Erro ao excluir");
+      .then(([res1]) => {
+        if (!res1.ok) throw new Error("Erro ao excluir");
         alert("Produto excluído com sucesso!");
         buscarProdutos();
       })
@@ -339,7 +318,6 @@
       });
   }
 
-  // Modal "Cadastrar Novo Produto"
   document.getElementById("novoProdutoBtn").onclick = function () {
     document.getElementById("novoProdutoModal").style.display = "block";
   };
@@ -366,11 +344,6 @@
     };
 
     Promise.all([
-      fetch(urlLocal, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(produtoData),
-      }),
       fetch(urlVercel, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -389,7 +362,6 @@
       });
   };
   window.onload = buscarProdutos;
-
 </script>
 </body>
 </html>
