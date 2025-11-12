@@ -11,26 +11,9 @@ async function Cadastrar() {
         alert("Por favor, preencha os campos corretamente.");
         return;
     }
-
- const urlLocal = 'http://localhost:3000/consultas';
     const urlVercel = 'https://back-end-tcc-gamma.vercel.app/consultas';
 
     try {
-        // Cria as promessas para as duas requisições
-        const promiseLocal = fetch(urlLocal, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ 
-                emailProprietario, 
-                nomePet, 
-                especiePet, 
-                racaPet, 
-                nomeProprietario, 
-                nascpet, 
-                dados 
-            })
-        });
-
         const promiseVercel = fetch(urlVercel, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -46,17 +29,15 @@ async function Cadastrar() {
         });
 
         // Espera as duas promessas serem resolvidas
-        const [responseLocal, responseVercel] = await Promise.all([promiseLocal, promiseVercel]);
+        const [responseVercel] = await Promise.all([promiseVercel]);
 
         // Verifica se ambas as respostas foram bem-sucedidas
-        if (responseLocal.ok || responseVercel.ok) {
+        if (responseVercel.ok) {
             alert("Cadastro realizado com sucesso!");
             window.location.href = "index.html";
         } else {
-            // Se ambas as requisições falharem
-            const erroLocal = await responseLocal.text();
             const erroVercel = await responseVercel.text();
-            alert(`Erro ao cadastrar na local: ${erroLocal}\nErro ao cadastrar na Vercel: ${erroVercel}`);
+            alert(`Erro ao cadastrar na Vercel: ${erroVercel}`);
         }
 
     } catch (error) {
@@ -77,18 +58,3 @@ async function Cadastrar() {
   closeButton.addEventListener('click', () => {
     popup.classList.remove('show');
   });
-
-  // Fecha ao clicar fora
-  window.addEventListener('click', function(event) {
-    if (!popup.contains(event.target) && event.target !== openButton) {
-      popup.classList.remove('show');
-    }
-  });
-
-  const menuToggle = document.getElementById('menu-toggle');
-const slideMenu = document.getElementById('slide-menu');
-
-menuToggle.addEventListener('click',() => {
-   slideMenu.classList.toggle('active');
-   menuToggle.classList.toggle('active');
-});

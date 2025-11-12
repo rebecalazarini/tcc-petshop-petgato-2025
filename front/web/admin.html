@@ -11,7 +11,7 @@
 <body>
   <header>
     <h1>𝓟𝓮𝓽 𝓖𝓪𝓽𝓸</h1>
-    <button onclick="window.location.href='index.html'">
+    <button id="logout" onclick="window.location.href='index.html'">
      <h2>Sair para a página inicial</h2>
     </button>
   </header>
@@ -57,12 +57,6 @@
     <h5 class="banner-text active">Compras acima de R$100,00 ganham um brinde</h5>
   </div>
 
-<main>
-   <div class="text">
-    <h1><b style="color:rgb(0, 17, 255)">Produtos Recomendados:</b></h1>
-  </div>
-</main>
-
 <br><br><br>
 <section class="section-fundo">
   <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
@@ -84,8 +78,13 @@
       </div><br>
       <div class="animal">
         <button onclick="window.location.href='produtos.html'">
-          <img src="../web/images/pet-food.png" />Produtos para seus pets 
+          <img src="../web/images/pet-food.png" />cadastrar produto 
         </button>
+
+        <button onclick="window.location.href='cadastraradmin.html'">
+          <img src="../web/images/pet-food.png" />Cadastrar cliente 
+        </button>
+
       </div><br>
     </div>
   </section>

@@ -46,7 +46,7 @@ async function fetchProtectedData() {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/usuarios', {
+        const response = await fetch('http://localhost:3001/usuarios', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,  // Envia o token no cabeçalho

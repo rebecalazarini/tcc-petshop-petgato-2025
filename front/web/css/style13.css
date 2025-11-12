@@ -11,22 +11,20 @@
   --c2: rgb(180, 227, 241);
   --c3: rgb(75, 197, 235);
   --c4: rgba(197, 218, 226, 0.623);
-  --c5: rgba(157, 201, 56, 0.795); /* COR DO TEXTO DOS BOTÕES */
-  --c6: rgb(27, 2, 168); /* COR DAS BOLINHAS DO CAROUSEL */
+  --c5: rgba(157, 201, 56, 0.795);
+  --c6: rgb(27, 2, 168); 
   --c7: linear-gradient(to right, rgb(22, 8, 214), rgb(1, 1, 116));
   --t1: rgb(53, 54, 56);
   --t2: rgba(0, 0, 0, 0.7);
 }
-
-/* CORPO DA PÁGINA */
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* ESCONDE A ROLAGEM LATERAL */
+  overflow-x: hidden; 
   display: flex;
-  flex-direction: column; /* ORGANIZA OS ELEMENTOS EM COLUNAS */
-  align-items: center; /* CENTRALIZA OS ELEMENTOS NA PÁGINA */
+  flex-direction: column; 
+  align-items: center;
 }
 @media (max-width: 768px) {
   body {
@@ -34,7 +32,6 @@ body {
   }
 }
 
-/* CABEÇALHO UM */
 header {
   background: var(--c6);
   color: black;
@@ -44,43 +41,41 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* MANTÉM O CABEÇALHO ACIMA DOS OUTROS ITENS DO SITE */
-  justify-content: space-around; /* DISTRIBUI OS ITENS DO CABEÇALHO */
-  align-items: center; /* ALINHA OS ITENS DO CABEÇALHO */
+  z-index: 1000; 
+  justify-content: space-around; 
+  align-items: center; 
 }
 
 header h1 {
   font-family: 'Brush Script MT', cursive;
   color: var(--c3);
-  font-size: 36.5px; /* TAMANHO DO TEXTO */
+  font-size: 36.5px; 
   position: relative;
   justify-content: center;
   align-items: center;
   top: 0px;
-  left: 8%; /* POSIÇÃO DO TEXTO */
-  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DO TEXTO, VAI APARECER UMA MÃOZINHA */
+  left: 8%; 
+  cursor: pointer;
 }
 
 header img {
-  width: 37px; /* TAMANHO DAS IMAGENS */
+  width: 37px; 
   border: none;
 }
 
 header button {
   background-color: transparent;
   border: none;
-  color: black; /* COR DO TEXTO */
-  font-weight: bold; /* TEXTO EM NEGRITO */
-  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DOS BOTÕES, VAI APARECER UMA MÃOZINHA */
+  color: black;
+  font-weight: bold; 
+  cursor: pointer; 
 }
 
 header button:hover {
-  color: white; /* COR DO TEXTO AO PASSAR O MOUSE EM CIMA */
-  transition: 0.3s; /* TEMPO DA TRANSIÇÃO */
+  color: white; 
+  transition: 0.3s; 
   font-size: 1.8vh;
 }
-
-/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DO TÍTULO */
 @media (max-width: 200%) {
   header h1 {
     width: 50%;
@@ -96,26 +91,22 @@ header button:hover {
   }
 }
 
-/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DAS IMAGENS */
 @media (max-width: 768px) {
   header button img {
-    width: 25px; /* diminui o tamanho das imagens */
+    width: 25px; 
   }
 }
 
-/* BARRA DE PESQUISA */
 .search-icon {
   width: 60%;
 }
 
-/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
 @media (max-width: 768px) {
   .search-icon {
-    display: none; /* some completamente */
+    display: none; 
   }
 }
 
-/* CONTAINER DOIS */
 .Containerheader {
   background-color: rgba(231, 231, 250, 0.445);
   position: relative;
@@ -136,31 +127,27 @@ header button:hover {
   color: var(--c5);
   background: transparent;
   cursor: pointer;
-  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  display: flex; 
   align-items: center;
   justify-content: center;
-  gap: 6px; /* ESPAÇO ENTRE TEXTO E IMG */
+  gap: 6px; 
 }
 
 .Containerheader button img {
-  display: none; /* some em todas as telas inicialmente */
+  display: none; 
 }
-
-/* Quando passar o mouse (somente em dispositivos que suportam hover), exibe a imagem */
 @media (hover: hover) and (pointer: fine) {
   .Containerheader button:hover img {
-    display: inline-block; /* mostra a imagem ao passar o mouse */
+    display: inline-block; 
   }
 }
 
-/* Em telas pequenas (responsivo, tipo celular), as imagens continuam ocultas */
 @media (max-width: 768px) {
   .Containerheader button img {
-    display: none !important; /* garante que no mobile nunca aparece */
+    display: none !important; 
   }
 }
 
-/* Anúncios buttons */
 .anuncios {
   width: 70%;
   height: 12.6vh;
@@ -173,10 +160,10 @@ header button:hover {
   background: transparent;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
-  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  display: flex; 
   align-items: center;
   justify-content: space-between;
-  gap: 11px; /* ESPAÇO ENTRE TEXTO E IMG */
+  gap: 11px; 
   padding: 3%;
   font-size: 60%;
   position: relative;
@@ -197,11 +184,10 @@ header button:hover {
 
 @media (max-width: 768px) {
   .anuncios {
-    display: none; /* some completamente */
+    display: none; 
   }
 }
 
-/* BANNER */
 .banner {
   position: relative;
   width: 60%;
@@ -210,29 +196,29 @@ header button:hover {
   padding: 15px;
   border-radius: 75px 75px 85px 75px;
   text-align: center;
-  font-weight: bold; /* TEXTO EM NEGRITO */
+  font-weight: bold;
   overflow: hidden;
   margin: 4vh;
 }
 
 .banner-text {
-  display: none; /* ESCONDE O TEXTO */
+  display: none; 
   color: black;
-  transition: color 0.5s ease; /* FAZ A TRANSIÇÃO DO TEXTO */
+  transition: color 0.5s ease; 
 }
 
 .banner-text.active {
-  display: block; /* MOSTRA O TEXTO */
+  display: block; 
 }
-/* RESPONSIVO */
+
 @media (max-width: 768px) {
   .carousel {
-    width: 90%; /* AJUSTA LARGURA NO MOBILE */
-    height: 250px; /* ALTURA MENOR */
+    width: 90%; 
+    height: 250px; 
   }
 
   .carousel img {
-    width: 90%; /* IMAGEM OCUPA MAIS ESPAÇO */
+    width: 90%; 
   }
 
   .prev,
@@ -242,19 +228,17 @@ header button:hover {
   }
 }
 
-/* ANIMAÇÃO */
 @keyframes fadeInDown {
   from {
-    opacity: 0; /* INICIA COM OPACIDADE 0 */
-    transform: translateY(-20px); /* INICIA 20PX ACIMA */
+    opacity: 0; 
+    transform: translateY(-20px); 
   }
   to {
-    opacity: 1; /* FINALIZA COM OPACIDADE 1 */
-    transform: translateY(0); /* FINALIZA NA POSIÇÃO ORIGINAL */
+    opacity: 1; 
+    transform: translateY(0);
   }
 }
 
-/* ANIMAL BUTTONS */
 .animal {
   border: none;
   width: 100%;
@@ -272,12 +256,12 @@ header button:hover {
   width: 40%;
   height: 90px;
   padding: 0.7%;
-  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  display: flex; 
   align-items: center;
   justify-content: center;
   font-size: 15px;
   border-radius: 5%;
-  gap: 70px; /* ESPAÇO ENTRE TEXTO E IMG */
+  gap: 70px; 
 
   img {
   width: 100%;
@@ -288,11 +272,9 @@ header button:hover {
 }
 }
 
-
-/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
 @media (max-width: 768px) {
   .animal img {
-    display: none; /* some completamente */
+    display: none; 
   }
 
   .animal button {
@@ -319,13 +301,13 @@ header button:hover {
   font-size: 100%;
   color: black;
   font-weight: bold;
-}/* --- wrapper do fundo ondulado --- */
+}
 .section-fundo {
   position: relative;
   
   width: 100%;
-  min-height: 0;          /* controla "a altura" do bloco — ajuste se precisar */
-  margin: 40px 0;             /* espaçamento externo (opcional) */
+  min-height: 0;          
+  margin: 40px 0;             
   overflow: visible;
 }
 
@@ -403,7 +385,6 @@ header button:hover {
   .animal button img { display: inline-block; width: 28px; height: 28px; }
 }
 
-/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
 @media (max-width: 768px) {
   .juros {
     display: none; 
@@ -494,7 +475,7 @@ header button:hover {
 
 @media (max-width: 768px) {
   .tosavet {
-    display: none; /* some completamente */
+    display: none; 
 
   }
 .h2 {
@@ -508,9 +489,7 @@ header button:hover {
       display: flex;
       justify-content: space-around;
       border-radius: 25px;
-      
-      
-
+    
        & img{
         width: 50%;
         border-radius: 70% 0 0 0 ; 
@@ -804,7 +783,7 @@ h4 {
 .footer {
   width: 100%;
   background-color:var(--c6); 
-  color: #5c5757;
+  color: #ffffff;
   padding: 40px 0 20px;
   font-family: 'Arial', sans-serif;
 }
@@ -850,7 +829,7 @@ h4 {
 }
 
 .footer-section ul li a {
-  color: #020a7e;
+  color: #e5e5e5;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1017,11 +996,11 @@ h5, p{
 
 .carrosselum {
   display: flex;
-  gap: 15px;  /* Espaçamento entre os produtos */
+  gap: 15px;  
   padding: 10px;
-  width: 85%;  /* Ajuste a largura conforme necessário */
-  overflow: hidden;  /* Garante que nada ultrapasse os limites */
-  justify-content: flex-start; /* Alinha os itens à esquerda */
+  width: 85%; 
+  overflow: hidden; 
+  justify-content: flex-start; 
 }
 
 .cardt {
@@ -1040,7 +1019,6 @@ h5, p{
   top: -8px;left: 0;
 }
 .vejamais{
-  
   button {
     position: relative;
     width: 100%;
@@ -1073,7 +1051,6 @@ h5, p{
 .btn:hover {
   background: #555;
 }
-
 }
 
 @media (max-width: 768px) {
@@ -1132,7 +1109,6 @@ h5, p{
     transform-origin: top center;
   }
 }
-
     .ôblog  {
       width: 100%;
       text-align: center;
@@ -1141,11 +1117,6 @@ h5, p{
       position: relative;
       top: -20vh;left: 0;
     }
-
-
-
-
-
 @media (max-width: 768px) {
       .ôblog h1{
         width: 100%;
@@ -1154,14 +1125,11 @@ h5, p{
         
       }
 }  
-
-
 @media (max-width: 768px) {
       .blog {
         width: 100%;
         position: relative;
         top: -20vh;left: 0;
-        
       }
       .petum, .imn img {
         position: relative;
@@ -1206,7 +1174,6 @@ h5, p{
       }
     }
 
-    
 @media (max-width: 768px) {
       .desp{
         position: relative;
@@ -1228,11 +1195,7 @@ h5, p{
         width: 150vh;
         height: 300px;
       }
-      
     }
-
-    
-  
 @media (max-width: 768px) {
       .bomba {
         width: 100%;
@@ -1241,8 +1204,6 @@ h5, p{
         top: -70vh;left: 0;
       }
     }
-    
-  
 @media (max-width: 768px) {
       .carrosselum {
         width: 100%;
@@ -1251,11 +1212,12 @@ h5, p{
         top: 0;left: 0;
       }
     }
-  
-
 @media (max-width: 768px) {
       .footer {
         position: relative;
         top: -70vh;left: 0;
       }
     }
+#logout{
+  color: white;
+}
