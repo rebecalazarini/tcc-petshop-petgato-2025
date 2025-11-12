@@ -224,77 +224,6 @@ header button:hover {
 .banner-text.active {
   display: block; /* MOSTRA O TEXTO */
 }
-
-/* CAROUSEL DE IMAGENS */
-.carousel {
-  position: relative;
-  top: 10px;
-  left: 0;
-  width: 80%;
-  height: 400px; /* ALTURA DO CAROUSEL AJUSTADA */
-  overflow: hidden; /* ESCONDE PARTES EXTERNAS DAS IMAGENS */
-  display: flex; /* PERMITE CENTRALIZAR AS IMAGENS */
-  justify-content: center; /* CENTRA HORIZONTALMENTE */
-  align-items: center; /* CENTRA VERTICALMENTE */
-}
-
-.carousel img {
-  width: 80%; /* LARGURA PADRÃO DAS IMAGENS */
-  height: auto;
-  opacity: 0; /* INICIALMENTE OCULTA */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* CENTRALIZA NO MEIO DO CAROUSEL */
-  transition: all 0.6s ease-in-out; /* ANIMAÇÃO SUAVE */
-  border-radius: 15px;
-  pointer-events: none; /* NÃO CLICÁVEL */
-}
-
-.carousel img.active {
-  opacity: 1; /* IMAGEM VISÍVEL */
-  transform: translate(-50%, -50%) scale(1); /* CENTRALIZA E AUMENTA LEVEMENTE */
-  filter: blur(0); /* SEM DESFOQUE */
-  pointer-events: auto; /* PERMITE CLICAR */
-}
-
-.carousel img.left {
-  opacity: 0.7; 
-  transform: translate(-150%, -50%) scale(0.85); /* POSICIONA À ESQUERDA E REDUZ LEVEMENTE */
-  filter: blur(3px); /* DESFOQUE LEVE */
-}
-
-.carousel img.right {
-  opacity: 0.7; 
-  transform: translate(50%, -50%) scale(0.85); /* POSICIONA À DIREITA E REDUZ LEVEMENTE */
-  filter: blur(3px); /* DESFOQUE LEVE */
-}
-
-.carousel img.hidden {
-  opacity: 0; 
-  transform: scale(0.5); /* REDUZ LEVEMENTE */
-  pointer-events: none; /* NÃO CLICÁVEL */
-}
-
-.carousel-indicators {
-  display: flex; /* Alinha as bolinhas horizontalmente */
-  gap: 10px; /* Espaçamento entre bolinhas */
-  margin-top: 20px; /* Distância do carousel */
-}
-
-.dot {
-  width: 12px; /* Largura da bolinha */
-  height: 12px; /* Altura da bolinha */
-  border-radius: 50%; /* Forma circular */
-  background: rgba(65, 63, 47, 0.5); /* Cor cinza clara */
-  cursor: pointer; /* Cursor de clique */
-  transition: background 0.3s; /* Transição suave ao mudar cor */
-}
-
-.dot.active-dot {
-  background: rgb(18, 14, 231); /* Bolinha ativa */
-}
-
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .carousel {
@@ -408,43 +337,39 @@ header button:hover {
     
   }}
 
-/* SVG do fundo (faz as ondulações nas extremidades) */
 .fundo-svg {
   position: absolute;
   left: 0;
   
   top: -16%;
   width: 200%;
-  height: 150%;                /* atrás do conteúdo */
-  pointer-events: none;       /* deixa os botões clicáveis */
+  height: 150%;                
+  pointer-events: none;       
   display: block;
 }
 
-/* conteúdo que fica sobre o SVG */
 .fundoparcial-content {
-  
-  position: relative;             /* acima do SVG */
-  padding: 30px 20px;         /* controla o "padding" interno (altura visível) */
+  position: relative;           
+  padding: 30px 20px;         
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-  color: #fff;                /* textos brancos por padrão — ajuste se quiser */
+  color: #fff;                
 }
 
-/* ----- seus estilos de botões (adaptados) ----- */
 .animal {
   display: flex;
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;            /* quebra em linhas quando precisar */
+  flex-wrap: wrap;            
   margin: 14px 0;
 }
 
 .animal button {
   border: none;
   background-color: rgb(75, 197, 235);
-  min-width: 160px;           /* fica mais amigável em telas pequenas */
+  min-width: 160px;        
   height: 72px;
   display: flex;
   align-items: center;
@@ -453,79 +378,29 @@ header button:hover {
   gap: 8px;
   padding: 8px 12px;
   cursor: pointer;
-  color: #003;                /* cor do texto do botão (ajuste se quiser) */
+  color: #003;               
   font-weight: 600;
 }
 
 @media (max-width: 768px) {
   .fundo-svg, .fundoparcial-content, .animal, .pet, .section-fundo  {
-    display: none; /* some completamente */
+    display: none;
   }}
-
-/* img dentro do botão */
 .animal button img {
   width: 36px;
   height: 36px;
   object-fit: cover;
   border-radius: 8px;
 }
-
-/* títulos dentro (pet/outros) */
 .pet h1, .outros h1 {
   margin: 0 0 8px 0;
   font-size: 20px;
   color: #fff;
 }
-
-/* responsividade */
 @media (max-width: 768px) {
   .fundoparcial-content { padding: 20px 12px; }
   .animal button { min-width: 48%; height: 56px; border-radius: 12px; }
   .animal button img { display: inline-block; width: 28px; height: 28px; }
-}
-
-/* JUROS */
-.juros {
-  width: 80%;
-  height: 12.6vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
-  top: 5%;
-  left: 2%;
-  gap: 2%;
-}
-
-.juros button {
-  width: 80%;
-  background: transparent;
-  justify-content: space-around;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: justify;
-  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
-  align-items: center;
-  justify-content: space-between;
-  gap: 11px; /* ESPAÇO ENTRE TEXTO E IMG */
-  padding: 3%;
-  font-size: 60%;
-  position: relative;
-  top: 3%;
-  left: -3%;
-  width: 28%;
-  border-radius: 5px;
-  height: 100%;
-  border-color: rgba(236, 231, 231, 0.205);
-  gap: 10%;
-}
-
-.juros button img {
-  background: transparent;
-  width: 15%;
-  height: 190%;
-  position: relative;
-  top: 0;
-  left: -6%;
 }
 
 /* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
@@ -534,75 +409,14 @@ header button:hover {
     display: none; 
   }
 }
-
-/* PRODUTOS CARDS */
-.mainContainer {
-  width: 98%;
-  height: 150%;
-  position: relative;
-  top: 0;
-  left: -1%;
-  color: rgb(80, 80, 85);
-}
-/* Wrapper geral */
-.produtos-wrapper {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-}
-
-/* Container dos cards */
-#produtos-container {
-  display: flex;
-  gap: 16px;
-  transition: transform 0.4s ease;
-}
-
-/* Cada card */
-#produtos-container .card {
-  flex: 0 0 250px;   /* largura fixa */
-  height: 400px;     /* altura fixa */
-  background: #f0f0f0;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.card {
-  height: 100%;
-  border: 3px solid rgb(0, 38, 252);
-  position: relative;
-  background-color: rgba(205, 235, 252, 0.418);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px; /* MARGIN EXTERNA */
-  border-radius: 2%;
-  justify-content: space-around;
-  border-color: rgba(240, 234, 186, 0.877);
-}
-
-.card img {
-  width: 70%;
-  position: relative;
-  top: 3%;
-  left: 0;
-  border-radius: 5%;
-  margin-bottom: 5%;
-}
-
-/* Botões dentro do card alinhados lado a lado */
 .button-group {
   position: relative;
-  
   top: 10%;
   left: 0;
-  display: flex; /* Alinha os botões em linha */
-  gap: 10px; /* Espaçamento entre os botões */
-  justify-content: center; /* Centraliza os botões horizontalmente */
-  margin-top: 10px; /* Espaço acima do grupo de botões */
+  display: flex;
+  gap: 10px; 
+  justify-content: center; 
+  margin-top: 10px; 
 }
 
 .button-group button {
@@ -615,59 +429,19 @@ header button:hover {
   font-weight: bold;
   cursor: pointer;
   color: rgb(128, 124, 124);
-  display: flex; /* Para alinhar o conteúdo interno (ex: img) */
-  align-items: center; /* Centraliza verticalmente o conteúdo do botão */
-  justify-content: center; /* Centraliza horizontalmente */
-  gap: 5px; /* Espaço entre texto e imagem dentro do botão */
-  min-width: 80px; /* Largura mínima para os botões */
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 5px; 
+  min-width: 80px; 
 }
 
 .button-group button img {
-  width: 20px; /* Tamanho das imagens dentro dos botões */
+  width: 20px;
   height: 20px;
 }
 
-/* MODAL */
-.modal {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro translúcido */
-  z-index: 9999; /* fica acima de tudo */
-}
-.janela {
-  background-color: #b4e3f1;
-  position: relative;
-  top: 0; /* removido top: 42px para centralizar melhor */
-  width: 60%;
-  max-height: 80%;
-  box-shadow: 0 0 5px var(--t1);
-  padding: 20px;
-  overflow-y: auto; /* para rolar se o conteúdo for grande */
-  border-radius: 8px;
 
-  
-  button{
-    background: red;
-    position: relative;
-    width: 100%;
-    top: 10px;
-    padding: 8px;
-    
-  }
-  img{
-    width: 50%;
-    height: 50%;
-
-  }
-}
-/* Garante que fundo parcial e cards banho & tosa fiquem atrás do modal */
 .fundoparcial-content, .tosavet {
   position: relative;
   z-index: 1;
@@ -681,7 +455,7 @@ header button:hover {
 
 @media (max-width: 768px) {
   .cb {
-    display: none; /* some completamente */
+    display: none; 
 
   }}
   .tosavet{
@@ -750,38 +524,12 @@ header button:hover {
         top: 25%;left: 5%;
       }
     }
-    /* ========== ESTILOS PARA A SEÇÃO DUPLICADA ========== */
-/* Ajustes mínimos — ficam isolados (sufixados com -dup) para não conflitar */
 .mainContainer-dup {
   width: 100%;
   padding: 30px 10%;
   box-sizing: border-box;
   color: rgb(80,80,85);
 }
-
-/* grid dos cards */
-.produtos-grid-dup {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  width: 100%;
-}
-
-/* cartão produto */
-.card-dup {
-  background: rgba(205,235,252,0.42);
-  border-radius: 8px;
-  padding: 12px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:space-between;
-  min-height: 220px;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-.card-dup img { width: 85%; height: 120px; object-fit: cover; border-radius:6px; }
-.card-dup h4 { margin:8px 0 4px; font-size:16px; text-align:center; }
-.card-dup p { font-size:14px; margin:2px 0; text-align:center; }
 
 .button-group-dup {
   display:flex;
@@ -796,47 +544,6 @@ header button:hover {
   border:1px solid rgba(0,0,0,0.08);
 }
 
-/* modal */
-.modal-dup {
-  position: fixed;
-  inset: 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: rgba(0,0,0,0.45);
-  z-index: 9999;
-}
-.janela-dup {
-  background:#fff;
-  padding:16px;
-  border-radius:8px;
-  width: min(900px, 95%);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-}
-.janela-header-dup { display:flex; justify-content:space-between; align-items:center; }
-.janela-header-dup button { cursor:pointer; }
-
-/* conteúdo e related */
-.conteudo-produto-dup { display:flex; gap:12px; align-items:center; margin-top:14px; }
-.conteudo-produto-dup img { width:140px; height:120px; object-fit:cover; border-radius:6px; }
-.related-products-dup { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
-.related-item-dup { width: 130px; border:1px solid rgba(0,0,0,0.06); padding:8px; border-radius:6px; text-align:center; }
-
-/* botão de adicionar */
-.modal-actions-dup { margin-top:12px; display:flex; justify-content:flex-end; }
-
-/* classe pra esconder (usada no seu código original também) */
-.oculto { display: none !important; }
-
-/* responsivo simples */
-@media (max-width:900px) {
-  .produtos-grid-dup { grid-template-columns: repeat(2, 1fr); }
-  .conteudo-produto-dup { flex-direction:column; align-items:flex-start; }
-}
-@media (max-width:480px) {
-  .produtos-grid-dup { grid-template-columns: 1fr; }
-}
-
 .blog {
   width: 80%;
   position: relative;
@@ -845,8 +552,6 @@ header button:hover {
   color: rgb(76, 76, 80);
   display: flex;
   gap: 2%;
-  
-
 }
 .petum {
   width: 100%;
@@ -936,7 +641,6 @@ h4 {
   gap: 3%;
 }
 
-  
     @media (max-width: 768px) {
       .video {
         position: relative;
@@ -974,7 +678,6 @@ h4 {
       color: var(--c6);
       text-align: justify;
     }
-
 
     img{
       width: 20vw;
@@ -1016,33 +719,28 @@ h4 {
         width: 80%;
       }
     }
-    
 
-/* ADIÇÕES PARA O CAROUSEL DAS PROMOÇÕES (MANUAL COM SETAS ROTATIVAS) */
-/* Wrapper do carousel - não conflita com o seu .carousel existente */
 .carousel-promos {
   width: 100%;
   position: relative;
   top: 0;
   left: 140px;
-  overflow: hidden; /* Esconde itens fora da vista */
-  border-radius: 15px; /* Opcional: arredonda o container para combinar com .prim */
-  margin: 20px auto; /* Centraliza se necessário, mas mantém seu posicionamento */
+  overflow: hidden; 
+  border-radius: 15px; 
+  margin: 20px auto; 
 }
 
-/* Ajustes mínimos no .promos para o carousel (mantém display: flex e gap) */
 .promos {
   display: flex;
   gap: 3%;
-  transition: transform 0.4s ease-in-out; /* Animação suave no deslize */
-  width: max-content; /* Permite que a trilha seja mais larga */
-  padding: 10px 0; /* Espaço vertical para setas */
+  transition: transform 0.4s ease-in-out;
+  width: max-content; 
+  padding: 10px 0; 
 }
 
-/* Ajustes mínimos no .prim para não encolher no flex (mantém todo o resto) */
 .prim {
   width: 17%;
-  min-width: 100px; /* Largura mínima para ~5 itens visíveis; ajuste se quiser mais (ex.: 140px para 6) */
+  min-width: 100px;
   flex-shrink: 0; 
   
   img{
@@ -1051,13 +749,12 @@ h4 {
   }
 }
 
-/* Estilos para as setas (novos, combinando com suas cores --c3) */
 .carousel-btn-prev,
 .carousel-btn-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(75, 197, 235, 0.8); /* Usa --c3 semi-transparente */
+  background: rgba(75, 197, 235, 0.8); 
   color: white;
   border: none;
   font-size: 24px;
@@ -1065,7 +762,7 @@ h4 {
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 10; /* Acima dos itens */
+  z-index: 10; 
   transition: all 0.3s;
   display: flex;
   align-items: center;
@@ -1082,18 +779,17 @@ h4 {
 
 .carousel-btn-prev:hover,
 .carousel-btn-next:hover {
-  background: var(--c3, rgb(75, 197, 235)); /* Cor cheia no hover */
+  background: var(--c3, rgb(75, 197, 235)); 
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Responsividade para as setas (integra com suas media queries) */
 @media (max-width: 768px) {
   .carousel-promos {
     width: 95%;
   }
   
   .prim {
-    width: 45%; /* ~2 itens visíveis no mobile */
+    width: 45%; 
     min-width: 140px;
   }
   
@@ -1105,36 +801,9 @@ h4 {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .footer {
   width: 100%;
-  background-color:var(--c6); /* Verde escuro para tema pet/natureza */
+  background-color:var(--c6); 
   color: #5c5757;
   padding: 40px 0 20px;
   font-family: 'Arial', sans-serif;
@@ -1162,7 +831,7 @@ h4 {
   margin-bottom: 15px;
   color: #002efd;
   font-size: 18px;
-  border-bottom: 2px solid #ffe711; /* Verde claro para destaque */
+  border-bottom: 2px solid #ffe711; 
   padding-bottom: 5px;
 }
 
@@ -1181,7 +850,7 @@ h4 {
 }
 
 .footer-section ul li a {
-  color: #020a7e; /* Verde claro para links */
+  color: #020a7e;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1246,7 +915,6 @@ h4 {
   color: #1e9962;
 }
 
-/* Responsividade para Mobile */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -1272,12 +940,6 @@ h4 {
     border-radius: 4px;
   }
 }
-
-
-
-
-
-
 
 .promocao{
   width: 90%;
@@ -1320,12 +982,6 @@ h4 {
     }
   }
 
-
-
-
-
-
-
 .bomba{
   background: var(--c7);
   width: 100%;
@@ -1363,23 +1019,23 @@ h5, p{
   display: flex;
   gap: 15px;  /* Espaçamento entre os produtos */
   padding: 10px;
-  width: 80%;  /* Ajuste a largura conforme necessário */
+  width: 85%;  /* Ajuste a largura conforme necessário */
   overflow: hidden;  /* Garante que nada ultrapasse os limites */
   justify-content: flex-start; /* Alinha os itens à esquerda */
 }
 
 .cardt {
   background: white;
-  width: 300px;  /* Largura fixa para cada produto */
+  width: 300px; 
   height: 340px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0;  /* Garante que os produtos não se ajustem ao tamanho da tela */
+  flex-shrink: 0;  
 }
 
 .cardt img {
-  width: 100%;  /* Garante que a imagem ocupe toda a largura do card */
-  height: 200px;  /* Altura fixa para a imagem */
+  width: 100%;  
+  height: 200px;  
   position: relative;
   top: -8px;left: 0;
 }
@@ -1420,10 +1076,6 @@ h5, p{
 
 }
 
-
-/* =====================================================
-   AJUSTES DE RESPONSIVIDADE — PRESERVA LAYOUT DESKTOP
-   ===================================================== */
 @media (max-width: 768px) {
 
   header h1 {
@@ -1446,7 +1098,6 @@ h5, p{
     transform-origin: top center;
   }
 
-  /* Ajuste para largura total da viewport */
   .carousel,
   .mainContainer,
   .mainContainer-dup,
@@ -1455,25 +1106,21 @@ h5, p{
     left: 0;
   }
 
-  /* Corrige imagens grandes */
   img {
     max-width: 100%;
     height: auto;
   }
 
-  /* Texto mais ajustado */
   h1, h2, h3, p, button {
     font-size: 90%;
   }
 
-  /* Evita sobreposição */
   .petum,
   .banho,
   .vet {
     overflow: hidden;
   }
 
-  /* Mantém botões clicáveis e legíveis */
   button {
     padding: 8px 12px;
   }

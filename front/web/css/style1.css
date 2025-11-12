@@ -570,6 +570,39 @@ header button:hover {
   justify-content: center;
   text-align: center;
 }
+
+/* ----- BOTÕES DE NAVEGAÇÃO (Anterior / Próximo) ----- */
+.produtos-navigation {
+  position: absolute;          /* coloca por cima do container */
+  top: 50%;                    /* centraliza na altura */
+  left: 0;                     /* começa na lateral esquerda */
+  width: 100%;   
+  height: 100%;              /* ocupa toda a largura */
+  display: flex;               /* coloca os botões em linha */
+  justify-content: space-between;
+  gap: 115%;
+  transform: translateY(-10%); /* ajusta para ficar no centro exato */
+  pointer-events: none; 
+         /* evita bloquear cliques em outros elementos */
+}
+@media (max-width: 768px) {
+  .produtos-navigation {
+    gap: 10%;
+  }
+}
+
+.produtos-navigation button {
+  pointer-events: auto;        /* deixa os botões clicáveis */
+  background: rgb(75, 197, 235); /* fundo preto semitransparente */
+  color: #fff;                 /* texto branco */
+  border: none;                /* remove borda padrão */
+  border-radius: 50%;          /* formato de círculo */
+  width: 75px;                /* tamanho fixo do botão */
+  height: 7%;
+  cursor: pointer;             /* cursor em forma de mãozinha */
+  font-size: 18px; 
+  justify-content: space-around;            /* tamanho do símbolo ou texto */
+}
 .card {
   height: 100%;
   border: 3px solid rgb(0, 38, 252);
@@ -593,7 +626,6 @@ header button:hover {
   margin-bottom: 5%;
 }
 
-/* Botões dentro do card alinhados lado a lado */
 .button-group {
   position: relative;
   
@@ -627,46 +659,6 @@ header button:hover {
   height: 20px;
 }
 
-/* MODAL */
-.modal {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro translúcido */
-  z-index: 9999; /* fica acima de tudo */
-}
-.janela {
-  background-color: #b4e3f1;
-  position: relative;
-  top: 0; /* removido top: 42px para centralizar melhor */
-  width: 60%;
-  max-height: 80%;
-  box-shadow: 0 0 5px var(--t1);
-  padding: 20px;
-  overflow-y: auto; /* para rolar se o conteúdo for grande */
-  border-radius: 8px;
-
-  
-  button{
-    background: red;
-    position: relative;
-    width: 100%;
-    top: 10px;
-    padding: 8px;
-    
-  }
-  img{
-    width: 50%;
-    height: 50%;
-
-  }
-}
 /* Garante que fundo parcial e cards banho & tosa fiquem atrás do modal */
 .fundoparcial-content, .tosavet {
   position: relative;
@@ -796,35 +788,6 @@ header button:hover {
   border:1px solid rgba(0,0,0,0.08);
 }
 
-/* modal */
-.modal-dup {
-  position: fixed;
-  inset: 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: rgba(0,0,0,0.45);
-  z-index: 9999;
-}
-.janela-dup {
-  background:#fff;
-  padding:16px;
-  border-radius:8px;
-  width: min(900px, 95%);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-}
-.janela-header-dup { display:flex; justify-content:space-between; align-items:center; }
-.janela-header-dup button { cursor:pointer; }
-
-/* conteúdo e related */
-.conteudo-produto-dup { display:flex; gap:12px; align-items:center; margin-top:14px; }
-.conteudo-produto-dup img { width:140px; height:120px; object-fit:cover; border-radius:6px; }
-.related-products-dup { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
-.related-item-dup { width: 130px; border:1px solid rgba(0,0,0,0.06); padding:8px; border-radius:6px; text-align:center; }
-
-/* botão de adicionar */
-.modal-actions-dup { margin-top:12px; display:flex; justify-content:flex-end; }
-
 /* classe pra esconder (usada no seu código original também) */
 .oculto { display: none !important; }
 
@@ -898,14 +861,14 @@ header button:hover {
 h4 {
     font-size: 15px;
     position: relative;
-    top: -310px;left: 510%;
+    top: -310px;left: 400%;
 
 }
   img{
     width: 50px;
     height: 50px;
     position: relative;
-    top: -352px;left: 610%;
+    top: -352px;left: 510%;
   }
 }
 
@@ -1363,7 +1326,7 @@ h5, p{
   display: flex;
   gap: 15px;  /* Espaçamento entre os produtos */
   padding: 10px;
-  width: 80%;  /* Ajuste a largura conforme necessário */
+  width: 85%;  /* Ajuste a largura conforme necessário */
   overflow: hidden;  /* Garante que nada ultrapasse os limites */
   justify-content: flex-start; /* Alinha os itens à esquerda */
 }
