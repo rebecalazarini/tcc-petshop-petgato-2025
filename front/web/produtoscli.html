@@ -3,109 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pet Gato</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #e6f7ff; 
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: rgb(27, 2, 168); 
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      color: #f3faff;
-    }
-
-    header button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #0099cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    header button:hover {
-      background-color: #0077aa;
-    }
-
-    .filter-container {
-      margin-top: 20px;
-      margin: 20px 0;
-    }
-
-    .filter-container select {
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #0099cc;
-      border-radius: 5px;
-    }
-
-    .produtos-container {
-      margin-top: 35px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 0 20px 40px;
-    }
-
-    .produto-card {
-      width: 250px;
-      background-color: white;
-      border: 1px solid #99ccff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-
-    .produto-card:hover {
-      transform: scale(1.03);
-    }
-
-    .produto-card img {
-      width: 100%;
-      height: 190px;
-    }
-
-    .produto-card .info {
-      padding: 15px;
-    }
-
-    .produto-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 1.2em;
-      color: #030099;
-    }
-
-    .produto-card p {
-      margin: 5px 0;
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    .produto-card .preco {
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #001faa;
-    }
-  </style>
+  <title>Pet Gatô: o melhor petshop online, em todos os aspectos</title>
+  <link rel="stylesheet" href="./css/produtoscli.css">
 </head>
 <body>
   <header>
-    <h1>𝓟𝓮𝓽 𝓖𝓪𝓽𝓸</h1>
+    <h1>Pet Gatô</h1>
     <button onclick="window.location.href='index.html'">
       Voltar para a tela inicial
     </button>
@@ -120,69 +23,10 @@
     </div>
   </header>
 
-
   <div id="produtosLista" class="produtos-container">
-    <!-- Cartões de produto aparecerão aqui -->
   </div>
 
-  <script>
-    const apiVercel = 'https://backend-tcc-petshop-petgato-2025.vercel.app/produto';
-
-    async function buscarTodosProdutos() {
-      try {
-        const [resVercel] = await Promise.all([
-          fetch(apiVercel)
-        ]);
-        const dadosVercel = resVercel.ok ? await resVercel.json() : [];
-
-        const todos = [...dadosVercel];
-
-        return todos;
-      } catch (erro) {
-        console.error('Erro ao buscar produtos das APIs:', erro);
-        return [];  
-      }
-    }
-    async function exibirProdutos(categoria = 'todos') {
-      const todosProdutos = await buscarTodosProdutos();
-      let produtosFiltrados = todosProdutos;
-      if (categoria && categoria !== 'todos') {
-        produtosFiltrados = todosProdutos.filter(p => {
-          return p.categoria === categoria;
-        });
-      }
-
-      const container = document.getElementById('produtosLista');
-      container.innerHTML = '';
-
-      if (produtosFiltrados.length === 0) {
-        container.innerHTML = `<p>Nenhum produto encontrado para a categoria "${categoria}".</p>`;
-        return;
-      }
-
-      produtosFiltrados.forEach(produto => {
-        const card = document.createElement('div');
-        card.classList.add('produto-card');
-
-        card.innerHTML = `
-          <img src="${produto.imagem}" alt="${produto.nome}">
-          <div class="info">
-            <h3>${produto.nome}</h3>
-            <p>${produto.descricao || ''}</p>
-            <p class="preco">R$ ${produto.preco}</p>
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-    document.getElementById('categoriaFilter').addEventListener('change', function() {
-      const cat = this.value;
-      exibirProdutos(cat);
-    });
-    window.addEventListener('DOMContentLoaded', (event) => {
-      exibirProdutos('todos');
-    });
-  </script>
+  <script src="./js/api.js"></script>
+  <script src="./js/produtoscli.js"></script>
 </body>
 </html>
