@@ -43,7 +43,6 @@ npx prisma migrate dev --name init
 npx nodemon server.js
 
 ```
-
 ## Teste no insomnia 
 - Você pode testar tanto no insomnia quanto na própria tela de cadastro e consulta no fron-end
 - Users
