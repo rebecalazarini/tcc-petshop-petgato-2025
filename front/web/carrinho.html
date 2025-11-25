@@ -15,23 +15,66 @@
     </header>
 
     <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>Imagem</th>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Total</th>
-                    <th>Remover</th>
-                </tr>
-            </thead>
-            <tbody id="carrinhoTabela"></tbody>
-        </table>
-        <div id="totalCarrinho">
-            <p>Total: R$ <span id="valorTotal">0.00</span></p>
-        </div>
-        <button id="enviarPedido" onclick="enviarPedido()">Enviar Pedido</button>
+      <h2>seu carrinho</h2>
+      <div id="listaCarrinho"></div>
+      <p>Total: R$ <span id="total">0.00</span></p>
+
+      <div class="banner">Cupom de presente: desconto5 </div>
+
+      <input type="text" id="cupom" placeholder="Cupom de desconto">
+      <button id="aplicarCupom">Alipcar 5%</button>
+
+      <h3>Informações de Entrega</h3>
+<form id="formEntrega">
+  <input type="text" id="nome" placeholder="Nome completo" required><br>
+  <input type="text" id="endereco" placeholder="Endereço completo" required><br>
+  <input type="text" id="bairro" placeholder="Bairro" required><br>
+  <input type="text" id="cidade" placeholder="Cidade" required><br>
+  <input type="text" id="cep" placeholder="CEP" required><br>
+  <input type="tel" id="telefone" placeholder="Telefone" required><br>
+</form>
+
+      <h3>Forma de pagamento</h3>
+      <select id="pagamento">
+      <option value="pix">PIX</option>
+      <option value="credito">Cartão de Crédito</option>
+      <option value="debito">Cartão de Débito</option>
+      </select>
+
+    
+      <!-- PIX -->
+<div id="pagamentoPix" style="display:none; margin-top:10px;">
+  <p>📱 Escaneie o QR Code abaixo para simular o pagamento PIX:</p>
+  <canvas id="qrCodePix"></canvas>
+</div>
+
+<!-- Cartão -->
+<div id="pagamentoCartao" style="display:none; margin-top:10px;">
+  <label>Número do Cartão:</label>
+  <input type="text" id="numeroCartao" maxlength="16" placeholder="0000 0000 0000 0000"><br>
+  <label>Nome no Cartão:</label>
+  <input type="text" id="nomeCartao" placeholder="Nome completo"><br>
+  <label>Validade (MM/AA):</label>
+  <input type="text" id="validadeCartao" maxlength="5" placeholder="MM/AA"><br>
+  <label>CVV:</label>
+  <input type="text" id="cvvCartao" maxlength="3" placeholder="123"><br>
+</div>
+
+<!-- Biblioteca para gerar QR Code -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+
+      <div id="parcelas" style="display:none;">
+  <label>Parcelar em: </label>
+  <select id="numParcelas">
+    <option value="1">1x sem juros</option>
+    <option value="2">2x</option>
+    <option value="3">3x</option>
+  </select>
+</div>
+
+<button id="finalizar">Finalizar Pedido</button>
+
     </main>
 
     <script src="./js/carrinho.js"></script>

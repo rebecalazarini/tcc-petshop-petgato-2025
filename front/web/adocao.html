@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pet Gatô: o melhor petshop online, em todos os aspectos</title>
-  <Link rel="stylesheet" href="./css/adocao.css">
-
+  <title>Adoção de Animais</title>
+  <link rel="stylesheet" href="./css/adocao.css">
+  <link rel="icon" href="https://img.icons8.com/ios/50/000000/dog.png" />
 </head>
-
 <body>
-  <div class="container1">
-    <h1>Faça um animalzinho feliz hoje ❤❤</h1>
-  </div>
 
-  <div class="container">
-    <button class="card" onclick="location.href='./adocao/cachorro.html'">Adotar Cachorro</button>
-    <button class="card" onclick="location.href='./adocao/gato.html'">Adotar Gato</button>
-    <button class="card" onclick="location.href='./adocao/peixe.html'">Adotar Peixe</button>
-    <button class="card" onclick="location.href='./adocao/passaro.html'">Adotar Passaro</button>
+  <header class="header">
+    <h1 class="title">Adoção</h1>
+    <div class="header-buttons">
+      <a href="./index.html" class="header-button">Início</a>
+      <a href="./login.html" class="header-button">
+        <img src="./docs/pessoa.png" alt="Perfil" class="profile-image">
+      </a>
+    </div>
+  </header>
 
-    <a href="index.html"><button id="voltar">Voltar</button></a>
-  </div>
+  <main class="container">
+    <img src="https://img.freepik.com/vetores-premium/adocao-de-animais-de-estimacao-maos-segurando-caes-gatos-bandeira-de-abrigo-animais-fofos-isolados-adotar-o-fundo-do-vetor_81894-4962.jpg" 
+         alt="Banner de adoção de animais" class="banner">
 
+    <div class="cards-container">
+      <div class="card card-dog" onclick="window.location.href='./adocao/cachorro.html'">
+        <i class="fa fa-dog"></i>
+        <span class="card-text">Adotar Cachorro</span>
+      </div>
+
+      <div class="card card-cat" onclick="window.location.href='./adocao/gato.html'">
+        <i class="fa fa-cat"></i>
+        <span class="card-text">Adotar Gato</span>
+      </div>
+
+      <div class="card card-fish" onclick="window.location.href='./adocao/peixe.html'">
+        <i class="fa fa-fish"></i>
+        <span class="card-text">Adotar Peixe</span>
+      </div>
+
+      <div class="card card-bird" onclick="window.location.href='./adocao/passaro.html'">
+        <i class="fa fa-bird"></i>
+        <span class="card-text">Adotar Pássaro</span>
+      </div>
+    </div>
+
+    <div class="back-button-container">
+      <button class="back-button" onclick="window.location.href='/'">Voltar</button>
+    </div>
+  </main>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome -->
 </body>
 </html>

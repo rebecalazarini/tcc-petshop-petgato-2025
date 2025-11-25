@@ -1,123 +1,125 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-body{
-    background: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header{
-    color: white;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-
-    & button{
-        background-color: rgb(255, 255, 255);
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        color: rgb(0, 0, 0);
-    }
-    & button:hover{
-        background-color: black;
-        color: white;
-    }
-   
-}
-main{
-    width: 100%;
-    height: 80vh;
-    overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow-y: auto;
-    color: white;
-}
-
-.card{
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--c1);
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px var(--t2);
-    gap: 10px;
-    color: white;
-
-    & img {
-        max-width: 250px;
-    }
-}
-    & div{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
+body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #d7ecff; /* azul bebê */
+      color: #003366;
+      margin: 0;
+      padding: 0;
     }
 
-input{
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px var(--t2);
-        font-weight: bold;
-}
+    header {
+      background-color: #a9d8ff;
+      color: #003366;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 51, 102, 0.2);
+    }
 
-#enviarPedido{
-    background-color: white;
-    border: none;
-    padding: 3px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 9vw;
-    height: 9vh;
-    color: black;
-}
-#enviarPedido:hover{
-    background-color: black;
-    color:white;
-}
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
 
-#totalCarrinho{
-    background-color:var(--t2);
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1vh;
-    border-radius: 10px;
-}
+    header button {
+      margin-top: 10px;
+      background-color: #74b9ff;
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-#removerProduto{
-    background-color: white;
-    border: none;
-    padding: 3px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 8vw;
-    height: 5vh;
-    color: black;
-}
-#removerProduto:hover{
-        background-color: black;
-        color:white;
-}
+    header button:hover {
+      background-color: #0984e3;
+    }
+
+    main {
+      max-width: 600px;
+      background: white;
+      margin: 40px auto;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 4px 20px rgba(0, 51, 102, 0.15);
+    }
+
+    main h2, main h3 {
+      text-align: center;
+      color: #003366;
+    }
+
+    #listaCarrinho {
+      background-color: #f0f8ff;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      min-height: 50px;
+    }
+
+    p {
+      text-align: right;
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    input[type="text"], 
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #a9d8ff;
+      border-radius: 10px;
+      font-size: 1em;
+      box-sizing: border-box;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #74b9ff;
+      box-shadow: 0 0 6px #a9d8ff;
+    }
+
+    #aplicarCupom, #finalizar {
+      background-color: #74b9ff;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    #aplicarCupom:hover, #finalizar:hover {
+      background-color: #0984e3;
+    }
+
+    #parcelas {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    label {
+      color: #003366;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #003366;
+      font-size: 0.9em;
+    }
+    .banner{
+  padding: 20px;
+  background-color: #74b9ff;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+    }

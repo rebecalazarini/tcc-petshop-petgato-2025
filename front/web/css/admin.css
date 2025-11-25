@@ -4,15 +4,14 @@
   box-sizing: border-box;
 }
 
-/* CORES DO SITE */
 :root {
-  --font-family: 'CircularXX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+   --font-family: 'CircularXX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --c1: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
   --c2: rgb(180, 227, 241);
   --c3: rgb(75, 197, 235);
   --c4: rgba(197, 218, 226, 0.623);
-  --c5: rgba(157, 201, 56, 0.795);
-  --c6: rgb(27, 2, 168); 
+  --c5: rgba(53, 153, 85, 0.823);
+  --c6: rgb(27, 2, 168);
   --c7: linear-gradient(to right, rgb(22, 8, 214), rgb(1, 1, 116));
   --t1: rgb(53, 54, 56);
   --t2: rgba(0, 0, 0, 0.7);
@@ -152,6 +151,7 @@ header button:hover {
   width: 70%;
   height: 12.6vh;
   display: flex;
+  font-size: 25px;
   justify-content: space-around;
   align-items: center;
 }
@@ -304,7 +304,6 @@ header button:hover {
 }
 .section-fundo {
   position: relative;
-  
   width: 100%;
   min-height: 0;          
   margin: 40px 0;             
@@ -322,7 +321,6 @@ header button:hover {
 .fundo-svg {
   position: absolute;
   left: 0;
-  
   top: -16%;
   width: 200%;
   height: 150%;                
@@ -422,7 +420,6 @@ header button:hover {
   height: 20px;
 }
 
-
 .fundoparcial-content, .tosavet {
   position: relative;
   z-index: 1;
@@ -469,14 +466,12 @@ header button:hover {
         position: relative;
         top: 25%;left: -7%;
       }
-
     }
 }
 
 @media (max-width: 768px) {
   .tosavet {
     display: none; 
-
   }
 .h2 {
     width: 0;
@@ -553,7 +548,6 @@ header button:hover {
     top: -345px;left: 50%;
   }
 .imn{
-  
   img {
     width: 20vw;
     height: 37.1vh;
@@ -566,7 +560,6 @@ header button:hover {
     font-size: 10px;
     position: relative;
     top: -330px;left: 50%;
-  
   }
 }
 .petum button {
@@ -619,7 +612,6 @@ h4 {
   align-items: center;
   gap: 3%;
 }
-
     @media (max-width: 768px) {
       .video {
         position: relative;
@@ -650,14 +642,12 @@ h4 {
       justify-content: center;
       align-items: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
     }
      p{
       font-size: 15px;
       color: var(--c6);
       text-align: justify;
     }
-
     img{
       width: 20vw;
       height: 20vh;
@@ -925,7 +915,6 @@ h4 {
   position: relative;
   top: 0;left: -2%;
   display: flex;
-
   gap: 3%;
 }
 .prinm{
@@ -943,15 +932,12 @@ h4 {
       justify-content: center;
       align-items: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
     }
      p{
       font-size: 15px;
       color: var(--c6);
       text-align: justify;
     }
-
-
     img{
       width: 100%;
       height: 100%;
@@ -982,7 +968,6 @@ h5, p{
   text-align: justify;
   font-size: 15px;
   position: relative;
-  
 }
 .container-carrossel {
   position: relative;
@@ -1033,7 +1018,6 @@ h5, p{
       height: 6%;
       position: relative;
       top: 8px;left: 0px;
-      
     }
   }
 }
@@ -1047,14 +1031,11 @@ h5, p{
   cursor: pointer;
   border-radius: 50px;
 }
-
 .btn:hover {
   background: #555;
 }
 }
-
 @media (max-width: 768px) {
-
   header h1 {
     font-size: 22px;
   }
@@ -1074,7 +1055,6 @@ h5, p{
     transform: scale(0.9);
     transform-origin: top center;
   }
-
   .carousel,
   .mainContainer,
   .mainContainer-dup,
@@ -1082,27 +1062,22 @@ h5, p{
     width: 100%;
     left: 0;
   }
-
   img {
     max-width: 100%;
     height: auto;
   }
-
   h1, h2, h3, p, button {
     font-size: 90%;
   }
-
   .petum,
   .banho,
   .vet {
     overflow: hidden;
   }
-
   button {
     padding: 8px 12px;
   }
 }
-
 @media (max-width: 480px) {
   body {
     transform: scale(0.85);
@@ -1122,9 +1097,7 @@ h5, p{
         width: 100%;
         position: relative;
         top: -35vh;left: 0;
-        
-      }
-}  
+}}  
 @media (max-width: 768px) {
       .blog {
         width: 100%;

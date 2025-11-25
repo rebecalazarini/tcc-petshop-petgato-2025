@@ -40,12 +40,28 @@
             <h3>${produto.nome}</h3>
             <p>${produto.descricao || ''}</p>
             <p class="preco">R$ ${produto.preco}</p>
+
+            <button class="btn-comprar" data-id="${produto.id}">Comprar</button>
           </div>
         `;
-
         container.appendChild(card);
       });
+
+      const botoesComprar = document.querySelectorAll('.btn-comprar');
+      botoesComprar.forEach(botao => {
+        botao.addEventListener('click', () => {
+          const produtoId = botao.getAttribute('data-id');
+          const produtoSelecionado = todosProdutos.find(p => p.id == produtoId);
+          if (produtoSelecionado) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.push(produtoSelecionado);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            alert(`Produto "${produtoSelecionado.nome}" adicionado ao carrinho!`);
+          }
+        });
+      });
     }
+    
     document.getElementById('categoriaFilter').addEventListener('change', function() {
       const cat = this.value;
       exibirProdutos(cat);

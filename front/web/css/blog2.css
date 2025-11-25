@@ -17,22 +17,18 @@
   --c2: rgb(180, 227, 241);
   --c3: rgb(75, 197, 235);
   --c4: rgba(197, 218, 226, 0.623);
-  --c5: rgba(157, 201, 56, 0.795); /* COR DO TEXTO DOS BOTÕES */
+  --c5: rgba(157, 201, 56, 0.795); 
   --t1: rgb(53, 54, 56);
   --t2: rgba(0, 0, 0, 0.7);
-
-
 }
-
-/* CORPO DA PÁGINA */
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* ESCONDE A ROLAGEM LATERAL */
+  overflow-x: hidden;
   display: flex;
-  flex-direction: column; /* ORGANIZA OS ELEMENTOS EM COLUNAS */
-  align-items: center; /* CENTRALIZA OS ELEMENTOS NA PÁGINA */
+  flex-direction: column;
+  align-items: center;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   line-height: 1.6;
   margin: 0;
@@ -47,7 +43,6 @@ body {
   }
 }
 
-/* CABEÇALHO UM */
 header {
   background: var(--c1);
   color: black;
@@ -57,43 +52,41 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* MANTÉM O CABEÇALHO ACIMA DOS OUTROS ITENS DO SITE */
-  justify-content: space-around; /* DISTRIBUI OS ITENS DO CABEÇALHO */
-  align-items: center; /* ALINHA OS ITENS DO CABEÇALHO */
+  z-index: 1000; 
+  justify-content: space-around;
+  align-items: center;
 }
 
 header h1 {
   font-family: 'Brush Script MT', cursive;
   color: rgb(6, 43, 255);
-  font-size: 36.5px; /* TAMANHO DO TEXTO */
+  font-size: 36.5px;
   position: relative;
   justify-content: center;
   align-items: center;
   top: 0px;
-  left: 8%; /* POSIÇÃO DO TEXTO */
-  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DO TEXTO, VAI APARECER UMA MÃOZINHA */
+  left: 8%;
+  cursor: pointer; 
 }
 
 header img {
-  width: 37px; /* TAMANHO DAS IMAGENS */
+  width: 37px; 
   border: none;
 }
 
 header button {
   background-color: transparent;
   border: none;
-  color: black; /* COR DO TEXTO */
-  font-weight: bold; /* TEXTO EM NEGRITO */
-  cursor: pointer; /* AO PASSAR O MOUSE EM CIMA DOS BOTÕES, VAI APARECER UMA MÃOZINHA */
+  color: black; 
+  font-weight: bold; 
+  cursor: pointer; 
 }
-
 header button:hover {
-  color: white; /* COR DO TEXTO AO PASSAR O MOUSE EM CIMA */
-  transition: 0.3s; /* TEMPO DA TRANSIÇÃO */
+  color: white; 
+  transition: 0.3s; 
   font-size: 1.8vh;
 }
 
-/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DO TÍTULO */
 @media (max-width: 768px) {
   header h1 {
     width: 60%;
@@ -107,26 +100,21 @@ header button:hover {
   }
 }
 
-/* 🔹 QUANDO A TELA FOR PEQUENA, DIMINUI O TAMANHO DAS IMAGENS */
 @media (max-width: 768px) {
   header button img {
-    width: 25px; /* diminui o tamanho das imagens */
+    width: 25px; 
   }
 }
 
-/* BARRA DE PESQUISA */
 .search-icon {
   width: 60%;
 }
 
-/* 🔹 QUANDO A TELA FOR PEQUENA A BARRA SOME */
 @media (max-width: 768px) {
   .search-icon {
-    display: none; /* some completamente */
+    display: none;
   }
 }
-
-/* CONTAINER DOIS */
 .Containerheader {
   background-color: rgba(231, 231, 250, 0.445);
   position: relative;
@@ -147,36 +135,30 @@ header button:hover {
   color: var(--c5);
   background: transparent;
   cursor: pointer;
-  display: flex; /* PARA ALINHAR A IMG E O TEXTO */
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px; /* ESPAÇO ENTRE TEXTO E IMG */
+  gap: 6px; 
 }
 
 .Containerheader button img {
-  display: none; /* some em todas as telas inicialmente */
+  display: none; 
 }
-
-/* Quando passar o mouse (somente em dispositivos que suportam hover), exibe a imagem */
 @media (hover: hover) and (pointer: fine) {
   .Containerheader button:hover img {
-    display: inline-block; /* mostra a imagem ao passar o mouse */
+    display: inline-block;
   }
 }
-
-/* Em telas pequenas (responsivo, tipo celular), as imagens continuam ocultas */
 @media (max-width: 768px) {
   .Containerheader button img {
-    display: none !important; /* garante que no mobile nunca aparece */
+    display: none !important; 
   }
 }
-
 brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .logo {
   width: 46px;
   height: 46px;
@@ -194,55 +176,45 @@ brand {
   margin: 28px auto;
   padding: 0 20px;
 }
-
-
 .move h4 {
   font-size: 3.5rem; 
   margin-bottom: 8px;
 }
-
 .hero {
   padding: 22px;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
 }
-
 .hero h1 {
-  font-size: 2.5rem; /* Tamanho maior para título */
+  font-size: 2.5rem;
   margin-bottom: 8px;
 }
-
 .meta {
   color: var(--muted);
   font-size: 0.95rem;
   margin-bottom: 12px;
 }
-
 .lead {
   font-size: 1.1rem;
   margin-bottom: 20px;
 }
-
 header1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
-
 nav a {
   margin-left: 14px;
   text-decoration: none;
   color: var(--muted);
   font-weight: 600;
 }
-
 .layout {
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: 28px;
   margin-top: 20px;
 }
-
 .hero h1 {
   font-size: 3.6rem; 
   margin-bottom: 8px;
@@ -258,13 +230,12 @@ nav a {
 
 img {
   display: block;
-  max-width: 80%; /* Imagem vai ocupar no máximo 80% da largura */
+  max-width: 80%; 
   height: auto;
-  margin: 0 auto 15px; /* Centraliza a imagem e dá margem abaixo */
+  margin: 0 auto 15px; 
   border-radius: 9.8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
-
 .comments {
   margin-top: 30px;
   padding: 16px;
@@ -272,7 +243,6 @@ img {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
 .comments h2 {
   font-size: 18px;
   margin-bottom: 14px;
@@ -326,7 +296,6 @@ transition:background 0.2s ease;
 }
 .btn:hover{background:#1bcdfa}
 
-/* Footer */
 footer1 {
   margin: 36px 0 80px;
   text-align: center;
@@ -335,8 +304,6 @@ footer1 {
   justify-content: center;
   display: flex;
 }
-
-/* Responsividade */
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;

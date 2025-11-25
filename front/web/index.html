@@ -405,16 +405,14 @@
       </ul>
     </div>
 
-    <!-- Seção Contato -->
     <div class="footer-section">
       <h3>Contato</h3>
-      <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro, São Paulo - SP</p>
-      <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
-      <p><i class="fas fa-envelope"></i> contato@petshop.com.br</p>
+      <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro, Jaguariúna - SP</p>
+      <p><i class="fas fa-phone"></i> (11) 93499-3499</p>
+      <p><i class="fas fa-envelope"></i> petgato@gmail.com</p>
       <p><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h | Sáb: 9h às 14h</p>
     </div>
 
-    <!-- Seção Newsletter -->
     <div class="footer-section">
       <h3>Newsletter</h3>
       <p>Receba dicas e promoções exclusivas!</p>
@@ -432,14 +430,14 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const carousel = document.querySelector('.carousel-promos');
-  if (!carousel) return; // Sai se não encontrar o carousel
+  if (!carousel) return; 
   
   const track = carousel.querySelector('.promos');
   const items = track.querySelectorAll('.prim');
   const prevBtn = carousel.querySelector('.carousel-btn-prev');
   const nextBtn = carousel.querySelector('.carousel-btn-next');
 
-  if (items.length <= 1) return; // Não precisa se houver 1 ou menos itens
+  if (items.length <= 1) return; 
 
   let currentIndex = 0;
   let itemWidth = 0;
@@ -447,8 +445,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const totalItems = items.length;
 
   function calculateDimensions() {
-    gap = parseFloat(getComputedStyle(track).gap) || 0; // Pega o gap em px
-    itemWidth = items[0].offsetWidth + gap; // Largura total por item
+    gap = parseFloat(getComputedStyle(track).gap) || 0; 
+    itemWidth = items[0].offsetWidth + gap; 
   }
 
   function updateCarousel() {
@@ -457,31 +455,28 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function moveNext() {
-    currentIndex = (currentIndex + 1) % totalItems; // Rotativo: volta ao 0
+    currentIndex = (currentIndex + 1) % totalItems;
     updateCarousel();
   }
 
   function movePrev() {
-    currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Rotativo: vai ao fim
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
     updateCarousel();
   }
 
   prevBtn.addEventListener('click', movePrev);
   nextBtn.addEventListener('click', moveNext);
 
-  // Inicializa
   calculateDimensions();
   updateCarousel();
 
-  // Recalcula em resize da janela
   window.addEventListener('resize', () => {
     calculateDimensions();
     updateCarousel();
   });
 
-  // Opcional: Navegação com teclado (setas esquerda/direita)
   document.addEventListener('keydown', (e) => {
-    if (document.activeElement === carousel || carousel.contains(document.activeElement)) { // Só se focado no carousel
+    if (document.activeElement === carousel || carousel.contains(document.activeElement)) { 
       if (e.key === 'ArrowLeft') movePrev();
       if (e.key === 'ArrowRight') moveNext();
     }

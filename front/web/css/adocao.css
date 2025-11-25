@@ -1,82 +1,125 @@
-
-
-*{
-margin: 0px;
-padding: 0px;
-box-sizing: border-box;
-
-}
-.container1{
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-background: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
-color: white;
-height: 100px; 
-font-family:Georgia, 'Times New Roman', Times, serif;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1B02A8;
+  padding: 12px 24px;
 }
 
-  .container1 h1 {
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color: #ffffff; /* bright blue */
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    text-shadow:
-      2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 0;
-  }
-body {
-            background: linear-gradient(to right, rgb(180, 227, 241), rgb(75, 197, 235));
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-
-        }
-        .card {
-            background-color: #ffffffe1;
-            color: black;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            border-radius: 8px;
-            margin: 20px auto;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            width: 300px;
-            height: 50px;
-            cursor: pointer;
-           }
-
-        .container1{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 10px;
-          margin-bottom: 40px;
-          margin-top: 20px;
-
-        }
-        .card:hover {
-            background-color: black;
-            color: white;
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-#voltar{
- height: 10%;
- width: 10%;
- padding: 10px;
- background-color: #ffffffe1;
- cursor: pointer;
- border-radius: 8px;
+.title {
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: Garamond, serif;
 }
-#voltar:hover{
-  background-color: black;
-  color: white;
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-button {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-button:hover {
+  text-decoration: underline;
+}
+
+.profile-image {
+  width: 30px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding-top: 10px;
+  min-height: 100vh;
+}
+
+.banner {
+  width: 90%;
+  height: 150px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.cards-container {
+  width: 40%;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 15px;
+  margin-bottom: 14px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.card-dog {
+  background-color: #7bb9bbff;
+}
+
+.card-cat {
+  background-color: #e9bfc3ff;
+}
+
+.card-fish {
+  background-color: #8fbde6ff;
+}
+
+.card-bird {
+  background-color: #fac98dff;
+}
+
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.back-button {
+  background-color: rgb(75, 197, 235);
+  border-radius: 12px;
+  width: 100px;   
+  height: 50px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgb(55, 177, 215);
 }

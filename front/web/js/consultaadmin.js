@@ -45,3 +45,18 @@ async function Cadastrar() {
         alert("Erro ao processar o cadastro.");
     }
 }
+
+
+const openButton = document.getElementById('open-button');
+const closeButton = document.getElementById('close-button');
+const popup = document.getElementById('popup');
+
+if (openButton && closeButton && popup) {
+    openButton.addEventListener('click', () => {
+        popup.classList.add('show');
+    });
+
+    closeButton.addEventListener('click', () => {
+        popup.classList.remove('show');
+    });
+}
