@@ -166,9 +166,6 @@
   </div>
 </main>
 
-
-  <br /><br /><br />
-
   <section class="section-fundo">
     <svg class="fundo-svg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
       <path fill="#B4E3F1" d="M0,80 C150,0 350,0 600,80 C850,160 1050,160 1440,80 L1440,320 C1200,260 1000,260 800,320 C600,380 400,380 200,320 L0,320 Z"></path>
@@ -179,12 +176,10 @@
         <h1><b style="font-size: 35px;">Todos os produtos:</b></h1>
       </div><br>
       <div class="animal">
-        <button onclick="window.location.href='produtoscli.html'">
-          <img src="./docs/petshopdois.png" />Produtos para seus pets 
-        </button>
-      </div><br>
-    </div>
-  </section>
+  <button onclick="window.location.href='produtoscli.html'">
+    <img src="./docs/petshopdois.png" />Produtos para seus pets
+  </button>
+</div>  </section><br /><br /><br /><br />
 
   <br /><br /><br /><br /><br /><br />
 
@@ -195,7 +190,7 @@
 
   <div class="tosavet">
     <br />
-    <div class="banho" <button onclick="window.location.href='https://daycarepet.com.br/banho-tosa'"></button>
+    <div class="banho"onclick="window.location.href='https://daycarepet.com.br/banho-tosa'"></button>
       <h2><b style="font-size: 50px;">Banho<br /> & Tosa</b><br /><br />
         Higiene e Conforto para o seu melhor amigo!
       </h2>
@@ -430,14 +425,17 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const carousel = document.querySelector('.carousel-promos');
-  if (!carousel) return; 
-  
+  if (!carousel) return;
+
   const track = carousel.querySelector('.promos');
   const items = track.querySelectorAll('.prim');
   const prevBtn = carousel.querySelector('.carousel-btn-prev');
   const nextBtn = carousel.querySelector('.carousel-btn-next');
 
-  if (items.length <= 1) return; 
+  // Verifica se os botões existem
+  if (!prevBtn || !nextBtn) return;
+
+  if (items.length <= 1) return;
 
   let currentIndex = 0;
   let itemWidth = 0;
@@ -445,8 +443,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const totalItems = items.length;
 
   function calculateDimensions() {
-    gap = parseFloat(getComputedStyle(track).gap) || 0; 
-    itemWidth = items[0].offsetWidth + gap; 
+    gap = parseFloat(getComputedStyle(track).gap) || 0;
+    itemWidth = items[0].offsetWidth + gap;
   }
 
   function updateCarousel() {
@@ -467,6 +465,9 @@ document.addEventListener('DOMContentLoaded', function() {
   prevBtn.addEventListener('click', movePrev);
   nextBtn.addEventListener('click', moveNext);
 
+  // Adicionando transição suave
+  track.style.transition = 'transform 0.3s ease-in-out';
+
   calculateDimensions();
   updateCarousel();
 
@@ -476,13 +477,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (document.activeElement === carousel || carousel.contains(document.activeElement)) { 
+    if (document.activeElement === carousel || carousel.contains(document.activeElement)) {
       if (e.key === 'ArrowLeft') movePrev();
       if (e.key === 'ArrowRight') moveNext();
     }
   });
 });
 </script>
+
 
   <script src="./js/index.js"></script>
 </body>
