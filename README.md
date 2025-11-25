@@ -85,13 +85,14 @@ npx nodemon server.js
 
 |PetGatô Swot (fofa)|
 
-![Matriz](/docs/fofapetshop.png)
-![uml](/docs/UML.png)
-![dc](I1.png)
+![Matriz](./docs/fofapetshop.png)
+![uml](./docs/UML.png)
+![dc](./docs/diagrama.png)
+![triangulo](./docs/petshoptriangulo.png)
  ## Relatório de testes
-  [relatorio caixa preta](/docs/relatoriocaixapreta.pdf)
-  [relatorio caixa branca](/docs/Relatório%20Back-end.pdf)
-  [relatorio front-end](/docs/relatorio%20front-end.pdf)
+  [relatorio caixa preta](./docs/relatoriocaixapreta.pdf)
+  [relatorio caixa branca](./docs/Relatório%20Back-end.pdf)
+  [relatorio front-end](./docs/relatorio%20front-end.pdf)
 - Requisitos funicionais
 - Clientes/Usuários
   - RF01: O sistema deve permitir o cadastro e login de clientes (nome, email, senha).
