@@ -48,7 +48,7 @@ npx nodemon server.js
 - Você pode testar tanto no insomnia quanto na própria tela de cadastro e consulta no fron-end
 - Users
 ```bash
- http://localhost:3000/usuarios
+ http://localhost:3001/usuarios
  exemplo:
 {
   "email": "teste@exemplo.com",
@@ -58,7 +58,7 @@ npx nodemon server.js
 
 - Cadastro do Pet
 ```bash
- http://localhost:3000/consultas
+ http://localhost:3001/consultas
  exemplo:
 {
 "id": 1,
@@ -85,15 +85,13 @@ npx nodemon server.js
 
 |PetGatô Swot (fofa)|
 
-![Matriz](fofapetshop.png)
-- Exemplo PetShop Tiangulo de ferro
-![triangulo](petshoptriangulo.png)
-![uml](UML.png)
+![Matriz](/docs/fofapetshop.png)
+![uml](/docs/UML.png)
 ![dc](I1.png)
  ## Relatório de testes
-  [relatorio caixa preta](Relatório%20Back-end.pdf)
-  [relatorio caixa branca](Relatório%20Back-end.pdf)
-  [relatorio front-end](relatorio%20front-end.pdf)
+  [relatorio caixa preta](/docs/relatoriocaixapreta.pdf)
+  [relatorio caixa branca](/docs/Relatório%20Back-end.pdf)
+  [relatorio front-end](/docs/relatorio%20front-end.pdf)
 - Requisitos funicionais
 - Clientes/Usuários
   - RF01: O sistema deve permitir o cadastro e login de clientes (nome, email, senha).
