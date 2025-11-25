@@ -81,7 +81,7 @@ npx nodemon server.js
 
 
 ## Gráfico gant
- [Gráfico aqui](https://wellifabio.github.io/gantt/) anual (260 dias)
+ [Gráfico aqui](./docs/graficogantt.png) anual (260 dias)
 
 |PetGatô Swot (fofa)|
 
@@ -89,6 +89,7 @@ npx nodemon server.js
 ![uml](./docs/UML.png)
 ![dc](./docs/diagrama.png)
 ![triangulo](./docs/petshoptriangulo.png)
+![requisitos](./docs/rfnf.png)
  ## Relatório de testes
   [relatorio caixa preta](./docs/relatoriocaixapreta.pdf)
   [relatorio caixa branca](./docs/Relatório%20Back-end.pdf)
