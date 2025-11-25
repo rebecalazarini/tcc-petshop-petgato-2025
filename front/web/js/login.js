@@ -1,81 +1,69 @@
-// Seleciona os elementos do formulário
-const loginForm = document.getElementById('login-form');
-const emailInput = document.getElementById('email-input');
-const senhaInput = document.getElementById('senha-input');
+// URL base do backend na Vercel
+const API_BASE_URL = "https://backend-tcc-petshop-petgato-2025.vercel.app";
 
-loginForm.addEventListener('submit', async (event) => {
-  event.preventDefault();  // Previne o envio do formulário
+// Função de login
+async function Login() {
+  const emailInput = document.getElementById("Email");
+  const senhaInput = document.getElementById("password");
 
-  const email = emailInput.value;
-  const senha = senhaInput.value;
+  const email = emailInput.value.trim();
+  const senha = senhaInput.value.trim();
+
+  if (!email || !senha) {
+    alert("Preencha todos os campos!");
+    return;
+  }
 
   try {
-    // Faz a requisição POST para /login
-    const response = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    const response = await fetch(`${API_BASE_URL}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, senha }),
     });
 
     const data = await response.json();
 
     if (response.ok) {
-      const token = data.token;  // Token de autenticação
-      console.log("Token recebido:", token);
-      sessionStorage.setItem('token', token);  // Armazena o token no sessionStorage
-      alert('Login bem-sucedido!');
+      const token = data.token;
+      sessionStorage.setItem("token", token);
+      alert("Login bem-sucedido!");
+      window.location.href = "index.html";
     } else {
-      alert('Erro no login: ' + data.error);  // Mostra a mensagem de erro recebida
+      alert("Erro no login: " + (data.error || "Verifique suas credenciais"));
     }
   } catch (error) {
-    console.error('Erro de rede:', error);
-    alert('Ocorreu um erro ao tentar conectar com o servidor.');
+    console.error("Erro de rede:", error);
+    alert("Não foi possível conectar ao servidor.");
   }
-});
-
-
-// Função para enviar dados protegidos com o token
-async function fetchProtectedData() {
-    const token = sessionStorage.getItem('token');  // Pega o token do sessionStorage
-
-    if (!token) {
-        alert('Você precisa estar logado para acessar essa página.');
-        return;
-    }
-
-    try {
-        const response = await fetch('http://localhost:3001/usuarios', {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,  // Envia o token no cabeçalho
-            },
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            console.log('Dados protegidos:', data);
-        } else {
-            console.error('Erro ao acessar dados protegidos:', data);
-        }
-    } catch (error) {
-        console.error('Erro de rede:', error);
-    }
 }
 
-  // Fecha ao clicar fora
-  window.addEventListener('click', function(event) {
-    if (!popup.contains(event.target) && event.target !== openButton) {
-      popup.classList.remove('show');
+// Função para voltar
+function voltar() {
+  window.location.href = "index.html";
+}
+
+async function fetchProtectedData() {
+  const token = sessionStorage.getItem("token");
+
+  if (!token) {
+    alert("Você precisa estar logado para acessar essa página.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/usuarios`, {
+      method: "GET",
+      headers: { "Authorization": `Bearer ${token}` },
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log("Dados protegidos:", data);
+    } else {
+      console.error("Erro ao acessar dados protegidos:", data);
     }
-  });
-
-  const menuToggle = document.getElementById('menu-toggle');
-const slideMenu = document.getElementById('slide-menu');
-
-menuToggle.addEventListener('click',() => {
-   slideMenu.classList.toggle('active');
-   menuToggle.classList.toggle('active');
-});
+  } catch (error) {
+    console.error("Erro de rede:", error);
+  }
+}

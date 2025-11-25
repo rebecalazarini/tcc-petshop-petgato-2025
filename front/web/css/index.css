@@ -154,7 +154,7 @@ header button:hover {
   width: 70%;
   height: 12.6vh;
   display: flex;
-  font-size: 25px;
+  font-size: 17px;
   justify-content: space-around;
   align-items: center;
 }
