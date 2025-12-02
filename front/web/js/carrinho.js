@@ -60,18 +60,8 @@ document.getElementById('pagamento').addEventListener('change', e => {
     cartaoDiv.style.display = 'block';
   } else if (e.target.value === 'pix') {
     pixDiv.style.display = 'block';
-    gerarQrCodePix();
   }
 });
-
-function gerarQrCodePix() {
-  const total = document.getElementById('total').textContent;
-  const chavePix = 'petgato@exemplo.com';
-  const conteudoPix = `Pagamento PIX\nChave: ${chavePix}\nValor: R$ ${total}`;
-  QRCode.toCanvas(document.getElementById('qrCodePix'), conteudoPix, function (error) {
-    if (error) console.error(error);
-  });
-}
 
 document.getElementById('finalizar').addEventListener('click', async () => {
   const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];

@@ -27,7 +27,6 @@ body {
 
 header {
   background: rgba(0, 31, 71, 0.158);
-  
   color: black;
   width: 100%;
   height: 85px;
@@ -331,7 +330,7 @@ header button:hover {
   justify-content: space-around;
 
   & img{
-    width: 40%;
+    width: 100%;
     height: 50vh;
     position: relative;
     top: 2%;
@@ -429,5 +428,143 @@ header button:hover {
     position: relative;
     top: -5%;
   }
+  }
+}
+
+/* RESPONSIVIDADE */
+
+/* TABLETS (até 1024px) */
+@media (max-width: 1024px) {
+  .fundo {
+    height: 70vh;
+  }
+  .texto h1 {
+    font-size: 2.3rem;
+    top: 150px;
+  }
+  .texto p {
+    font-size: 1rem;
+    top: 200px;
+  }
+  .texto button {
+    top: 250px;
+    padding: 1rem 2rem;
+  }
+
+  .confira h1,
+  .receba h1,
+  .parcele h1,
+  .frete h1,
+  .retire h1,
+  .troque h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* CELULARES GRANDES (até 768px) */
+@media (max-width: 768px) {
+  header {
+    height: 65px;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  header h1 {
+    font-size: 26px;
+    left: 0;
+    width: auto;
+  }
+
+  .fundo {
+    flex-direction: column;
+    height: auto;
+    padding: 100px 0 40px;
+    width: 100vw;
+  }
+
+  .text, .texto {
+    width: 100% !important;
+    position: static;
+    padding: 20px;
+  }
+
+  .texto h1, .texto p, .texto button {
+    top: 0 !important;
+    left: 0 !important;
+    position: static;
+    margin: 10px 0;
+  }
+
+  /* Seções com imagem + texto lado a lado */
+  .receba,
+  .parcele,
+  .frete,
+  .retire,
+  .troque {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    left: 0 !important;
+    top: 0 !important;
+  }
+
+  .receba img,
+  .parcele img,
+  .frete imgdois,
+  .retire img,
+  .troque imgum {
+    width: 90%;
+    height: auto;
+  }
+
+  .receba p,
+  .parcele p,
+  .frete p,
+  .retire p,
+  .troque p {
+    width: 90%;
+    text-align: center;
+  }
+
+  .confira {
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .confira h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .confira p {
+    width: 80%;
+  }
+}
+
+/* CELULARES PEQUENOS (até 480px) */
+@media (max-width: 480px) {
+  .texto h1 {
+    font-size: 1.8rem;
+  }
+
+  .texto p {
+    font-size: 0.95rem;
+  }
+
+  .confira h1 {
+    font-size: 1.8rem;
+  }
+
+  .receba h1,
+  .parcele h1,
+  .frete h1,
+  .retire h1,
+  .troque h1 {
+    font-size: 1.8rem;
+  }
+
+  header h1 {
+    font-size: 22px;
   }
 }

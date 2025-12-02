@@ -36,6 +36,7 @@
 
       <h3>Forma de pagamento</h3>
       <select id="pagamento">
+      <option value="pix">Seleciona uma opção</option>
       <option value="pix">PIX</option>
       <option value="credito">Cartão de Crédito</option>
       <option value="debito">Cartão de Débito</option>
@@ -44,8 +45,9 @@
     
       <!-- PIX -->
 <div id="pagamentoPix" style="display:none; margin-top:10px;">
-  <p>📱 Escaneie o QR Code abaixo para simular o pagamento PIX:</p>
-  <canvas id="qrCodePix"></canvas>
+  <p>Copie a chave pix no seu banco e envie o coprovante:</p>
+  <br>
+  <p>f66ff5b8-7671-41b0-863d-207c672954b7</p>
 </div>
 
 <!-- Cartão -->
@@ -60,8 +62,6 @@
   <input type="text" id="cvvCartao" maxlength="3" placeholder="123"><br>
 </div>
 
-<!-- Biblioteca para gerar QR Code -->
-<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 
 
       <div id="parcelas" style="display:none;">
