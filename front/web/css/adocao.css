@@ -46,11 +46,17 @@
 }
 
 .banner {
-  width: 90%;
-  height: 150px;
+  width: 30vw;
+  height: 30vh;
   border-radius: 15px;
   margin-bottom: 15px;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    width: 50vw;
+  }
 }
 
 .cards-container {

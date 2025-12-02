@@ -27,7 +27,7 @@ async function Login() {
       const token = data.token;
       sessionStorage.setItem("token", token);
       alert("Login bem-sucedido!");
-      window.location.href = "index.html";
+      window.location.href = "logado.html";
     } else {
       alert("Erro no login: " + (data.error || "Verifique suas credenciais"));
     }

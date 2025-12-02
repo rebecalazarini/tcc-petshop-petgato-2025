@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Gatô: o melhor petshop online, em todos os aspectos</title>
+  <link rel="stylesheet" href="./css/produtoscli.css">
+</head>
+<body>
+  <header>
+    <h1>Pet Gatô</h1>
+    <button onclick="window.location.href='logado.html'">
+      Voltar para a tela inicial
+    </button>
+    <button onclick="window.location.href='carrinho.html'">🛒 Ir para o carrinho</button>
+    <div class="filter-container">
+      <select id="categoriaFilter">
+        <option value="todos">Todos os Produtos</option>
+        <option value="cachorro">Cachorro</option>
+        <option value="gato">Gato</option>
+        <option value="peixe">Peixe</option>
+        <option value="passaro">Pássaro</option>
+      </select>
+    </div>
+  </header>
+
+  <div id="produtosLista" class="produtos-container">
+  </div>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/produtoscli.js"></script>
+</body>
+</html>

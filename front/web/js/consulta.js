@@ -34,7 +34,7 @@ async function Cadastrar() {
         // Verifica se ambas as respostas foram bem-sucedidas
         if (responseVercel.ok) {
             alert("Cadastro realizado com sucesso!");
-            window.location.href = "index.html";
+            window.location.href = "logado.html";
         } else {
             const erroVercel = await responseVercel.text();
             alert(`Erro ao cadastrar na Vercel: ${erroVercel}`);

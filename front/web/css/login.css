@@ -15,9 +15,6 @@ a {
     justify-content: center;
 }
 
-/* =========================================
-   CONTAINER PRINCIPAL
-========================================= */
 .container {
     display: flex;
     justify-content: center;
@@ -26,9 +23,6 @@ a {
     padding: 1rem;
 }
 
-/* =========================================
-   LADO ESQUERDO – IMAGEM
-========================================= */
 .containerLeft {
     width: 100%;
     display: flex;
@@ -42,9 +36,6 @@ a {
     object-fit: contain;
 }
 
-/* =========================================
-   CARD (NÃO ALTERADO)
-========================================= */
 .containerRight {
     position: absolute;
     height: 90vh;
@@ -101,9 +92,6 @@ a {
     background: #4e81c9;
 }
 
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
 
 /* Para telas maiores → side-by-side */
 @media (min-width: 768px) {
