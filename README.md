@@ -93,7 +93,7 @@ npx nodemon server.js
   - [relatorio caixa branca](./docs/Relatório%20Back-end.pdf)
   - [relatorio front-end](./docs/relatorio%20front-end.pdf)
   - [Documentação](./SERVIÇO%20NACIONAL%20DE%20APRENDIZAGEM%20INDUSTRIAL%20TCC%20.pdf)
-- Requisitos funicionais
+## Requisitos funicionais
 - Clientes/Usuários
   - RF01: O sistema deve permitir o cadastro e login de clientes (nome, email, senha).
   - RF02: O cliente pode cadastrar seus pets (nome, espécie, raça, data de nascimento).
@@ -108,7 +108,7 @@ npx nodemon server.js
   - RF12: O sistema deve gerar um token para o login por 30min.
   - RF13: O sistema deve criptografar a senha dos usuários.
 
-- Requisitos não funcionais 
+## Requisitos não funcionais 
 - Desempenho
   - RNF01: A página inicial e as páginas de produtos carregam no máximo 3 segundos, mesmo com 500 usuários simultâneos.
   - RNF02: O processamento de uma transação de pagamento deve ser concluído em no máximo 5 segundos.
