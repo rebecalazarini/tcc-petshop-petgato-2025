@@ -89,10 +89,10 @@ npx nodemon server.js
 ![triangulo](./docs/petshoptriangulo.png)
 ![requisitos](./docs/rfnf.png)
  ## Relatório de testes
-  [relatorio caixa preta](./docs/relatoriocaixapreta.pdf)
-  [relatorio caixa branca](./docs/Relatório%20Back-end.pdf)
-  [relatorio front-end](./docs/relatorio%20front-end.pdf)
-  [Documentação](./SERVIÇO%20NACIONAL%20DE%20APRENDIZAGEM%20INDUSTRIAL%20TCC%20.pdf)
+  - [relatorio caixa preta](./docs/relatoriocaixapreta.pdf)
+  - [relatorio caixa branca](./docs/Relatório%20Back-end.pdf)
+  - [relatorio front-end](./docs/relatorio%20front-end.pdf)
+  - [Documentação](./SERVIÇO%20NACIONAL%20DE%20APRENDIZAGEM%20INDUSTRIAL%20TCC%20.pdf)
 - Requisitos funicionais
 - Clientes/Usuários
   - RF01: O sistema deve permitir o cadastro e login de clientes (nome, email, senha).
