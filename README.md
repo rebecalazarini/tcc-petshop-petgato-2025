@@ -83,7 +83,6 @@ npx nodemon server.js
  [Gráfico aqui](./docs/graficogantt.png) anual (260 dias)
 
 |PetGatô Swot (fofa)|
-
 ![Matriz](./docs/fofapetshop.png)
 ![uml](./docs/UML.png)
 ![dc](./docs/diagrama.png)
@@ -93,6 +92,7 @@ npx nodemon server.js
   [relatorio caixa preta](./docs/relatoriocaixapreta.pdf)
   [relatorio caixa branca](./docs/Relatório%20Back-end.pdf)
   [relatorio front-end](./docs/relatorio%20front-end.pdf)
+  [Documentação](./SERVIÇO%20NACIONAL%20DE%20APRENDIZAGEM%20INDUSTRIAL%20TCC%20.pdf)
 - Requisitos funicionais
 - Clientes/Usuários
   - RF01: O sistema deve permitir o cadastro e login de clientes (nome, email, senha).
